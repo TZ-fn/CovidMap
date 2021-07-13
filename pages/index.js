@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div>Covid Map</div>;
+  return <div>Map</div>;
 }
