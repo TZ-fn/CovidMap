@@ -1,3 +1,9 @@
+import { StyledHeader } from './styles';
+
 export default function Header() {
-  return <header>Covid Map</header>;
+  return (
+    <StyledHeader>
+      <h1>Covid Map</h1>
+    </StyledHeader>
+  );
 }
