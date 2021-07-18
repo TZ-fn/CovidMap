@@ -1,3 +1,5 @@
+import { StyledMain } from './styles';
+
 export default function Home() {
-  return <div>Map</div>;
+  return <StyledMain>Map</StyledMain>;
 }

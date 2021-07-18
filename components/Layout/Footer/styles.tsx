@@ -5,5 +5,6 @@ export const StyledFooter = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 20rem;
+  height: 7vh;
+  width: 100%;
 `;
