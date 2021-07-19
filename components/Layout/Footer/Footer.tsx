@@ -1,5 +1,5 @@
 import { StyledFooter } from './styles';
 
 export default function Footer() {
-  return <StyledFooter>Footer</StyledFooter>;
+  return <StyledFooter>*</StyledFooter>;
 }
