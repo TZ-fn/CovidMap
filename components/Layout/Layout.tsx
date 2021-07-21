@@ -2,11 +2,15 @@ import { StyledWrapper } from './styles';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 
-export default function Layout({ children }) {
+type LayoutProps = {
+  children: React.ReactNode;
+};
+
+export default function Layout(props: LayoutProps) {
   return (
     <StyledWrapper>
       <Header />
-      {children}
+      {props.children}
       <Footer />
     </StyledWrapper>
   );

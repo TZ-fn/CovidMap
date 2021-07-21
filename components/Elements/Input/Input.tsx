@@ -1,5 +1,9 @@
 import { StyledInput } from './styles';
 
-export default function Input({ children }) {
-  return <StyledInput>{children}</StyledInput>;
+type InputProps = {
+  children: React.ReactNode;
+};
+
+export default function Input(props: InputProps) {
+  return <StyledInput>{props.children}</StyledInput>;
 }

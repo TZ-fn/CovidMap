@@ -1,4 +1,5 @@
 import { StyledHeader } from './styles';
+import Button from 'components/Elements/Button/Button';
 
 export default function Header() {
   return (
@@ -6,7 +7,7 @@ export default function Header() {
       <h1>Covid Map</h1>
       <div>
         <input type='search' placeholder='Search for country...' />
-        <button type='button'>Search</button>
+        <Button>Search</Button>
         <input type='checkbox' name='theme-picker' id='' />
       </div>
     </StyledHeader>
