@@ -4,6 +4,6 @@ type InputProps = {
   children: React.ReactNode;
 };
 
-export default function Input(props: InputProps) {
-  return <StyledInput>{props.children}</StyledInput>;
+export default function Input({ children }: InputProps) {
+  return <StyledInput>{children}</StyledInput>;
 }
