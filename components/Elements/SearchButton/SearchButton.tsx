@@ -1,10 +1,10 @@
-import { StyledButton } from './styles';
+import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 
 export default function SearchButton() {
   return (
-    <StyledButton aria-label='Search' type='button'>
+    <Button variant='contained' aria-label='Search' type='button'>
       <SearchIcon />
-    </StyledButton>
+    </Button>
   );
 }

@@ -1,4 +1,5 @@
 import { StyledHeader } from './styles';
+import { Input, FormControlLabel, FormGroup, Switch } from '@material-ui/core';
 import SearchButton from 'components/Elements/SearchButton/SearchButton';
 
 export default function Header() {
@@ -6,9 +7,11 @@ export default function Header() {
     <StyledHeader>
       <h1>Covid Map</h1>
       <div>
-        <input type='search' placeholder='Search for country...' />
+        <Input type='search' placeholder='Search for country...' />
         <SearchButton />
-        <input type='checkbox' name='theme-picker' id='' />
+        <FormGroup>
+          <FormControlLabel control={<Switch />} label='Normal' />
+        </FormGroup>
       </div>
     </StyledHeader>
   );
