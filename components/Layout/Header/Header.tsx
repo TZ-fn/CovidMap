@@ -1,6 +1,7 @@
 import { StyledHeader } from './styles';
-import { Input, FormControlLabel, FormGroup, Switch } from '@material-ui/core';
+import { Input } from '@material-ui/core';
 import SearchButton from 'components/Elements/SearchButton/SearchButton';
+import ThemeSwitch from 'components/Elements/ThemeSwitch/ThemeSwitch';
 
 export default function Header() {
   return (
@@ -9,9 +10,7 @@ export default function Header() {
       <div>
         <Input type='search' placeholder='Search for country...' />
         <SearchButton />
-        <FormGroup>
-          <FormControlLabel control={<Switch />} label='Normal' />
-        </FormGroup>
+        <ThemeSwitch />
       </div>
     </StyledHeader>
   );
