@@ -11,6 +11,6 @@ export const StyledWrapper = styled.div`
   background: ${mainTheme.themeColors.background};
 
   & > * {
-    border: 1px solid white;
+    /* border: 1px solid white; */
   }
 `;

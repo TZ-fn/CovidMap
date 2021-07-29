@@ -1,7 +1,5 @@
+import Button from '../Button/Button';
+
 export default function SearchButton() {
-  return (
-    <button aria-label='Search' type='button'>
-      search
-    </button>
-  );
+  return <Button aria-label='Search'>search</Button>;
 }
