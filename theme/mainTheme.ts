@@ -1,16 +1,18 @@
 const mainTheme = {
   themeColors: {
-    background: 'hsl(198, 50%, 13%)',
+    fontColor: 'hsl(60, 100%, 97%)',
+    background: 'hsl(198, 50%, 15%)',
+    backgroundDarker: 'hsl(198, 50%, 10%)',
   },
   dataColors: {
-    AstronautBlue: '#003f5c',
-    Chambray: '#2f4b7c',
-    ButterflyBush: '#665191',
-    Tapestry: '#a05195',
-    Cranberry: '#d45087',
-    Carnation: '#f95d6a',
-    Coral: '#ff7c43',
-    WebOrange: '#ffa600',
+    AstronautBlue: 'hsl(199, 100%, 18%)',
+    Chambray: 'hsl(218, 45%, 34%)',
+    ButterflyBush: 'hsl(260, 28%, 44%)',
+    Tapestry: 'hsl(308, 33%, 47%)',
+    Cranberry: 'hsl(335, 61%, 57%)',
+    Carnation: 'hsl(355, 93%, 67%)',
+    Coral: 'hsl(18, 100%, 63%)',
+    WebOrange: 'hsl(39, 100%, 50%)',
   },
 };
 
