@@ -1,5 +1,10 @@
-import Button from '../Button/Button';
+import { StyledSearchButton } from './styles';
+import SearchIcon from 'public/icons/iconmonstr-search-thin.svg';
 
 export default function SearchButton() {
-  return <Button aria-label='Search'>search</Button>;
+  return (
+    <StyledSearchButton aria-label='Search'>
+      <img src={SearchIcon.src} alt='' />
+    </StyledSearchButton>
+  );
 }

@@ -1,15 +1,18 @@
 import styled from 'styled-components';
+import mainTheme from 'theme/mainTheme';
 
 export const StyledHeader = styled.header`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  height: 10vh;
+  justify-content: center;
   width: 100%;
+  background-color: ${mainTheme.themeColors.backgroundDarker};
+`;
 
-  & > h1 {
-    font-size: 3rem;
-    margin-left: 1rem;
-  }
+export const StyledControlPanel = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;
