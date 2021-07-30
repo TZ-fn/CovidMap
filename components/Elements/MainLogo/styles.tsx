@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledMainLogo = styled.h1`
-  font-size: 4rem;
-  margin: 0.33em 2em 0.33em 0;
+  font-size: 3.5rem;
+  margin: 0.25em 3em 0.25em 0;
 `;
