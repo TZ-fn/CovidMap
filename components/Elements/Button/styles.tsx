@@ -7,4 +7,8 @@ export const StyledButton = styled.button`
   border: 1px solid ${mainTheme.dataColors.Coral};
   background-color: ${mainTheme.themeColors.backgroundDarker};
   border-radius: 2px;
+
+  &:hover {
+    background-color: blue;
+  }
 `;
