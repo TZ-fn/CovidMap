@@ -14,6 +14,9 @@ const mainTheme = {
     Coral: 'hsl(18, 100%, 63%)',
     WebOrange: 'hsl(39, 100%, 50%)',
   },
+  misc: {
+    borderRadius: '0.125em',
+  },
 };
 
 export default mainTheme;
