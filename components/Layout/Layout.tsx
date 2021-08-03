@@ -1,4 +1,4 @@
-import { StyledWrapper } from './styles';
+import { StyledWrapper } from './Layout.styles';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 

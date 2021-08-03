@@ -1,4 +1,4 @@
-import { StyledHeader, StyledControlPanel } from './styles';
+import { StyledHeader, StyledControlPanel } from './Header.styles';
 import MainLogo from 'components/Elements/MainLogo/MainLogo';
 import Input from 'components/Elements/Input/Input';
 import SearchButton from 'components/Elements/SearchButton/SearchButton';

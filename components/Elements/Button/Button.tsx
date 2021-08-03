@@ -1,4 +1,4 @@
-import { StyledButton } from './styles';
+import { StyledButton } from './Button.styles';
 
 export default function Button({ children, className }) {
   return (

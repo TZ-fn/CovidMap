@@ -1,4 +1,4 @@
-import { StyledSearchButton } from './styles';
+import { StyledSearchButton } from './SearchButton.styles';
 import SearchIcon from 'public/icons/iconmonstr-search-thin.svg';
 
 export default function SearchButton() {
