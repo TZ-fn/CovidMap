@@ -8,7 +8,7 @@ export const StyledWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: ${mainTheme.themeColors.background};
+  background: ${mainTheme.themeColors.backgroundDarker};
 
   & > * {
     /* border: 1px solid white; */

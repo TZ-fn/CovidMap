@@ -7,7 +7,7 @@ export const StyledInput = styled.input`
   padding: 0.33em 0.25em;
   border-radius: ${mainTheme.misc.borderRadius};
   color: ${mainTheme.themeColors.fontColor};
-  background-color: ${mainTheme.themeColors.background};
+  background-color: ${mainTheme.themeColors.backgroundDarker};
 
   &:focus {
     outline: 2px solid ${mainTheme.dataColors.Coral};

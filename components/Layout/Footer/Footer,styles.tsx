@@ -8,5 +8,5 @@ export const StyledFooter = styled.footer`
   justify-content: center;
   height: 7vh;
   width: 100%;
-  background-color: ${mainTheme.themeColors.backgroundDarker};
+  background-color: ${mainTheme.themeColors.background};
 `;

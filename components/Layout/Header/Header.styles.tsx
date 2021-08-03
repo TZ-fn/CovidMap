@@ -7,7 +7,7 @@ export const StyledHeader = styled.header`
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: ${mainTheme.themeColors.backgroundDarker};
+  background-color: ${mainTheme.themeColors.background};
 `;
 
 export const StyledControlPanel = styled.div`
