@@ -9,7 +9,7 @@ export default function Header() {
     <StyledHeader>
       <MainLogo />
       <StyledControlPanel>
-        <Input type={'search'} placeholder='Search for country...' />
+        <Input type={'search'} placeholder='Search for a country...' />
         <SearchButton />
         <ThemeSwitch />
       </StyledControlPanel>
