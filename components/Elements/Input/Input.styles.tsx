@@ -4,7 +4,7 @@ import deleteIcon from 'public/icons/icons8-delete.svg';
 
 export const StyledInput = styled.input`
   min-width: 20rem;
-  padding: 0.8rem 1rem;
+  padding: 0.75rem 0.95rem;
   border-radius: ${mainTheme.misc.borderRadius};
   color: ${mainTheme.themeColors.fontColor};
   font-size: 1.3rem;

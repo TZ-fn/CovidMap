@@ -15,7 +15,7 @@ const mainTheme = {
     WebOrange: 'hsl(39, 100%, 50%)',
   },
   misc: {
-    borderRadius: '0.125em',
+    borderRadius: '0.225em',
   },
 };
 

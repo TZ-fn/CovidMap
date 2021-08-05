@@ -15,4 +15,5 @@ export const StyledControlPanel = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin-right: 1em;
 `;

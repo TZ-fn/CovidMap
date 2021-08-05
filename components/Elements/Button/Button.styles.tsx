@@ -9,7 +9,7 @@ export const StyledButton = styled.button`
   border-radius: ${mainTheme.misc.borderRadius};
 
   &:hover {
-    background-color: ${mainTheme.themeColors.backgroundDarker};
+    background-color: ${mainTheme.dataColors.Coral};
   }
 
   &:focus {
