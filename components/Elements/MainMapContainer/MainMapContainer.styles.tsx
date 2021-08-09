@@ -9,4 +9,6 @@ export const StyledMainMapContainer = styled.div`
   width: 65%;
   height: 80vh;
   background-color: ${mainTheme.themeColors.background};
+  border: 1px solid ${mainTheme.themeColors.border};
+  border-radius: ${mainTheme.misc.borderRadius};
 `;

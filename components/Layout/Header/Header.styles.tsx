@@ -8,6 +8,7 @@ export const StyledHeader = styled.header`
   justify-content: center;
   width: 100%;
   background-color: ${mainTheme.themeColors.background};
+  border-bottom: 1px solid ${mainTheme.themeColors.border};
 `;
 
 export const StyledControlPanel = styled.div`

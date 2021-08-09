@@ -1,6 +1,7 @@
 const mainTheme = {
   themeColors: {
     fontColor: 'hsl(60, 100%, 97%)',
+    border: 'hsl(198, 50%, 35%)',
     background: 'hsl(198, 50%, 15%)',
     backgroundDarker: 'hsl(198, 50%, 10%)',
   },

@@ -9,4 +9,5 @@ export const StyledFooter = styled.footer`
   height: 7vh;
   width: 100%;
   background-color: ${mainTheme.themeColors.background};
+  border-top: 1px solid ${mainTheme.themeColors.border};
 `;
