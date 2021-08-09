@@ -48,7 +48,7 @@ export const StyledToggleSwitchInnerSpan = styled.span`
     text-transform: uppercase;
     margin-top: 0;
     padding-left: 0;
-    background-color: ${mainTheme.dataColors.Coral};
+    background-color: ${mainTheme.dataColors.AstronautBlue};
     color: ${mainTheme.themeColors.fontColor};
   }
 
@@ -57,7 +57,7 @@ export const StyledToggleSwitchInnerSpan = styled.span`
     text-transform: uppercase;
     padding-top: 4px;
     padding-right: 4px;
-    background-color: ${mainTheme.dataColors.AstronautBlue};
+    background-color: ${mainTheme.dataColors.Coral};
     color: ${mainTheme.themeColors.fontColor};
     text-align: right;
   }
