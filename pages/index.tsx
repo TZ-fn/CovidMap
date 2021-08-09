@@ -1,5 +1,10 @@
-import { StyledMain } from './styles';
+import { StyledMain } from './index.styles';
+import MainMapContainer from 'components/Elements/MainMapContainer/MainMapContainer';
 
 export default function Home() {
-  return <StyledMain>Map</StyledMain>;
+  return (
+    <StyledMain>
+      <MainMapContainer />
+    </StyledMain>
+  );
 }
