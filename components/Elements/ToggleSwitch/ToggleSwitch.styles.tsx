@@ -12,6 +12,8 @@ export const StyledToggleSwitchContainer = styled.div`
   user-select: none;
   text-align: left;
   margin-left: 1em;
+  border: 1px solid ${mainTheme.themeColors.border};
+  border-radius: 20px;
 `;
 
 export const StyledToggleSwitchLabel = styled.label`
@@ -47,7 +49,7 @@ export const StyledToggleSwitchInnerSpan = styled.span`
     content: url(${({ leftLabel }) => leftLabel});
     text-transform: uppercase;
     margin-top: 0;
-    padding-left: 0;
+    padding-left: 1px;
     background-color: ${mainTheme.dataColors.AstronautBlue};
     color: ${mainTheme.themeColors.fontColor};
   }

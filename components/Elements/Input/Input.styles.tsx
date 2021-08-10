@@ -5,12 +5,13 @@ import deleteIcon from 'public/icons/icons8-delete.svg';
 export const StyledInput = styled.input`
   min-width: 20rem;
   padding: 0.75rem 0.95rem;
+  margin-right: 1px;
   border-radius: ${mainTheme.misc.borderRadius};
   color: ${mainTheme.themeColors.fontColor};
   font-size: 1.3rem;
   background-color: ${mainTheme.themeColors.backgroundDarker};
   box-shadow: none;
-  border: none;
+  border: 1px solid ${mainTheme.themeColors.border};
 
   &:focus {
     outline: 2px solid ${mainTheme.dataColors.Coral};
