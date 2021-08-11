@@ -6,8 +6,9 @@ export const StyledMainMapContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 65%;
+  width: 55%;
   height: 80vh;
+  margin: auto 2em;
   background-color: ${mainTheme.themeColors.background};
   border: 1px solid ${mainTheme.themeColors.border};
   border-radius: ${mainTheme.misc.borderRadius};
