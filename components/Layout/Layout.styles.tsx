@@ -9,8 +9,4 @@ export const StyledWrapper = styled.div`
   justify-content: center;
   width: 100%;
   background: ${mainTheme.themeColors.backgroundDarker};
-
-  & > * {
-    /* border: 1px solid white; */
-  }
 `;
