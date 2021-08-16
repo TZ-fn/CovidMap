@@ -1,8 +1,10 @@
-# NutritiGuide
+# Covid Map
 
 ## About
 
 This is a map that allows the user to check the number of Covid-19 cases in different countries around the world. It also displays two rankings: cases by country on the left side, and vaccinated people by country on the right side.
+
+This app uses the [disease.sh]('https://disease.sh/') API.
 
 ## Usage
 
