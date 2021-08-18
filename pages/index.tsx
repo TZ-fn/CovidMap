@@ -1,12 +1,12 @@
 import { StyledMain } from './index.styles';
 import MainMapContainer from 'components/Layout/MainMapContainer/MainMapContainer';
 import Aside from 'components/Elements/Aside/Aside';
-import CasesRanking from 'components/CasesRanking/CasesRanking';
+import CountriesRanking from 'components/CountriesRanking/CountriesRanking';
 
 export default function Home() {
   return (
     <StyledMain>
-      <CasesRanking />
+      <CountriesRanking />
       <MainMapContainer />
       <Aside />
     </StyledMain>
