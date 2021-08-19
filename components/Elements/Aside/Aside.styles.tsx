@@ -12,8 +12,4 @@ export const StyledAside = styled.aside`
   background-color: ${mainTheme.themeColors.background};
   border: 1px solid ${mainTheme.themeColors.border};
   border-radius: ${mainTheme.misc.borderRadius};
-
-  & > h2 {
-    border-bottom: 2px solid ${mainTheme.themeColors.border};
-  }
 `;

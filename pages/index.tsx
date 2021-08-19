@@ -1,14 +1,13 @@
 import { StyledMain } from './index.styles';
 import MainMapContainer from 'components/Layout/MainMapContainer/MainMapContainer';
-import Aside from 'components/Elements/Aside/Aside';
 import CountriesRanking from 'components/CountriesRanking/CountriesRanking';
 
 export default function Home() {
   return (
     <StyledMain>
-      <CountriesRanking />
+      <CountriesRanking rankingTitle='Covid-19 cases worldwide' />
       <MainMapContainer />
-      <Aside />
+      <CountriesRanking rankingTitle='Vaccine doses administered' />
     </StyledMain>
   );
 }
