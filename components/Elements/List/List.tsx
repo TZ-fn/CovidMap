@@ -1,84 +1,33 @@
 import CountriesListItem from 'components/CountriesListItem/CountriesListItem';
 import { useEffect, useState } from 'react';
-import { fetchData } from 'utils/utils';
+import { fetchData, sortCountriesByVaccineDoses } from 'utils/utils';
 import { StyledList } from './List.styles';
 
-export default function List() {
-  const [vaccinesData, setVaccinesData] = useState(null);
-  useEffect(() => {
-    async () => {
-      setVaccinesData(
-        await fetchData(
-          'https://disease.sh/v3/covid-19/vaccine/coverage/countries?lastdays=1&fullData=false',
-        ),
-      );
-    };
-  }, []);
+type CountryType = [string, number];
 
-  console.log(vaccinesData);
+export default function List() {
+  const [vaccinesData, setVaccinesData] = useState([]);
+  useEffect(async () => {
+    setVaccinesData(
+      await fetchData(
+        'https://disease.sh/v3/covid-19/vaccine/coverage/countries?lastdays=1&fullData=false',
+      ),
+    );
+  }, []);
 
   return (
     <StyledList>
-      <CountriesListItem
-        countryFlag='https://disease.sh/assets/img/flags/af.png'
-        countryName='Afghanistan'
-        numberOfCases={123456}
-      />
-      <CountriesListItem
-        countryFlag='https://disease.sh/assets/img/flags/pl.png'
-        countryName='Afghanistan'
-        numberOfCases={123456}
-      />
-      <CountriesListItem
-        countryFlag='https://disease.sh/assets/img/flags/gb.png'
-        countryName='Afghanistan'
-        numberOfCases={123456}
-      />
-      <CountriesListItem
-        countryFlag='https://disease.sh/assets/img/flags/af.png'
-        countryName='Afghanistan'
-        numberOfCases={123456}
-      />
-      <CountriesListItem
-        countryFlag='https://disease.sh/assets/img/flags/af.png'
-        countryName='Afghanistan'
-        numberOfCases={123456}
-      />
-      <CountriesListItem
-        countryFlag='https://disease.sh/assets/img/flags/af.png'
-        countryName='Afghanistan'
-        numberOfCases={123456}
-      />
-      <CountriesListItem
-        countryFlag='https://disease.sh/assets/img/flags/af.png'
-        countryName='Afghanistan'
-        numberOfCases={123456}
-      />
-      <CountriesListItem
-        countryFlag='https://disease.sh/assets/img/flags/af.png'
-        countryName='Afghanistan'
-        numberOfCases={123456}
-      />
-      <CountriesListItem
-        countryFlag='https://disease.sh/assets/img/flags/af.png'
-        countryName='Afghanistan'
-        numberOfCases={123456}
-      />
-      <CountriesListItem
-        countryFlag='https://disease.sh/assets/img/flags/af.png'
-        countryName='Afghanistan'
-        numberOfCases={123456}
-      />
-      <CountriesListItem
-        countryFlag='https://disease.sh/assets/img/flags/af.png'
-        countryName='Afghanistan'
-        numberOfCases={123456}
-      />
-      <CountriesListItem
-        countryFlag='https://disease.sh/assets/img/flags/af.png'
-        countryName='Afghanistan'
-        numberOfCases={123456}
-      />
+      {vaccinesData.length > 0
+        ? sortCountriesByVaccineDoses(vaccinesData, 12).map((country: CountryType) => {
+            return (
+              <CountriesListItem
+                countryFlag='https://disease.sh/assets/img/flags/af.png'
+                countryName={country[0]}
+                numberOfCases={country[1]}
+              />
+            );
+          })
+        : null}
     </StyledList>
   );
 }
