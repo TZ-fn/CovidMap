@@ -4,8 +4,8 @@
     "next",
     "next/core-web-vitals",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "plugin:@typescript-eslint/recommended"
+    // "prettier"
   ],
   "parser": "babel-eslint",
   "plugins": ["@typescript-eslint"],
@@ -31,7 +31,8 @@
         "assert": "either",
         "depth": 3
       }
-    ]
+    ],
+    "@typescript-eslint/ban-ts-comment": "off"
   },
   "settings": {
     "import/resolver": {
