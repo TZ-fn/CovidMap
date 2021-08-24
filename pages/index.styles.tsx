@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledMain = styled.main`
+const StyledMain = styled.main`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -8,3 +8,5 @@ export const StyledMain = styled.main`
   width: 100%;
   height: 90vh;
 `;
+
+export default StyledMain;

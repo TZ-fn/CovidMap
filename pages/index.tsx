@@ -1,4 +1,4 @@
-import { StyledMain } from './index.styles';
+import StyledMain from './index.styles';
 import MainMapContainer from 'components/Layout/MainMapContainer/MainMapContainer';
 import CountriesRanking from 'components/CountriesRanking/CountriesRanking';
 
