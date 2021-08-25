@@ -1,9 +1,9 @@
 import { StyledCountriesRanking } from './CountriesRanking.styles';
 import List from 'components/Elements/List/List';
 
-type CountriesRankingProps = {
+interface CountriesRankingProps {
   rankingTitle: string;
-};
+}
 
 export default function CountriesRanking({ rankingTitle }: CountriesRankingProps) {
   return (

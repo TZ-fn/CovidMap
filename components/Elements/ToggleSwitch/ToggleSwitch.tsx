@@ -1,3 +1,4 @@
+import * as React from 'react';
 import {
   StyledToggleSwitchContainer,
   StyledToggleSwitchCheckbox,
@@ -6,19 +7,19 @@ import {
   StyledToggleSwitchInnerSwitch,
 } from './ToggleSwitch.styles';
 
-type ToggleSwitchProps = {
+interface ToggleSwitchProps {
   name: string;
   ariaLabel: string;
   leftLabel: string;
   rightLabel: string;
-};
+}
 
 export default function ToggleSwitch({
   name,
   ariaLabel,
   leftLabel,
   rightLabel,
-}: ToggleSwitchProps) {
+}: ToggleSwitchProps): React.ReactElement {
   return (
     <StyledToggleSwitchContainer>
       <StyledToggleSwitchCheckbox type='checkbox' name={name} id={name} aria-label={ariaLabel} />

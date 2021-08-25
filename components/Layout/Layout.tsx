@@ -2,9 +2,9 @@ import { StyledWrapper } from './Layout.styles';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 
-type LayoutProps = {
+interface LayoutProps {
   children: React.ReactNode;
-};
+}
 
 export default function Layout({ children }: LayoutProps) {
   return (

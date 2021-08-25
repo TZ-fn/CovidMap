@@ -1,11 +1,11 @@
 import FlagIcon from 'components/FlagIcon/FlagIcon';
 import { StyledCountriesListItem } from './CountriesListItem.styles';
 
-type CountriesListItemProps = {
+interface CountriesListItemProps {
   countryFlag: string;
   countryName: string;
   numberOfCases: number;
-};
+}
 
 export default function CountriesListItem({
   countryFlag,
