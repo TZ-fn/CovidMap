@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { StyledAside } from './Aside.styles';
 
 interface AsideProps {
@@ -5,6 +6,6 @@ interface AsideProps {
   children: React.ReactNode;
 }
 
-export default function Aside({ className, children }: AsideProps) {
+export default function Aside({ className, children }: AsideProps): React.ReactElement {
   return <StyledAside className={className}>{children}</StyledAside>;
 }
