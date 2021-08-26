@@ -25,7 +25,9 @@ export const StyledToggleSwitchLabel = styled.label`
   margin: 0;
 `;
 
-export const StyledToggleSwitchInnerSpan = styled.span`
+type SwitchSpanProps = { leftLabel: string; rightLabel: string };
+
+export const StyledToggleSwitchInnerSpan = styled.span<SwitchSpanProps>`
   display: block;
   width: 200%;
   margin-left: -100%;
