@@ -3,27 +3,23 @@ import CountriesListItem from 'components/CountriesListItem/CountriesListItem';
 import { useEffect, useState } from 'react';
 import { fetchData, sortCountriesByVaccineDoses } from 'utils/utils';
 import { StyledList } from './List.styles';
-type CountryType = [string, number];
+
+type VaccineDosesInCountry = [string, number];
 
 export default function List(): ReactElement {
   const [vaccinesData, setVaccinesData] = useState([]);
 
   useEffect(() => {
-    async function getVaccinesData(): Promise<void> {
-      setVaccinesData(
-        await fetchData(
-          'https://disease.sh/v3/covid-19/vaccine/coverage/countries?lastdays=1&fullData=false',
-        ),
-      );
-    }
-
-    getVaccinesData();
+    fetchData(
+      'https://disease.sh/v3/covid-19/vaccine/coverage/countries?lastdays=1&fullData=false',
+      setVaccinesData,
+    );
   }, []);
 
   return (
     <StyledList>
       {vaccinesData?.length > 0
-        ? sortCountriesByVaccineDoses(vaccinesData, 12).map((country: CountryType) => {
+        ? sortCountriesByVaccineDoses(vaccinesData, 12).map((country: VaccineDosesInCountry) => {
             return (
               <CountriesListItem
                 key={country[0]}
