@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React, { ReactElement } from 'react';
 import { StyledThemeSwitch } from 'components/Elements/ThemeSwitch/ThemeSwitch.styles';
 import lightThemeIcon from 'public/icons/icons8-sun.svg';
 import darkThemeIcon from 'public/icons/reshot-icon-moon-crescent-UKRLZEWPYG.svg';
 
-export default function ThemeSwitch(): React.ReactElement {
+export default function ThemeSwitch(): ReactElement {
   return (
     <StyledThemeSwitch
       name='theme-switch'

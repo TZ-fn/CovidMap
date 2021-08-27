@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { ReactElement } from 'react';
 import FlagIcon from 'components/FlagIcon/FlagIcon';
 import { StyledCountriesListItem } from './CountriesListItem.styles';
 
@@ -12,7 +12,7 @@ export default function CountriesListItem({
   countryFlag,
   countryName,
   numberOfCases,
-}: CountriesListItemProps): React.ReactElement {
+}: CountriesListItemProps): ReactElement {
   return (
     <StyledCountriesListItem>
       <FlagIcon src={countryFlag} /> {countryName} {numberOfCases}

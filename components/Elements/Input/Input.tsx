@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { ReactElement } from 'react';
 import { StyledInput } from './Input.styles';
 
 interface InputProps {
@@ -6,6 +6,6 @@ interface InputProps {
   placeholder: string;
 }
 
-export default function Input({ type, placeholder }: InputProps): React.ReactElement {
+export default function Input({ type, placeholder }: InputProps): ReactElement {
   return <StyledInput type={type} placeholder={placeholder} />;
 }

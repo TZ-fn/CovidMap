@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React, { ReactElement } from 'react';
 import { useRouter } from 'next/router';
 
-export default function Country(): React.ReactElement {
+export default function Country(): ReactElement {
   const router = useRouter();
   const countryName = router.query.countryName;
   return (

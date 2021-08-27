@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { ReactElement } from 'react';
 import {
   StyledToggleSwitchContainer,
   StyledToggleSwitchCheckbox,
@@ -19,7 +19,7 @@ export default function ToggleSwitch({
   ariaLabel,
   leftLabel,
   rightLabel,
-}: ToggleSwitchProps): React.ReactElement {
+}: ToggleSwitchProps): ReactElement {
   return (
     <StyledToggleSwitchContainer>
       <StyledToggleSwitchCheckbox type='checkbox' name={name} id={name} aria-label={ariaLabel} />
