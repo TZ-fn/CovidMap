@@ -5,17 +5,18 @@ import { StyledCountriesListItem } from './CountriesListItem.styles';
 interface CountriesListItemProps {
   countryFlag: string;
   countryName: string;
-  numberOfCases: number;
+  numberOfCasesOrVaccineDoses: number;
 }
 
 export default function CountriesListItem({
   countryFlag,
   countryName,
-  numberOfCases,
+  numberOfCasesOrVaccineDoses,
 }: CountriesListItemProps): ReactElement {
   return (
     <StyledCountriesListItem>
-      <FlagIcon src={countryFlag} /> {countryName} {numberOfCases}
+      <FlagIcon src={countryFlag} /> {countryName}{' '}
+      {new Intl.NumberFormat('pl-PL').format(numberOfCasesOrVaccineDoses)}
     </StyledCountriesListItem>
   );
 }
