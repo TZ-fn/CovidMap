@@ -1,16 +1,19 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import { StyledCountriesRanking } from './CountriesRanking.styles';
-import List from 'components/Elements/List/List';
 
 interface CountriesRankingProps {
   rankingTitle: string;
+  children: ReactNode;
 }
 
-export default function CountriesRanking({ rankingTitle }: CountriesRankingProps): ReactElement {
+export default function CountriesRanking({
+  rankingTitle,
+  children,
+}: CountriesRankingProps): ReactElement {
   return (
     <StyledCountriesRanking>
       <h2>{rankingTitle}</h2>
-      <List />
+      {children}
     </StyledCountriesRanking>
   );
 }
