@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { StyledFlagIcon } from './FlagIcon.styles';
 
 interface FlagIconProps {

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { StyledMainLogo } from './MainLogo.styles';
 
 export default function MainLogo(): ReactElement {

@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react';
+import { ReactElement, ReactNode } from 'react';
 import { StyledAside } from './Aside.styles';
 
 interface AsideProps {
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function Aside({ className, children }: AsideProps): ReactElement {

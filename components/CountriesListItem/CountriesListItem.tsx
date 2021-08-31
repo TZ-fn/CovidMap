@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import FlagIcon from 'components/FlagIcon/FlagIcon';
 import { StyledCountriesListItem } from './CountriesListItem.styles';
 

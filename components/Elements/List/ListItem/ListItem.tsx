@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react';
+import { ReactElement, ReactNode } from 'react';
 import { StyledListItem } from './ListItem.styles';
 
 interface ListItemProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 

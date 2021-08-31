@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import CountriesListItem from 'components/CountriesListItem/CountriesListItem';
 import { useEffect, useState } from 'react';
 import { fetchData, sortCountriesByVaccineDoses } from 'utils/vaccineDoses.utils';

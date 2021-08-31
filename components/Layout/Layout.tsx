@@ -1,10 +1,10 @@
-import React, { ReactElement } from 'react';
+import { ReactElement, ReactNode } from 'react';
 import { StyledWrapper } from './Layout.styles';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps): ReactElement {

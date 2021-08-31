@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { StyledSearchButton } from './SearchButton.styles';
 import SearchIcon from 'public/icons/icons8-search.svg';
 import Image from 'next/image';

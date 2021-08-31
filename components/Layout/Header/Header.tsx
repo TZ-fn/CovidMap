@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { StyledHeader, StyledControlPanel } from './Header.styles';
 import MainLogo from 'components/Elements/MainLogo/MainLogo';
 import Input from 'components/Elements/Input/Input';
