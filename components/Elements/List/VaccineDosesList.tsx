@@ -1,10 +1,13 @@
 import { ReactElement } from 'react';
 import CountriesListItem from 'components/CountriesListItem/CountriesListItem';
 import { useEffect, useState } from 'react';
-import { fetchData, sortCountriesByVaccineDoses } from 'utils/vaccineDoses.utils';
+import { fetchData, sortCountries } from 'utils/utils';
 import { StyledList } from './List.styles';
 
-type VaccineDosesInCountry = [string, number];
+interface VaccineDosesInCountry {
+  countryName: string;
+  vaccineDoses: number;
+}
 
 export default function VaccineDosesList(): ReactElement {
   const [vaccinesData, setVaccinesData] = useState([]);
@@ -19,16 +22,18 @@ export default function VaccineDosesList(): ReactElement {
   return (
     <StyledList>
       {vaccinesData?.length > 0
-        ? sortCountriesByVaccineDoses(vaccinesData, 12).map((country: VaccineDosesInCountry) => {
-            return (
-              <CountriesListItem
-                key={country[0]}
-                countryFlag='https://disease.sh/assets/img/flags/af.png'
-                countryName={country[0]}
-                numberOfCasesOrVaccineDoses={country[1]}
-              />
-            );
-          })
+        ? sortCountries(vaccinesData, 12, false).map(
+            ({ countryName, vaccineDoses }: VaccineDosesInCountry) => {
+              return (
+                <CountriesListItem
+                  key={countryName}
+                  countryFlag='https://disease.sh/assets/img/flags/af.png'
+                  countryName={countryName}
+                  numberOfCasesOrVaccineDoses={vaccineDoses}
+                />
+              );
+            },
+          )
         : null}
     </StyledList>
   );
