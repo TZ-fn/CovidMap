@@ -1,7 +1,6 @@
 import { ReactElement } from 'react';
 import CountriesListItem from 'components/CountriesListItem/CountriesListItem';
-import { useEffect, useState } from 'react';
-import { fetchData, sortCountries } from 'utils/utils';
+import { sortCountries } from 'utils/utils';
 import { StyledList } from './List.styles';
 
 interface CovidCasesInCountry {
@@ -10,13 +9,7 @@ interface CovidCasesInCountry {
   countryFlag: string;
 }
 
-export default function CovidCasesList(): ReactElement {
-  const [covidCasesData, setCovidCasesData] = useState([]);
-
-  useEffect(() => {
-    fetchData('https://disease.sh/v3/covid-19/countries', setCovidCasesData);
-  }, []);
-
+export default function CovidCasesList({ covidCasesData }): ReactElement {
   return (
     <StyledList>
       {covidCasesData?.length > 0

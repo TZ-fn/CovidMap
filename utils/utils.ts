@@ -62,11 +62,22 @@ export async function fetchData(
 interface VaccineDosesInCountry {
   countryName: string;
   vaccineDoses: number;
+  countryFlag?: string;
 }
 
-function createVaccineCountriesTuples(countriesData: VaccinesData): VaccineDosesInCountry[] {
+function createVaccineCountriesObjects(
+  countriesData: VaccinesData,
+  covidCasesData: CovidCasesData,
+): VaccineDosesInCountry[] {
   return countriesData.map((country) => {
-    return { countryName: country.country, vaccineDoses: Object.values(country.timeline)[0] };
+    const countryFlag = covidCasesData.filter(
+      (countryWithFlag: CovidCasesDataForCountry) => countryWithFlag.country === country.country,
+    );
+    return {
+      countryName: country.country,
+      vaccineDoses: Object.values(country.timeline)[0],
+      countryFlag: countryFlag[0]?.countryInfo.flag,
+    };
   });
 }
 
@@ -76,7 +87,7 @@ interface CovidCasesInCountry {
   countryFlag: string;
 }
 
-function createCovidCasesCountriesTuples(countriesData: CovidCasesData): CovidCasesInCountry[] {
+function createCovidCasesCountriesObjects(countriesData: CovidCasesData): CovidCasesInCountry[] {
   return countriesData.map((country) => {
     return {
       countryName: country.country,
@@ -92,11 +103,11 @@ export function sortCountries(
   isCasesData: boolean,
 ): VaccineDosesInCountry[] | CovidCasesInCountry[] {
   if (isCasesData) {
-    return createCovidCasesCountriesTuples(data)
+    return createCovidCasesCountriesObjects(data)
       .sort((country1, country2) => country2.covidCases - country1.covidCases)
       .slice(0, numberOfResults);
   } else {
-    return createVaccineCountriesTuples(data)
+    return createVaccineCountriesObjects(data)
       .sort((country1, country2) => country2.vaccineDoses - country1.vaccineDoses)
       .slice(0, numberOfResults);
   }
