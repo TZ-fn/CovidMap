@@ -65,18 +65,18 @@ interface VaccineDosesInCountry {
   countryFlag?: string;
 }
 
-function createVaccineCountriesObjects(
+export function createVaccineCountriesObjects(
   countriesData: VaccinesData,
   covidCasesData: CovidCasesData,
 ): VaccineDosesInCountry[] {
-  return countriesData.map((country) => {
+  return countriesData?.map((country) => {
     const countryFlag = covidCasesData.filter(
       (countryWithFlag: CovidCasesDataForCountry) => countryWithFlag.country === country.country,
     );
     return {
       countryName: country.country,
       vaccineDoses: Object.values(country.timeline)[0],
-      countryFlag: countryFlag[0]?.countryInfo.flag,
+      countryFlag: countryFlag[0].countryInfo.flag,
     };
   });
 }
@@ -87,8 +87,10 @@ interface CovidCasesInCountry {
   countryFlag: string;
 }
 
-function createCovidCasesCountriesObjects(countriesData: CovidCasesData): CovidCasesInCountry[] {
-  return countriesData.map((country) => {
+export function createCovidCasesCountriesObjects(
+  countriesData: CovidCasesData,
+): CovidCasesInCountry[] {
+  return countriesData?.map((country) => {
     return {
       countryName: country.country,
       covidCases: country.cases,
@@ -97,18 +99,18 @@ function createCovidCasesCountriesObjects(countriesData: CovidCasesData): CovidC
   });
 }
 
+export const sortByVaccineDoses = (a: VaccinesDataForCountry, b: VaccinesDataForCountry): number =>
+  Object.values(b.timeline)[0] - Object.values(a.timeline)[0];
+
+export const sortByCovidCases = (
+  a: CovidCasesDataForCountry,
+  b: CovidCasesDataForCountry,
+): number => b.cases - a.cases;
+
 export function sortCountries(
   data: CovidCasesData | VaccinesData,
   numberOfResults: number,
-  isCasesData: boolean,
-): VaccineDosesInCountry[] | CovidCasesInCountry[] {
-  if (isCasesData) {
-    return createCovidCasesCountriesObjects(data)
-      .sort((country1, country2) => country2.covidCases - country1.covidCases)
-      .slice(0, numberOfResults);
-  } else {
-    return createVaccineCountriesObjects(data)
-      .sort((country1, country2) => country2.vaccineDoses - country1.vaccineDoses)
-      .slice(0, numberOfResults);
-  }
+  sortBy: Function,
+): VaccinesDataForCountry | CovidCasesDataForCountry {
+  return data.sort(sortBy).slice(0, numberOfResults);
 }

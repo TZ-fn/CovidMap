@@ -6,6 +6,7 @@ import { StyledList } from './List.styles';
 interface VaccineDosesInCountry {
   countryName: string;
   vaccineDoses: number;
+  countryFlag: string;
 }
 
 export default function VaccineDosesList({ vaccinesData }): ReactElement {
@@ -13,11 +14,11 @@ export default function VaccineDosesList({ vaccinesData }): ReactElement {
     <StyledList>
       {vaccinesData?.length > 0
         ? sortCountries(vaccinesData, 12, false).map(
-            ({ countryName, vaccineDoses }: VaccineDosesInCountry) => {
+            ({ countryName, vaccineDoses, countryFlag }: VaccineDosesInCountry) => {
               return (
                 <CountriesListItem
                   key={countryName}
-                  countryFlag='https://disease.sh/assets/img/flags/af.png'
+                  countryFlag={countryFlag}
                   countryName={countryName}
                   numberOfCasesOrVaccineDoses={vaccineDoses}
                 />
