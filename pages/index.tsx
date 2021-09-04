@@ -26,23 +26,21 @@ export default function Home(): ReactElement {
   return (
     <StyledMain>
       <CountriesRanking rankingTitle='Covid-19 cases worldwide'>
-        {covidCasesData && (
-          <List
-            countryObjectArray={covidCasesData}
-            sortByFunction={sortByCovidCases}
-            createCountryObjectsFunction={createCovidCasesCountriesObjects}
-          />
-        )}
+        <List
+          countryObjectArray={covidCasesData}
+          sortByFunction={sortByCovidCases}
+          createCountryObjectsFunction={createCovidCasesCountriesObjects}
+        />
       </CountriesRanking>
       <MainMapContainer />
       <CountriesRanking rankingTitle='Vaccine doses administered'>
-        {vaccinesData && (
+        {/* {vaccinesData && (
           <List
             countryObjectArray={vaccinesData}
             sortByFunction={sortByVaccineDoses}
             createCountryObjectsFunction={createVaccineCountriesObjects}
           />
-        )}
+        )} */}
       </CountriesRanking>
     </StyledMain>
   );

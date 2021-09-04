@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { sortCountries } from 'utils/utils';
+import CountriesListItem from 'components/CountriesListItem/CountriesListItem';
 import { StyledList } from './List.styles';
 
 interface countryObject {
@@ -21,9 +22,23 @@ export default function List({
 }: ListProps): ReactElement {
   return (
     <StyledList>
+      {/* {console.log(
+        'data: ',
+        createCountryObjectsFunction(sortCountries(countryObjectArray, 12, sortByFunction)),
+      )} */}
+      {/* {console.log('data>0', countryObjectArray.length > 0)} */}
       {countryObjectArray.length > 0 &&
-        console.log(
-          createCountryObjectsFunction(sortCountries(countryObjectArray, 12, sortByFunction)),
+        createCountryObjectsFunction(sortCountries(countryObjectArray, 12, sortByFunction))?.map(
+          ({ countryName, number, countryFlag }: countryObject) => {
+            return (
+              <CountriesListItem
+                key={countryName}
+                countryFlag={countryFlag}
+                countryName={countryName}
+                numberOfCasesOrVaccineDoses={number}
+              />
+            );
+          },
         )}
       {/* {countryObjectArray?.length > 0
         ? sortCountries(countryObjectArray, 12, sortByFunction).map(
