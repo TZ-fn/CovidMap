@@ -2,46 +2,50 @@ import { ReactElement } from 'react';
 import { sortCountries } from 'utils/utils';
 import CountriesListItem from 'components/CountriesListItem/CountriesListItem';
 import { StyledList } from './List.styles';
-
-interface countryObject {
-  countryName: string;
-  covidCases: number;
-  countryFlag: string;
-}
-
 interface ListProps {
-  countryObjectArray: countryObject[];
+  covidCasesData: CovidCasesDataForCountry[];
+  vaccinesData?: VaccinesDataForCountry[];
   sortByFunction: Function;
-  createCountryObjectsFunction: Function;
 }
 
 export default function List({
-  countryObjectArray,
+  covidCasesData,
+  vaccinesData,
   sortByFunction,
-  createCountryObjectsFunction,
 }: ListProps): ReactElement {
   return (
-    <StyledList>
-      {/* {console.log(
-        'data: ',
-        createCountryObjectsFunction(sortCountries(countryObjectArray, 12, sortByFunction)),
-      )} */}
-      {/* {console.log('data>0', countryObjectArray.length > 0)} */}
-      {countryObjectArray.length > 0 &&
-        createCountryObjectsFunction(sortCountries(countryObjectArray, 12, sortByFunction))?.map(
-          ({ countryName, number, countryFlag }: countryObject) => {
+    <>
+      {vaccinesData && (
+        <StyledList>
+          {vaccinesData.length > 0 &&
+            sortCountries(vaccinesData, 12, sortByFunction).map((country) => {
+              return (
+                <CountriesListItem
+                  key={country.country}
+                  countryFlag={getFlag(country.country)}
+                  countryName={country.country}
+                  numberOfCasesOrVaccineDoses={Object.values(country.timeline)[0]}
+                />
+              );
+            })}
+        </StyledList>
+      )}
+      <StyledList>
+        {covidCasesData.length > 0 &&
+          sortCountries(covidCasesData, 12, sortByFunction).map((country) => {
             return (
               <CountriesListItem
-                key={countryName}
-                countryFlag={countryFlag}
-                countryName={countryName}
-                numberOfCasesOrVaccineDoses={number}
+                key={country.country}
+                countryFlag={country.countryInfo.flag}
+                countryName={country.country}
+                numberOfCasesOrVaccineDoses={country.cases}
               />
             );
-          },
-        )}
-      {/* {countryObjectArray?.length > 0
-        ? sortCountries(countryObjectArray, 12, sortByFunction).map(
+          })}
+      </StyledList>
+      {/* <StyledList>
+        {countryObjectArray.length > 0 &&
+          createCountryObjectsFunction(sortCountries(countryObjectArray, 12, sortByFunction))?.map(
             ({ countryName, number, countryFlag }: countryObject) => {
               return (
                 <CountriesListItem
@@ -52,8 +56,8 @@ export default function List({
                 />
               );
             },
-          )
-        : null} */}
-    </StyledList>
+          )}
+      </StyledList> */}
+    </>
   );
 }

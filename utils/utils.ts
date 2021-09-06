@@ -57,48 +57,6 @@ export async function fetchData(
   }
 }
 
-// Convert the country objects received from the API into tuples containing the country's name and number of vaccine doses administered, so they can be sorted more easily sorted
-
-interface VaccineDosesInCountry {
-  countryName: string;
-  vaccineDoses: number;
-  countryFlag?: string;
-}
-
-export function createVaccineCountriesObjects(
-  countriesData: VaccinesData,
-  covidCasesData: CovidCasesData,
-): VaccineDosesInCountry[] {
-  // return countriesData?.map((country) => {
-  //   const countryFlag = covidCasesData.filter(
-  //     (countryWithFlag: CovidCasesDataForCountry) => countryWithFlag.country === country.country,
-  //   );
-  //   return {
-  //     countryName: country.country,
-  //     vaccineDoses: Object.values(country.timeline)[0],
-  //     countryFlag: countryFlag[0].countryInfo.flag,
-  //   };
-  // });
-}
-
-interface CovidCasesInCountry {
-  countryName: string;
-  number: number;
-  countryFlag: string;
-}
-
-export function createCovidCasesCountriesObjects(
-  countriesData: CovidCasesData,
-): CovidCasesInCountry[] {
-  return countriesData.map((country) => {
-    return {
-      countryName: country.country,
-      number: country.cases,
-      countryFlag: country.countryInfo.flag,
-    };
-  });
-}
-
 export const sortByVaccineDoses = (a: VaccinesDataForCountry, b: VaccinesDataForCountry): number =>
   Object.values(b.timeline)[0] - Object.values(a.timeline)[0];
 
@@ -111,7 +69,7 @@ export function sortCountries(
   data: CovidCasesData | VaccinesData,
   numberOfResults: number,
   sortBy: Function,
-): VaccinesDataForCountry | CovidCasesDataForCountry {
+): CovidCasesData | VaccinesData {
   console.log(data.sort(sortBy).slice(0, numberOfResults));
   return data.sort(sortBy).slice(0, numberOfResults);
 }

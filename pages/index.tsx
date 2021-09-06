@@ -3,13 +3,7 @@ import StyledMain from './index.styles';
 import MainMapContainer from 'components/Layout/MainMapContainer/MainMapContainer';
 import CountriesRanking from 'components/CountriesRanking/CountriesRanking';
 import List from 'components/Elements/List/List';
-import {
-  fetchData,
-  sortByCovidCases,
-  sortByVaccineDoses,
-  createVaccineCountriesObjects,
-  createCovidCasesCountriesObjects,
-} from 'utils/utils';
+import { fetchData, sortByCovidCases, sortByVaccineDoses } from 'utils/utils';
 
 export default function Home(): ReactElement {
   const [vaccinesData, setVaccinesData] = useState([]);
@@ -26,21 +20,11 @@ export default function Home(): ReactElement {
   return (
     <StyledMain>
       <CountriesRanking rankingTitle='Covid-19 cases worldwide'>
-        <List
-          countryObjectArray={covidCasesData}
-          sortByFunction={sortByCovidCases}
-          createCountryObjectsFunction={createCovidCasesCountriesObjects}
-        />
+        <List covidCasesData={covidCasesData} sortByFunction={sortByCovidCases} />
       </CountriesRanking>
       <MainMapContainer />
       <CountriesRanking rankingTitle='Vaccine doses administered'>
-        {/* {vaccinesData && (
-          <List
-            countryObjectArray={vaccinesData}
-            sortByFunction={sortByVaccineDoses}
-            createCountryObjectsFunction={createVaccineCountriesObjects}
-          />
-        )} */}
+        {/* <List data={covidCasesData} vaccinesData={vaccinesData} sortByFunction={sortByVaccineDoses} /> */}
       </CountriesRanking>
     </StyledMain>
   );
