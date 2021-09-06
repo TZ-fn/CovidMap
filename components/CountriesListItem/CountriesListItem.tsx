@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import FlagIcon from 'components/FlagIcon/FlagIcon';
+import FlagIcon from 'components/Elements/FlagIcon/FlagIcon';
 import { StyledCountriesListItem } from './CountriesListItem.styles';
 
 interface CountriesListItemProps {
