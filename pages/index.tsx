@@ -24,7 +24,11 @@ export default function Home(): ReactElement {
       </CountriesRanking>
       <MainMapContainer />
       <CountriesRanking rankingTitle='Vaccine doses administered'>
-        {/* <List data={covidCasesData} vaccinesData={vaccinesData} sortByFunction={sortByVaccineDoses} /> */}
+        <List
+          covidCasesData={covidCasesData}
+          vaccinesData={vaccinesData}
+          sortByFunction={sortByVaccineDoses}
+        />
       </CountriesRanking>
     </StyledMain>
   );

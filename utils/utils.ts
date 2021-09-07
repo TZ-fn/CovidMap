@@ -70,6 +70,5 @@ export function sortCountries(
   numberOfResults: number,
   sortBy: Function,
 ): CovidCasesData | VaccinesData {
-  console.log(data.sort(sortBy).slice(0, numberOfResults));
   return data.sort(sortBy).slice(0, numberOfResults);
 }
