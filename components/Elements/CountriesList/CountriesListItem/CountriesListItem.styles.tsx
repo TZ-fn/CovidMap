@@ -1,8 +1,8 @@
-import ListItem from 'components/Elements/List/ListItem/ListItem';
 import styled from 'styled-components';
 import mainTheme from 'theme/mainTheme';
 
-export const StyledCountriesListItem = styled(ListItem)`
+export const StyledCountriesListItem = styled.li`
+  margin: 0.5em;
   font-size: 1.3rem;
   border-bottom: 2px solid transparent;
   cursor: pointer;

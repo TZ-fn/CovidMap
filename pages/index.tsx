@@ -2,8 +2,9 @@ import { ReactElement, useEffect, useState } from 'react';
 import StyledMain from './index.styles';
 import MainMapContainer from 'components/Layout/MainMapContainer/MainMapContainer';
 import CountriesRanking from 'components/CountriesRanking/CountriesRanking';
-import List from 'components/Elements/List/List';
-import { fetchData, sortByCovidCases, sortByVaccineDoses } from 'utils/utils';
+import CountriesList from 'components/Elements/CountriesList/CountriesList';
+import { sortByCovidCases, sortByVaccineDoses } from 'utils/APIdata.utils';
+import { fetchData } from 'utils/fetchData.utils';
 
 export default function Home(): ReactElement {
   const [vaccinesData, setVaccinesData] = useState([]);
@@ -20,11 +21,11 @@ export default function Home(): ReactElement {
   return (
     <StyledMain>
       <CountriesRanking rankingTitle='Covid-19 cases worldwide'>
-        <List covidCasesData={covidCasesData} sortByFunction={sortByCovidCases} />
+        <CountriesList covidCasesData={covidCasesData} sortByFunction={sortByCovidCases} />
       </CountriesRanking>
       <MainMapContainer />
       <CountriesRanking rankingTitle='Vaccine doses administered'>
-        <List
+        <CountriesList
           covidCasesData={covidCasesData}
           vaccinesData={vaccinesData}
           sortByFunction={sortByVaccineDoses}
