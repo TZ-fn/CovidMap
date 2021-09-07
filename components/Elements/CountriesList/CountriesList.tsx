@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import { sortCountries } from 'utils/APIdata.utils';
 import CountriesListItem from 'components/Elements/CountriesList/CountriesListItem/CountriesListItem';
 import { StyledList } from './CountriesList.styles';
+import { CovidCasesDataForCountry, VaccinesDataForCountry } from 'utils/APIdata.types';
 
 interface ListProps {
   covidCasesData: CovidCasesDataForCountry[];
