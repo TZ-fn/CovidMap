@@ -44,7 +44,7 @@ type CovidCasesData = CovidCasesDataForCountry[];
 export async function fetchData(
   API: string,
   setterFunction?: Function,
-): Promise<void | VaccinesData | CovidCasesData | Error> {
+): Promise<void | VaccinesData | CovidCasesData> {
   try {
     const response = await fetch(API);
     const data = await response.json();
@@ -70,5 +70,5 @@ export function sortCountries(
   numberOfResults: number,
   sortBy: Function,
 ): CovidCasesData | VaccinesData {
-  return data.sort(sortBy).slice(0, numberOfResults);
+  return data.sort((a, b) => sortBy(a, b)).slice(0, numberOfResults);
 }
