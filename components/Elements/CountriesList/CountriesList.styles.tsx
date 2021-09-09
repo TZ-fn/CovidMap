@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import mainTheme from 'theme/mainTheme';
 
-export const StyledList = styled.ol`
+export const StyledCountriesList = styled.ol`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

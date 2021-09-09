@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { sortCountries } from 'utils/APIdata.utils';
 import CountriesListItem from 'components/Elements/CountriesList/CountriesListItem/CountriesListItem';
-import { StyledList } from './CountriesList.styles';
+import { StyledCountriesList } from './CountriesList.styles';
 import { CovidCasesDataForCountry, VaccinesDataForCountry } from 'utils/APIdata.types';
 
 interface ListProps {
@@ -22,7 +22,7 @@ export default function List({
   return (
     <>
       {vaccinesData && (
-        <StyledList>
+        <StyledCountriesList>
           {vaccinesData.length > 0 &&
             covidCasesData.length > 0 &&
             sortCountries(vaccinesData, 12, sortByFunction).map((country) => {
@@ -35,10 +35,10 @@ export default function List({
                 />
               );
             })}
-        </StyledList>
+        </StyledCountriesList>
       )}
       {!vaccinesData && (
-        <StyledList>
+        <StyledCountriesList>
           {covidCasesData.length > 0 &&
             sortCountries(covidCasesData, 12, sortByFunction).map((country) => {
               return (
@@ -50,7 +50,7 @@ export default function List({
                 />
               );
             })}
-        </StyledList>
+        </StyledCountriesList>
       )}
     </>
   );
