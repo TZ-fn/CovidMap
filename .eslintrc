@@ -13,7 +13,8 @@
     "browser": true
   },
   "globals": {
-    "document": true
+    "document": true,
+    "JSX": true
   },
   "rules": {
     "indent": ["error", 2, { "SwitchCase": 1 }],
