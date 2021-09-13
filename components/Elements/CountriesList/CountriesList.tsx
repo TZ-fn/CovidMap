@@ -10,7 +10,7 @@ interface ListProps {
   sortByFunction: Function;
 }
 
-export default function List({
+export default function CountriesList({
   covidCasesData,
   vaccinesData,
   sortByFunction,
