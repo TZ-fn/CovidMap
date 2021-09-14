@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { useRouter } from 'next/router';
+import HeadElement from 'components/Layout/HeadElement/HeadElement';
 import CountryDetailsView from 'views/CountryDetailsView/CountryDetailsView';
 
 export default function Country(): ReactElement {
@@ -7,6 +8,7 @@ export default function Country(): ReactElement {
   const countryName = router.query.countryName;
   return (
     <>
+      <HeadElement title={countryName} />
       <CountryDetailsView countryName={countryName} />
     </>
   );
