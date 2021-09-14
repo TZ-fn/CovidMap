@@ -14,7 +14,7 @@ export default function HeadElement({ title = 'Covid-19 Map' }: HeadElementProps
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <meta
         name='description'
-        content='Web application that displays Covid-19 for different countries'
+        content='Web application that displays Covid-19 data for different countries'
       />
       <link rel='apple-touch-icon' href={MainLogo.src} />
       <title>{typeof title === 'string' && `${capitalise(title)} - Covid-19 Map`}</title>
