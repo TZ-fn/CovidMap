@@ -7,11 +7,11 @@ export const StyledInput = styled.input`
   padding: 0.75rem 0.95rem;
   margin-right: 1px;
   border-radius: ${mainTheme.misc.borderRadius};
-  color: ${mainTheme.themeColors.fontColor};
+  color: ${mainTheme.darkTheme.fontColor};
   font-size: 1.3rem;
-  background-color: ${mainTheme.themeColors.backgroundDarker};
+  background-color: ${mainTheme.darkTheme.backgroundDarker};
   box-shadow: none;
-  border: 1px solid ${mainTheme.themeColors.border};
+  border: 1px solid ${mainTheme.darkTheme.border};
 
   &:focus {
     outline: 2px solid ${mainTheme.dataColors.Coral};

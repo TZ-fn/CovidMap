@@ -12,7 +12,7 @@ export const StyledToggleSwitchContainer = styled.div`
   user-select: none;
   text-align: left;
   margin-left: 1em;
-  border: 1px solid ${mainTheme.themeColors.border};
+  border: 1px solid ${mainTheme.darkTheme.border};
   border-radius: 20px;
 `;
 
@@ -42,7 +42,7 @@ export const StyledToggleSwitchInnerSpan = styled.span<SwitchSpanProps>`
     padding: 0;
     line-height: 34px;
     font-size: 14px;
-    color: ${mainTheme.themeColors.fontColor};
+    color: ${mainTheme.darkTheme.fontColor};
     font-weight: bold;
     box-sizing: border-box;
   }
@@ -53,7 +53,7 @@ export const StyledToggleSwitchInnerSpan = styled.span<SwitchSpanProps>`
     margin-top: 0;
     padding-left: 1px;
     background-color: ${mainTheme.dataColors.AstronautBlue};
-    color: ${mainTheme.themeColors.fontColor};
+    color: ${mainTheme.darkTheme.fontColor};
   }
 
   &:after {
@@ -62,7 +62,7 @@ export const StyledToggleSwitchInnerSpan = styled.span<SwitchSpanProps>`
     padding-top: 4px;
     padding-right: 4px;
     background-color: ${mainTheme.dataColors.Coral};
-    color: ${mainTheme.themeColors.fontColor};
+    color: ${mainTheme.darkTheme.fontColor};
     text-align: right;
   }
 `;
@@ -71,7 +71,7 @@ export const StyledToggleSwitchInnerSwitch = styled.span`
   display: block;
   width: 24px;
   margin: 5px;
-  background: ${mainTheme.themeColors.fontColor};
+  background: ${mainTheme.darkTheme.fontColor};
   position: absolute;
   top: 0;
   bottom: 0;

@@ -1,10 +1,17 @@
 const mainTheme = {
-  themeColors: {
+  darkTheme: {
     fontColor: 'hsl(60, 100%, 97%)',
     border: 'hsl(198, 50%, 20%)',
     backgroundLighter: 'hsl(198, 50%, 20%)',
     background: 'hsl(198, 50%, 15%)',
     backgroundDarker: 'hsl(198, 50%, 10%)',
+  },
+  lightTheme: {
+    fontColor: 'hsl(198, 50%, 5%)',
+    border: 'hsl(198, 50%, 20%)',
+    backgroundLighter: 'hsl(218, 45%, 95%)',
+    background: 'hsl(218, 45%, 90%)',
+    backgroundDarker: 'hsl(218, 45%, 85%)',
   },
   dataColors: {
     AstronautBlue: 'hsl(199, 100%, 18%)',

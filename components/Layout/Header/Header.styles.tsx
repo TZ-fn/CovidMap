@@ -7,8 +7,8 @@ export const StyledHeader = styled.header`
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: ${mainTheme.themeColors.background};
-  border-bottom: 1px solid ${mainTheme.themeColors.border};
+  background-color: ${mainTheme.darkTheme.background};
+  border-bottom: 1px solid ${mainTheme.darkTheme.border};
 `;
 
 export const StyledControlPanel = styled.div`

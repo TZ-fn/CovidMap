@@ -3,9 +3,9 @@ import mainTheme from 'theme/mainTheme';
 
 export const StyledButton = styled.button`
   padding: 1em 1.5em;
-  color: ${mainTheme.themeColors.fontColor};
-  border: 1px solid ${mainTheme.themeColors.border};
-  background-color: ${mainTheme.themeColors.background};
+  color: ${mainTheme.darkTheme.fontColor};
+  border: 1px solid ${mainTheme.darkTheme.border};
+  background-color: ${mainTheme.darkTheme.background};
   border-radius: ${mainTheme.misc.borderRadius};
 
   &:hover {
