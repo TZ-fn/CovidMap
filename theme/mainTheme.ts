@@ -1,4 +1,6 @@
-const mainTheme = {
+import { DefaultTheme } from 'styled-components';
+
+const mainTheme: DefaultTheme = {
   darkTheme: {
     fontColor: 'hsl(60, 100%, 97%)',
     border: 'hsl(198, 50%, 20%)',
