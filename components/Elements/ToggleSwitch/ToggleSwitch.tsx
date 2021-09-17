@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ChangeEventHandler, ReactElement } from 'react';
 import {
   StyledToggleSwitchContainer,
   StyledToggleSwitchCheckbox,
@@ -12,6 +12,7 @@ interface ToggleSwitchProps {
   ariaLabel: string;
   leftLabel: string;
   rightLabel: string;
+  onChange: ChangeEventHandler<HTMLInputElement>;
 }
 
 export default function ToggleSwitch({
@@ -19,10 +20,17 @@ export default function ToggleSwitch({
   ariaLabel,
   leftLabel,
   rightLabel,
+  onChange,
 }: ToggleSwitchProps): ReactElement {
   return (
     <StyledToggleSwitchContainer>
-      <StyledToggleSwitchCheckbox type='checkbox' name={name} id={name} aria-label={ariaLabel} />
+      <StyledToggleSwitchCheckbox
+        type='checkbox'
+        name={name}
+        id={name}
+        aria-label={ariaLabel}
+        onChange={onChange}
+      />
       <StyledToggleSwitchLabel htmlFor={name}>
         <StyledToggleSwitchInnerSpan leftLabel={leftLabel} rightLabel={rightLabel} />
         <StyledToggleSwitchInnerSwitch />
