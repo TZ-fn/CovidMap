@@ -1,6 +1,4 @@
-import { DefaultTheme } from 'styled-components';
-
-const mainTheme: DefaultTheme = {
+const theme = {
   darkTheme: {
     fontColor: 'hsl(60, 100%, 97%)',
     border: 'hsl(198, 50%, 20%)',
@@ -11,9 +9,9 @@ const mainTheme: DefaultTheme = {
   lightTheme: {
     fontColor: 'hsl(198, 50%, 5%)',
     border: 'hsl(198, 50%, 20%)',
-    backgroundLighter: 'hsl(218, 45%, 95%)',
-    background: 'hsl(218, 45%, 90%)',
-    backgroundDarker: 'hsl(218, 45%, 85%)',
+    backgroundLighter: 'hsl(218, 45%, 93%)',
+    background: 'hsl(218, 45%, 87%)',
+    backgroundDarker: 'hsl(218, 45%, 80%)',
   },
   dataColors: {
     AstronautBlue: 'hsl(199, 100%, 18%)',
@@ -30,4 +28,4 @@ const mainTheme: DefaultTheme = {
   },
 };
 
-export default mainTheme;
+export default theme;

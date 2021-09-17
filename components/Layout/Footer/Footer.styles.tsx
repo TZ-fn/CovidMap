@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import mainTheme from 'theme/mainTheme';
+import theme from 'theme/theme';
 
 export const StyledFooter = styled.footer`
   display: flex;
@@ -8,8 +8,8 @@ export const StyledFooter = styled.footer`
   justify-content: center;
   height: 7vh;
   width: 100%;
-  background-color: ${mainTheme.darkTheme.background};
-  border-top: 1px solid ${mainTheme.darkTheme.border};
+  background-color: ${({ theme }) => theme.background};
+  border-top: 1px solid ${({ theme }) => theme.border};
 
   & > a {
     margin-left: 1rem;

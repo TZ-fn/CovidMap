@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import mainTheme from 'theme/mainTheme';
+import theme from 'theme/theme';
 
 export const StyledMainMapContainer = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ export const StyledMainMapContainer = styled.div`
   width: 55%;
   height: 80vh;
   margin: auto 2em;
-  background-color: ${mainTheme.darkTheme.background};
-  border: 1px solid ${mainTheme.darkTheme.border};
-  border-radius: ${mainTheme.misc.borderRadius};
+  background-color: ${({ theme }) => theme.background};
+  border: 1px solid ${({ theme }) => theme.border};
+  border-radius: ${theme.misc.borderRadius};
 `;

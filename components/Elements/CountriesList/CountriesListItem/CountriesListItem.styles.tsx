@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import mainTheme from 'theme/mainTheme';
+import theme from 'theme/theme';
 
 export const StyledCountriesListItem = styled.li`
   margin: 0.7rem;
@@ -8,6 +8,6 @@ export const StyledCountriesListItem = styled.li`
   cursor: pointer;
 
   &:hover {
-    border-bottom: 2px solid ${mainTheme.dataColors.Coral};
+    border-bottom: 2px solid ${theme.dataColors.Coral};
   }
 `;

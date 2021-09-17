@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import mainTheme from 'theme/mainTheme';
+import theme from 'theme/theme';
 
 export const StyledCountriesList = styled.ol`
   display: flex;
@@ -10,7 +10,7 @@ export const StyledCountriesList = styled.ol`
   height: 90%;
   padding: 1em;
   padding-left: 3em;
-  background-color: ${mainTheme.darkTheme.backgroundLighter};
-  border: 1px solid ${mainTheme.darkTheme.border};
-  border-radius: ${mainTheme.misc.borderRadius};
+  background-color: ${({ theme }) => theme.backgroundLighter};
+  border: 1px solid ${({ theme }) => theme.border};
+  border-radius: ${theme.misc.borderRadius};
 `;

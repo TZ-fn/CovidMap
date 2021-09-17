@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import mainTheme from 'theme/mainTheme';
+import theme from 'theme/theme';
 
 export const StyledCountryDetailsContainer = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ export const StyledCountryDetailsContainer = styled.div`
   width: 96.3%;
   height: 80vh;
   margin: 3em 2em;
-  background-color: ${mainTheme.darkTheme.background};
-  border: 1px solid ${mainTheme.darkTheme.border};
-  border-radius: ${mainTheme.misc.borderRadius};
+  background-color: ${({ theme }) => theme.background};
+  border: 1px solid ${({ theme }) => theme.border};
+  border-radius: ${theme.misc.borderRadius};
 `;

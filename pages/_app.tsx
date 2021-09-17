@@ -4,11 +4,11 @@ import Layout from '../components/Layout/Layout';
 import '../styles/globals.css';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from 'components/GlobalStyles/GlobalStyles';
-import mainTheme from 'theme/mainTheme';
+import theme from 'theme/theme';
 
 function MyApp({ Component, pageProps }: AppProps): ReactElement {
   return (
-    <ThemeProvider theme={mainTheme}>
+    <ThemeProvider theme={theme.lightTheme}>
       <GlobalStyles />
       <Layout>
         <Component {...pageProps} />

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import mainTheme from 'theme/mainTheme';
+import theme from 'theme/theme';
 
 export const StyledHeader = styled.header`
   display: flex;
@@ -7,8 +7,8 @@ export const StyledHeader = styled.header`
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: ${mainTheme.darkTheme.background};
-  border-bottom: 1px solid ${mainTheme.darkTheme.border};
+  background-color: ${({ theme }) => theme.background};
+  border-bottom: 1px solid ${({ theme }) => theme.border};
 `;
 
 export const StyledControlPanel = styled.div`
