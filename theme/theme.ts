@@ -6,7 +6,7 @@ export interface ThemeType {
   backgroundDarker: string;
 }
 
-const theme = {
+export const theme = {
   darkTheme: {
     fontColor: 'hsl(60, 100%, 97%)',
     border: 'hsl(198, 50%, 20%)',
