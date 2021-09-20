@@ -1,3 +1,11 @@
+export interface ThemeType {
+  fontColor: string;
+  border: string;
+  backgroundLighter: string;
+  background: string;
+  backgroundDarker: string;
+}
+
 const theme = {
   darkTheme: {
     fontColor: 'hsl(60, 100%, 97%)',
