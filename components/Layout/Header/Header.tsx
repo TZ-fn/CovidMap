@@ -7,7 +7,7 @@ import ThemeSwitch from 'components/Elements/ThemeSwitch/ThemeSwitch';
 import Image from 'next/image';
 import LogoIcon from '../../../public/Covid19_Map_Logo.svg';
 
-export default function Header(): ReactElement {
+export default function Header({ themeToggler }): ReactElement {
   return (
     <StyledHeader>
       <Image alt='Covid-19 Map Logo' src={LogoIcon.src} height='85px' width='85px' />
@@ -15,7 +15,7 @@ export default function Header(): ReactElement {
       <StyledControlPanel>
         <Input type={'search'} placeholder='Search for a country...' />
         <SearchButton />
-        <ThemeSwitch />
+        <ThemeSwitch onChange={themeToggler} />
       </StyledControlPanel>
     </StyledHeader>
   );

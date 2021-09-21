@@ -8,11 +8,11 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-export default function Layout({ children }: LayoutProps): ReactElement {
+export default function Layout({ children, themeToggler }: LayoutProps): ReactElement {
   return (
     <StyledWrapper>
       <HeadElement />
-      <Header />
+      <Header themeToggler={themeToggler} />
       {children}
       <Footer />
     </StyledWrapper>
