@@ -12,7 +12,7 @@ interface ToggleSwitchProps {
   ariaLabel: string;
   leftLabel: string;
   rightLabel: string;
-  onChange: ChangeEventHandler<HTMLInputElement>;
+  onChange: ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
 export default function ToggleSwitch({

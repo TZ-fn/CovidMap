@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, ChangeEventHandler } from 'react';
 
-export const useColorMode = (): [string, Function] => {
+export const useColorMode = (): [string, ChangeEventHandler] => {
   const [theme, setTheme] = useState('dark');
 
   const setMode = (mode: string) => {
@@ -8,7 +8,7 @@ export const useColorMode = (): [string, Function] => {
     setTheme(mode);
   };
 
-  const themeToggler = () => {
+  const themeToggler = (): void => {
     theme === 'light' ? setMode('dark') : setMode('light');
   };
 

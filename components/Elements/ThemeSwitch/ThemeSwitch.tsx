@@ -4,7 +4,7 @@ import lightThemeIcon from 'public/icons/icons8-sun.svg';
 import darkThemeIcon from 'public/icons/reshot-icon-moon-crescent-UKRLZEWPYG.svg';
 
 interface ThemeSwitchProps {
-  onChange: ChangeEventHandler<HTMLInputElement>;
+  onChange: ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
 export default function ThemeSwitch({ onChange }: ThemeSwitchProps): ReactElement {
