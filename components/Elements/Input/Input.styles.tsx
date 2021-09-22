@@ -14,7 +14,7 @@ export const StyledInput = styled.input`
   border: 1px solid ${({ theme }) => theme.border};
 
   &:focus {
-    outline: 2px solid ${theme.dataColors.Coral};
+    outline: 1px solid ${theme.dataColors.Coral};
   }
 
   &::-webkit-search-cancel-button {

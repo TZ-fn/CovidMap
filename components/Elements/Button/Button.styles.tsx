@@ -13,6 +13,6 @@ export const StyledButton = styled.button`
   }
 
   &:focus {
-    outline: 2px solid ${theme.dataColors.Coral};
+    outline: 1px solid ${theme.dataColors.Coral};
   }
 `;
