@@ -16,7 +16,7 @@ export const theme = {
   },
   lightTheme: {
     fontColor: 'hsl(198, 50%, 5%)',
-    border: 'hsl(198, 50%, 20%)',
+    border: 'hsl(198, 50%, 80%)',
     backgroundLighter: 'hsl(218, 45%, 93%)',
     background: 'hsl(218, 45%, 87%)',
     backgroundDarker: 'hsl(218, 45%, 80%)',
