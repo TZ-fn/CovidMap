@@ -1,20 +1,20 @@
 import { ReactElement } from 'react';
-import { sortCountries } from 'utils/APIdata.utils';
+import { sortCountries, sortByVaccineDosesType, sortByCovidCasesType } from 'utils/APIdata.utils';
 import CountriesListItem from 'components/Elements/CountriesList/CountriesListItem/CountriesListItem';
 import { StyledCountriesList } from './CountriesList.styles';
 import { CovidCasesDataForCountry, VaccinesDataForCountry } from 'utils/APIdata.types';
 
-interface ListProps {
+interface ListPropsTypes {
   covidCasesData: CovidCasesDataForCountry[];
   vaccinesData?: VaccinesDataForCountry[];
-  sortByFunction: Function;
+  sortByFunction: sortByVaccineDosesType | sortByCovidCasesType;
 }
 
 export default function CountriesList({
   covidCasesData,
   vaccinesData,
   sortByFunction,
-}: ListProps): ReactElement {
+}: ListPropsTypes): ReactElement {
   function getFlag(countryName: string) {
     return covidCasesData.filter((country) => country.country === countryName)[0].countryInfo.flag;
   }
