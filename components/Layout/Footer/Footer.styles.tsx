@@ -11,7 +11,7 @@ export const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.background};
   border-top: 1px solid ${({ theme }) => theme.border};
 
-  & > a {
+  a {
     margin-left: 1rem;
     text-decoration: underline;
     text-underline-offset: 0.2rem;
