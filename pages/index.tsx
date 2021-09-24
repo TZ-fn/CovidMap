@@ -20,17 +20,19 @@ export default function Home(): ReactElement {
 
   return (
     <StyledMain>
-      <CountriesRanking rankingTitle='Covid-19 cases worldwide'>
-        <CountriesList covidCasesData={covidCasesData} sortByFunction={sortByCovidCases} />
-      </CountriesRanking>
-      <MainMapContainer />
-      <CountriesRanking rankingTitle='Vaccine doses administered'>
-        <CountriesList
-          covidCasesData={covidCasesData}
-          vaccinesData={vaccinesData}
-          sortByFunction={sortByVaccineDoses}
-        />
-      </CountriesRanking>
+      {vaccinesData?.length > 0 && covidCasesData?.length > 0 ? (
+        <>
+          <CountriesRanking rankingTitle='Covid-19 cases worldwide'>
+            <CountriesList covidCasesData={covidCasesData} />
+          </CountriesRanking>
+          <MainMapContainer />
+          <CountriesRanking rankingTitle='Vaccine doses administered'>
+            <CountriesList covidCasesData={covidCasesData} vaccinesData={vaccinesData} />
+          </CountriesRanking>
+        </>
+      ) : (
+        <p>Loading</p>
+      )}
     </StyledMain>
   );
 }

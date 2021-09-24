@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { sortCountries, sortByVaccineDosesType, sortByCovidCasesType } from 'utils/APIdata.utils';
+import { sortCountries } from 'utils/APIdata.utils';
 import CountriesListItem from 'components/Elements/CountriesList/CountriesListItem/CountriesListItem';
 import { StyledCountriesList } from './CountriesList.styles';
 import { CovidCasesDataForCountry, VaccinesDataForCountry } from 'utils/APIdata.types';
@@ -7,13 +7,11 @@ import { CovidCasesDataForCountry, VaccinesDataForCountry } from 'utils/APIdata.
 interface ListPropsTypes {
   covidCasesData: CovidCasesDataForCountry[];
   vaccinesData?: VaccinesDataForCountry[];
-  sortByFunction: sortByVaccineDosesType | sortByCovidCasesType;
 }
 
 export default function CountriesList({
   covidCasesData,
   vaccinesData,
-  sortByFunction,
 }: ListPropsTypes): ReactElement {
   function getFlag(countryName: string) {
     return covidCasesData.filter((country) => country.country === countryName)[0].countryInfo.flag;
@@ -21,11 +19,10 @@ export default function CountriesList({
 
   return (
     <>
-      {vaccinesData && (
+      {
         <StyledCountriesList>
-          {vaccinesData.length > 0 &&
-            covidCasesData.length > 0 &&
-            sortCountries(vaccinesData, 12, sortByFunction).map((country) => {
+          {sortCountries(covidCasesData, 12, vaccinesData).map((country) => {
+            if (vaccinesData) {
               return (
                 <CountriesListItem
                   key={country.country}
@@ -34,13 +31,7 @@ export default function CountriesList({
                   numberOfCasesOrVaccineDoses={Object.values(country.timeline)[0]}
                 />
               );
-            })}
-        </StyledCountriesList>
-      )}
-      {!vaccinesData && (
-        <StyledCountriesList>
-          {covidCasesData.length > 0 &&
-            sortCountries(covidCasesData, 12, sortByFunction).map((country) => {
+            } else {
               return (
                 <CountriesListItem
                   key={country.country}
@@ -49,9 +40,10 @@ export default function CountriesList({
                   numberOfCasesOrVaccineDoses={country.cases}
                 />
               );
-            })}
+            }
+          })}
         </StyledCountriesList>
-      )}
+      }
     </>
   );
 }
