@@ -9,7 +9,7 @@ export const StyledCountryDetailsContainer = styled.div`
   width: 96.3%;
   height: 80vh;
   margin: 3em 2em;
-  background-color: ${({ theme }) => theme.background};
+  background: ${({ theme }) => theme.background};
   border: 1px solid ${({ theme }) => theme.border};
   border-radius: ${theme.misc.borderRadius};
 `;

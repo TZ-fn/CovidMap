@@ -9,7 +9,7 @@ export const StyledAside = styled.aside`
   width: 19%;
   height: 80vh;
   padding-top: 1em;
-  background-color: ${({ theme }) => theme.background};
+  background: ${({ theme }) => theme.background};
   border: 1px solid ${({ theme }) => theme.border};
   border-radius: ${theme.misc.borderRadius};
 `;

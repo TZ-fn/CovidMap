@@ -9,7 +9,7 @@ export const StyledInput = styled.input`
   border-radius: ${theme.misc.borderRadius};
   color: ${({ theme }) => theme.fontColor};
   font-size: 1.3rem;
-  background-color: ${({ theme }) => theme.backgroundDarker};
+  background: ${({ theme }) => theme.backgroundDarker};
   box-shadow: none;
   border: 1px solid ${({ theme }) => theme.border};
 

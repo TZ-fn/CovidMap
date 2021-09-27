@@ -10,7 +10,7 @@ export const StyledCountriesList = styled.ol`
   height: 90%;
   padding: 1em;
   padding-left: 3em;
-  background-color: ${({ theme }) => theme.backgroundLighter};
+  background: ${({ theme }) => theme.backgroundLighter};
   border: 1px solid ${({ theme }) => theme.border};
   border-radius: ${theme.misc.borderRadius};
 `;

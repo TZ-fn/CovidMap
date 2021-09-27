@@ -52,7 +52,7 @@ export const StyledToggleSwitchInnerSpan = styled.span<SwitchSpanProps>`
     text-transform: uppercase;
     margin-top: 0;
     padding-left: 1px;
-    background-color: ${({ theme }) => theme.backgroundDarker};
+    background: ${({ theme }) => theme.backgroundDarker};
     color: ${({ theme }) => theme.fontColor};
   }
 
@@ -61,7 +61,7 @@ export const StyledToggleSwitchInnerSpan = styled.span<SwitchSpanProps>`
     text-transform: uppercase;
     padding-top: 4px;
     padding-right: 4px;
-    background-color: ${({ theme }) => theme.backgroundDarker};
+    background: ${({ theme }) => theme.backgroundDarker};
     color: ${({ theme }) => theme.backgroundLighter};
     text-align: right;
   }
