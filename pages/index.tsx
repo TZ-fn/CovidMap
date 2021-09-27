@@ -3,7 +3,6 @@ import StyledMain from './index.styles';
 import MainMapContainer from 'components/Layout/MainMapContainer/MainMapContainer';
 import CountriesRanking from 'components/CountriesRanking/CountriesRanking';
 import CountriesList from 'components/Elements/CountriesList/CountriesList';
-import { sortByCovidCases, sortByVaccineDoses } from 'utils/APIdata.utils';
 import { fetchData } from 'utils/fetchData.utils';
 
 export default function Home(): ReactElement {
