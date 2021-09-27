@@ -1,6 +1,7 @@
 export interface ThemeType {
   fontColor: string;
   border: string;
+  gradientBackground: string;
   backgroundLighter: string;
   background: string;
   backgroundDarker: string;
@@ -9,17 +10,19 @@ export interface ThemeType {
 export const theme = {
   darkTheme: {
     fontColor: 'hsl(60, 100%, 97%)',
+    gradientBackground: 'linear-gradient(115deg, rgba(26,61,77,1) 0%, rgba(19,46,57,1) 100%);',
     border: 'hsl(198, 50%, 20%)',
     backgroundLighter: 'hsl(198, 50%, 20%)',
     background: 'hsl(198, 50%, 15%)',
     backgroundDarker: 'hsl(198, 50%, 10%)',
+    shadows: {},
   },
   lightTheme: {
     fontColor: 'hsl(198, 50%, 5%)',
     border: 'hsl(198, 50%, 80%)',
-    backgroundLighter: 'hsl(218, 45%, 93%)',
-    background: 'hsl(218, 45%, 87%)',
-    backgroundDarker: 'hsl(218, 45%, 80%)',
+    backgroundLighter: 'hsl(218, 45%, 90%)',
+    background: 'hsl(218, 45%, 82%)',
+    backgroundDarker: 'hsl(218, 45%, 75%)',
   },
   dataColors: {
     AstronautBlue: 'hsl(199, 100%, 18%)',

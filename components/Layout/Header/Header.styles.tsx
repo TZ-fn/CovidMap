@@ -6,7 +6,7 @@ export const StyledHeader = styled.header`
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: ${({ theme }) => theme.background};
+  background: ${({ theme }) => theme.gradientBackground};
   border-bottom: 1px solid ${({ theme }) => theme.border};
 `;
 

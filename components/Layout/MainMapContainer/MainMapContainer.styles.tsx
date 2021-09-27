@@ -9,7 +9,7 @@ export const StyledMainMapContainer = styled.div`
   width: 55%;
   height: 80vh;
   margin: auto 2em;
-  background-color: ${({ theme }) => theme.background};
+  background: ${({ theme }) => theme.gradientBackground};
   border: 1px solid ${({ theme }) => theme.border};
   border-radius: ${theme.misc.borderRadius};
 `;
