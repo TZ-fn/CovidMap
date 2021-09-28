@@ -4,12 +4,12 @@ import theme from 'theme/theme';
 export const StyledButton = styled.button`
   padding: 1em 1.5em;
   color: ${({ theme }) => theme.fontColor};
-  border: 1px solid ${({ theme }) => theme.border};
-  background: ${({ theme }) => theme.background};
+  border: 1px solid ${theme.dataColors.Coral};
+  background: ${({ theme }) => theme.backgroundLighter};
   border-radius: ${theme.misc.borderRadius};
 
   &:hover {
-    background: ${theme.dataColors.Coral};
+    background: ${({ theme }) => theme.background};
   }
 
   &:focus {
