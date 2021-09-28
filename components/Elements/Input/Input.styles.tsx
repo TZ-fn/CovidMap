@@ -12,6 +12,7 @@ export const StyledInput = styled.input`
   background: ${({ theme }) => theme.backgroundDarker};
   box-shadow: none;
   border: 1px solid ${({ theme }) => theme.border};
+  box-shadow: ${theme.misc.shadows.lowElevation};
 
   &:focus {
     outline: 1px solid ${theme.dataColors.Coral};

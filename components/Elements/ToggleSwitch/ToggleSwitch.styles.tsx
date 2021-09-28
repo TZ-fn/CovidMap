@@ -14,6 +14,7 @@ export const StyledToggleSwitchContainer = styled.div`
   margin-left: 1em;
   border: 1px solid ${theme.dataColors.Coral};
   border-radius: 20px;
+  box-shadow: ${theme.misc.shadows.lowElevation};
 `;
 
 export const StyledToggleSwitchLabel = styled.label`

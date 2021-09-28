@@ -7,6 +7,7 @@ export const StyledButton = styled.button`
   border: 1px solid ${theme.dataColors.Coral};
   background: ${({ theme }) => theme.backgroundLighter};
   border-radius: ${theme.misc.borderRadius};
+  box-shadow: ${theme.misc.shadows.lowElevation};
 
   &:hover {
     background: ${({ theme }) => theme.background};

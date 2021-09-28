@@ -12,4 +12,5 @@ export const StyledMainMapContainer = styled.div`
   background: ${({ theme }) => theme.gradientBackground};
   border: 1px solid ${({ theme }) => theme.border};
   border-radius: ${theme.misc.borderRadius};
+  box-shadow: ${theme.misc.shadows.mediumElevation};
 `;

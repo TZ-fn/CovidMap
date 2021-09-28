@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import theme from 'theme/theme';
 
 export const StyledFooter = styled.footer`
   display: flex;
@@ -9,6 +10,7 @@ export const StyledFooter = styled.footer`
   width: 100%;
   background: ${({ theme }) => theme.gradientBackground};
   border-top: 1px solid ${({ theme }) => theme.border};
+  box-shadow: ${theme.misc.shadows.mediumElevation};
 
   a {
     margin-left: 1rem;

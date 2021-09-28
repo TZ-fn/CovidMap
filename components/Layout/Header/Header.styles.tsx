@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import theme from 'theme/theme';
 
 export const StyledHeader = styled.header`
   display: flex;
@@ -8,6 +9,7 @@ export const StyledHeader = styled.header`
   width: 100%;
   background: ${({ theme }) => theme.gradientBackground};
   border-bottom: 1px solid ${({ theme }) => theme.border};
+  box-shadow: ${theme.misc.shadows.mediumElevation};
 `;
 
 export const StyledControlPanel = styled.div`
