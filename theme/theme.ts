@@ -15,7 +15,7 @@ export interface ThemeType {
 export const theme = {
   darkTheme: {
     fontColor: 'hsl(60, 100%, 97%)',
-    gradientBackground: 'linear-gradient(115deg, hsl(198, 50%, 25%) 0%, hsl(198, 50%, 15%)100%);',
+    gradientBackground: 'linear-gradient(115deg, hsl(198, 50%, 25%) 0%, hsl(198, 50%, 17%)100%);',
     border: 'hsl(198, 50%, 18%)',
     backgroundLighter: 'hsl(198, 50%, 20%)',
     background: 'hsl(198, 50%, 15%)',
