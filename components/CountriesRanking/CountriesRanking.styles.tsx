@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import theme from 'theme/theme';
 
 export const StyledCountriesRanking = styled(Aside)`
+  min-width: 22em;
   box-shadow: ${theme.misc.shadows.mediumElevation};
 
   h2 {
