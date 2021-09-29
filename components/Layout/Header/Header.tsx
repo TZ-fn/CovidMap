@@ -1,4 +1,5 @@
 import { ReactElement, useContext, ChangeEventHandler } from 'react';
+import Link from 'next/link';
 import { StyledHeader, StyledControlPanel } from './Header.styles';
 import MainLogo from 'components/Elements/MainLogo/MainLogo';
 import Input from 'components/Elements/Input/Input';
@@ -13,7 +14,11 @@ export default function Header(): ReactElement {
     useContext(ThemeTogglerContext);
   return (
     <StyledHeader>
-      <Image alt='Covid-19 Map Logo' src={LogoIcon.src} height='85px' width='85px' />
+      <Link href='/' passHref>
+        <a>
+          <Image alt='Covid-19 Map Logo' src={LogoIcon.src} height='85px' width='85px' />
+        </a>
+      </Link>
       <MainLogo />
       <StyledControlPanel>
         <Input type={'search'} placeholder='Search for a country...' />
