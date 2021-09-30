@@ -27,6 +27,7 @@ export default function HeadElement({ title = 'Covid-19 Map' }: HeadElementProps
         src='https://unpkg.com/leaflet@1.7.1/dist/leaflet.js'
         integrity='sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=='
         crossOrigin=''
+        async
       ></script>
       <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
       <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
