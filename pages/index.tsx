@@ -24,7 +24,7 @@ export default function Home(): ReactElement {
           <CountriesRanking rankingTitle='Covid-19 cases worldwide'>
             <CountriesList covidCasesData={covidCasesData} />
           </CountriesRanking>
-          <MainMapContainer />
+          <MainMapContainer covidCasesData={covidCasesData} />
           <CountriesRanking rankingTitle='Vaccine doses administered'>
             <CountriesList covidCasesData={covidCasesData} vaccinesData={vaccinesData} />
           </CountriesRanking>
