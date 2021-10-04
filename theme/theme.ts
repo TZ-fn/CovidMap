@@ -30,6 +30,7 @@ export const theme = {
     backgroundDarker: 'hsl(199, 65%, 75%)',
   },
   dataColors: {
+    NoData: 'hsl(202, 9%, 61%)',
     AstronautBlue: 'hsl(199, 100%, 18%)',
     Chambray: 'hsl(218, 45%, 34%)',
     ButterflyBush: 'hsl(260, 28%, 44%)',
@@ -69,5 +70,7 @@ export const theme = {
     },
   },
 };
+
+['#d53e4f', '#f46d43', '#fdae61', '#fee08b', '#e6f598', '#abdda4', '#66c2a5', '#3288bd'];
 
 export default theme;
