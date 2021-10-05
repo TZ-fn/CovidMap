@@ -6,6 +6,8 @@ export const StyledFooter = styled.footer`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  min-height: 25%;
+  min-width: 525px;
   height: 7vh;
   width: 100%;
   background: ${({ theme }) => theme.gradientBackground};

@@ -32,4 +32,8 @@ export const StyledInput = styled.input`
     opacity: 1;
     pointer-events: all;
   }
+
+  @media (max-width: 54em) {
+    min-width: 10rem;
+  }
 `;

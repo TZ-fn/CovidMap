@@ -14,4 +14,9 @@ export const StyledMainMapContainer = styled.div`
   border: 1px solid ${({ theme }) => theme.border};
   border-radius: ${theme.misc.borderRadius};
   box-shadow: ${theme.misc.shadows.mediumElevation};
+
+  @media (max-width: 95em) {
+    width: 75%;
+    min-height: 80vh;
+  }
 `;

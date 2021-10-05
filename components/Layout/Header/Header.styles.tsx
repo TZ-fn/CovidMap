@@ -6,10 +6,16 @@ export const StyledHeader = styled.header`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  min-height: 25%;
+  min-width: 525px;
   width: 100%;
   background: ${({ theme }) => theme.gradientBackground};
   border-bottom: 1px solid ${({ theme }) => theme.border};
   box-shadow: ${theme.misc.shadows.mediumElevation};
+
+  @media (max-width: 95em) {
+    padding: 1em;
+  }
 `;
 
 export const StyledControlPanel = styled.div`

@@ -8,6 +8,8 @@ export const StyledAside = styled.aside`
   justify-content: flex-start;
   width: 19%;
   height: 80vh;
+  margin-top: 1em;
+  margin-bottom: 1em;
   padding-top: 1em;
   background: ${({ theme }) => theme.background};
   border: 1px solid ${({ theme }) => theme.border};
