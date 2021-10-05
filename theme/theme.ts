@@ -5,11 +5,6 @@ export interface ThemeType {
   backgroundLighter: string;
   background: string;
   backgroundDarker: string;
-  shadows: {
-    lowElevation: string;
-    mediumElevation: string;
-    highElevation: string;
-  };
 }
 
 export const theme = {
