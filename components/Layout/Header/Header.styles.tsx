@@ -7,7 +7,7 @@ export const StyledHeader = styled.header`
   align-items: center;
   justify-content: center;
   min-height: 25%;
-  min-width: 525px;
+  min-width: min-content;
   width: 100%;
   background: ${({ theme }) => theme.gradientBackground};
   border-bottom: 1px solid ${({ theme }) => theme.border};
@@ -15,6 +15,10 @@ export const StyledHeader = styled.header`
 
   @media (max-width: 95em) {
     padding: 1em;
+  }
+
+  @media (max-width: 37em) {
+    flex-direction: column;
   }
 `;
 

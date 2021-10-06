@@ -36,4 +36,10 @@ export const StyledInput = styled.input`
   @media (max-width: 54em) {
     min-width: 10rem;
   }
+
+  @media (max-width: 37em) {
+    min-width: 8rem;
+    font-size: 1rem;
+    padding: 0.5rem 0.66rem;
+  }
 `;

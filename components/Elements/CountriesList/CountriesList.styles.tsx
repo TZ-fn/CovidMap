@@ -7,7 +7,7 @@ export const StyledCountriesList = styled.ol`
   justify-content: flex-start;
   align-items: flex-start;
   width: 90%;
-  height: 90%;
+  height: min-content;
   padding: 1em;
   padding-left: 3em;
   background: ${({ theme }) => theme.backgroundLighter};

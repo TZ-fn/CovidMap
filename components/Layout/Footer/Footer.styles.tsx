@@ -7,7 +7,7 @@ export const StyledFooter = styled.footer`
   align-items: center;
   justify-content: center;
   min-height: 25%;
-  min-width: 525px;
+  min-width: min-content;
   height: 7vh;
   width: 100%;
   background: ${({ theme }) => theme.gradientBackground};

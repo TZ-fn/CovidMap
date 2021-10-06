@@ -9,4 +9,9 @@ export const StyledSearchButton = styled(Button)`
   & svg {
     fill: ${({ theme }) => theme.fontColor};
   }
+
+  @media (max-width: 37em) {
+    margin-left: -0.55rem;
+    transform: scale(0.72);
+  }
 `;

@@ -16,7 +16,7 @@ export default function Header(): ReactElement {
     <StyledHeader>
       <Link href='/' passHref>
         <a>
-          <Image alt='Covid-19 Map Logo' src={LogoIcon.src} height='85px' width='85px' />
+          <img alt='Covid-19 Map Logo' src={LogoIcon.src} height='85px' width='85px' />
         </a>
       </Link>
       <MainLogo />

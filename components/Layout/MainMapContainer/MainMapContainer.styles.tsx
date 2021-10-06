@@ -16,7 +16,9 @@ export const StyledMainMapContainer = styled.div`
   box-shadow: ${theme.misc.shadows.mediumElevation};
 
   @media (max-width: 95em) {
-    width: 75%;
+    margin-top: 2em;
+    /* width: 90%; */
+    /* max-width: 65em; */
     min-height: 80vh;
   }
 `;
