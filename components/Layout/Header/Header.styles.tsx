@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import theme from 'theme/theme';
 
 export const StyledHeader = styled.header`
+  z-index: 2;
   display: flex;
   flex-direction: row;
   align-items: center;
