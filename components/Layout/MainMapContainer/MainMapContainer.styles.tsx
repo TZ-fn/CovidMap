@@ -17,8 +17,8 @@ export const StyledMainMapContainer = styled.div`
 
   @media (max-width: ${theme.breakpoints.medium}) {
     margin-top: 2em;
-    /* width: 90%; */
-    /* max-width: 65em; */
+    width: 90%;
+    max-width: 65em;
     min-height: 80vh;
   }
 `;
