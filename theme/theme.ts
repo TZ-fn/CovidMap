@@ -66,7 +66,7 @@ export const theme = {
     },
   },
   breakpoints: {
-    smallest: '37em',
+    smallest: '41em',
     medium: '95em',
     mainLogoSmaller: '54em',
   },

@@ -12,7 +12,7 @@ export const StyledMainLogo = styled.h1`
   }
 
   @media (max-width: ${theme.breakpoints.mainLogoSmaller}) {
-    margin: -0.4em 0.25em 0.1em 0.25em;
+    margin: -0.4em 0.25em 0.1em 0.5em;
     font-size: 1.5rem;
   }
 `;
