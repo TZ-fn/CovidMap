@@ -14,11 +14,11 @@ export const StyledHeader = styled.header`
   border-bottom: 1px solid ${({ theme }) => theme.border};
   box-shadow: ${theme.misc.shadows.mediumElevation};
 
-  @media (max-width: 95em) {
+  @media (max-width: ${theme.breakpoints.medium}) {
     padding: 1em;
   }
 
-  @media (max-width: 37em) {
+  @media (max-width: ${theme.breakpoints.smallest}) {
     flex-direction: column;
   }
 `;

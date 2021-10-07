@@ -15,7 +15,7 @@ export const StyledAside = styled.aside`
   border: 1px solid ${({ theme }) => theme.border};
   border-radius: ${theme.misc.borderRadius};
 
-  @media (max-width: 95em) {
+  @media (max-width: ${theme.breakpoints.medium}) {
     width: max-content;
   }
 `;

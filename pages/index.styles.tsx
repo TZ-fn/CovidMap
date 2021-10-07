@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from 'theme/theme';
 
 const StyledMain = styled.main`
   display: flex;
@@ -10,7 +11,7 @@ const StyledMain = styled.main`
   min-height: 90vh;
   background: ${({ theme }) => theme.backgroundDarker};
 
-  @media (max-width: 95em) {
+  @media (max-width: ${theme.breakpoints.medium}) {
     flex-direction: column;
 
     aside {

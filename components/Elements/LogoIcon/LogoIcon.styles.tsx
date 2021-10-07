@@ -6,7 +6,7 @@ export const StyledLogoIcon = styled.img`
   height: 85px;
   filter: drop-shadow(${theme.misc.shadows.default});
 
-  @media (max-width: 37em) {
+  @media (max-width: ${theme.breakpoints.smallest}) {
     width: 30px;
     height: 30px;
   }

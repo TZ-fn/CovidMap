@@ -1,13 +1,12 @@
-import { ReactElement, useContext, ChangeEventHandler } from 'react';
+import React, { ReactElement, useContext, ChangeEventHandler } from 'react';
 import Link from 'next/link';
 import { StyledHeader, StyledControlPanel } from './Header.styles';
 import MainLogo from 'components/Elements/MainLogo/MainLogo';
 import Input from 'components/Elements/Input/Input';
 import SearchButton from 'components/Elements/SearchButton/SearchButton';
 import ThemeSwitch from 'components/Elements/ThemeSwitch/ThemeSwitch';
-import Image from 'next/image';
-import LogoIcon from '../../../public/Covid19_Map_Logo.svg';
 import { ThemeTogglerContext } from 'pages/_app';
+import LogoIcon from 'components/Elements/LogoIcon/LogoIcon';
 
 export default function Header(): ReactElement {
   const themeToggler: ChangeEventHandler<HTMLInputElement> | undefined =
@@ -16,7 +15,7 @@ export default function Header(): ReactElement {
     <StyledHeader>
       <Link href='/' passHref>
         <a>
-          <img alt='Covid-19 Map Logo' src={LogoIcon.src} height='85px' width='85px' />
+          <LogoIcon />
         </a>
       </Link>
       <MainLogo />

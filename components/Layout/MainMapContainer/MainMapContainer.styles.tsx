@@ -15,7 +15,7 @@ export const StyledMainMapContainer = styled.div`
   border-radius: ${theme.misc.borderRadius};
   box-shadow: ${theme.misc.shadows.mediumElevation};
 
-  @media (max-width: 95em) {
+  @media (max-width: ${theme.breakpoints.medium}) {
     margin-top: 2em;
     /* width: 90%; */
     /* max-width: 65em; */

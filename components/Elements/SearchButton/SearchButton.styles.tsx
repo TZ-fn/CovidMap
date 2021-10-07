@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from 'theme/theme';
 import Button from '../Button/Button';
 
 export const StyledSearchButton = styled(Button)`
@@ -10,7 +11,7 @@ export const StyledSearchButton = styled(Button)`
     fill: ${({ theme }) => theme.fontColor};
   }
 
-  @media (max-width: 37em) {
+  @media (max-width: ${theme.breakpoints.smallest}) {
     margin-left: -0.55rem;
     transform: scale(0.72);
   }

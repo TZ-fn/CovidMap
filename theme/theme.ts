@@ -65,6 +65,11 @@ export const theme = {
 `,
     },
   },
+  breakpoints: {
+    smallest: '37em',
+    medium: '95em',
+    mainLogoSmaller: '54em',
+  },
 };
 
 ['#d53e4f', '#f46d43', '#fdae61', '#fee08b', '#e6f598', '#abdda4', '#66c2a5', '#3288bd'];

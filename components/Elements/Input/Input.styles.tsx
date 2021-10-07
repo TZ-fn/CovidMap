@@ -33,11 +33,11 @@ export const StyledInput = styled.input`
     pointer-events: all;
   }
 
-  @media (max-width: 54em) {
+  @media (max-width: ${theme.breakpoints.mainLogoSmaller}) {
     min-width: 10rem;
   }
 
-  @media (max-width: 37em) {
+  @media (max-width: ${theme.breakpoints.smallest}) {
     min-width: 8rem;
     font-size: 1rem;
     padding: 0.5rem 0.66rem;
