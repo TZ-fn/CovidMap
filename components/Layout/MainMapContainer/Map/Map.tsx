@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
 import allCountries from 'public/geojsonData/allCountries.geo.json';
 import countryNamesFromCovidData from 'assets/data/countryNames';
@@ -9,6 +10,8 @@ interface MapProps {
 }
 
 const Map = ({ covidCasesData }: MapProps): JSX.Element => {
+  const geoJsonRef = useRef();
+
   const mapCountriesNamesToCovidDataCountries = (countryNameFromMap: string) => {
     if (countryNamesFromCovidData[countryNameFromMap]) {
       return countryNamesFromCovidData[countryNameFromMap];
@@ -48,7 +51,7 @@ const Map = ({ covidCasesData }: MapProps): JSX.Element => {
     }
   };
 
-  function style(feature) {
+  function styleMap(feature) {
     return {
       fillColor: mapNumberOfCasesToColor(mapCountryToNumberOfCases(feature.properties.name)),
       weight: 0.7,
@@ -56,6 +59,35 @@ const Map = ({ covidCasesData }: MapProps): JSX.Element => {
       color: `${theme.darkTheme.background}`,
       fillOpacity: 1,
     };
+  }
+
+  function highlightFeature(e: Event) {
+    const layer = e.target;
+
+    layer.setStyle({
+      weight: 3,
+      color: `${theme.darkTheme.background}`,
+      dashArray: '',
+      fillOpacity: 0.8,
+    });
+
+    layer.bringToFront();
+  }
+
+  function resetHighlight(e: Event) {
+    geoJsonRef.current.resetStyle(e.target);
+  }
+
+  // function zoomToFeature(e) {
+  //   map.fitBounds(e.target.getBounds());
+  // }
+
+  function onEachFeature(feature, layer) {
+    layer.on({
+      mouseover: highlightFeature,
+      mouseout: resetHighlight,
+      // click: zoomToFeature,
+    });
   }
 
   return (
@@ -69,7 +101,12 @@ const Map = ({ covidCasesData }: MapProps): JSX.Element => {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
-      <GeoJSON data={allCountries} style={style} />
+      <GeoJSON
+        data={allCountries}
+        style={styleMap}
+        onEachFeature={onEachFeature}
+        ref={geoJsonRef}
+      />
     </MapContainer>
   );
 };
