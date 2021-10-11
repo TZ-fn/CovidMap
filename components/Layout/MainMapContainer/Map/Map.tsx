@@ -1,9 +1,10 @@
 import { useRef } from 'react';
 import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
+import { Layer, LeafletMouseEvent } from 'leaflet';
 import allCountries from 'public/geojsonData/allCountries.geo.json';
-import countryNamesFromCovidData from 'assets/data/countryNames';
 import theme from 'theme/theme';
 import { CovidCasesDataForCountry } from 'utils/APIdata.types';
+import { mapCountryToNumberOfCases, mapNumberOfCasesToColor } from './Map.utils';
 
 interface MapProps {
   covidCasesData: CovidCasesDataForCountry[];
@@ -12,48 +13,12 @@ interface MapProps {
 const Map = ({ covidCasesData }: MapProps): JSX.Element => {
   const geoJsonRef = useRef();
 
-  const mapCountriesNamesToCovidDataCountries = (countryNameFromMap: string) => {
-    if (countryNamesFromCovidData[countryNameFromMap]) {
-      return countryNamesFromCovidData[countryNameFromMap];
-    } else {
-      return countryNameFromMap;
-    }
-  };
-
-  const mapCountryToNumberOfCases = (countryNameFromMap: string) => {
-    return covidCasesData.filter(
-      (CovidCasesDataForCountry) =>
-        CovidCasesDataForCountry.country ===
-        mapCountriesNamesToCovidDataCountries(countryNameFromMap),
-    )[0]?.cases;
-  };
-
-  const mapNumberOfCasesToColor = (numberOfCases: number) => {
-    switch (true) {
-      case numberOfCases > 10000000:
-        return theme.dataColors.WebOrange;
-      case numberOfCases > 5000000:
-        return theme.dataColors.Coral;
-      case numberOfCases > 2500000:
-        return theme.dataColors.Carnation;
-      case numberOfCases > 1000000:
-        return theme.dataColors.Cranberry;
-      case numberOfCases > 100000:
-        return theme.dataColors.Tapestry;
-      case numberOfCases > 10000:
-        return theme.dataColors.ButterflyBush;
-      case numberOfCases > 1000:
-        return theme.dataColors.Chambray;
-      case numberOfCases > 100:
-        return theme.dataColors.AstronautBlue;
-      default:
-        return theme.dataColors.NoData;
-    }
-  };
-
   function styleMap(feature) {
     return {
-      fillColor: mapNumberOfCasesToColor(mapCountryToNumberOfCases(feature.properties.name)),
+      fillColor: mapNumberOfCasesToColor(
+        mapCountryToNumberOfCases(feature.properties.name, covidCasesData),
+        theme,
+      ),
       weight: 0.7,
       opacity: 0.7,
       color: `${theme.darkTheme.background}`,
@@ -61,7 +26,7 @@ const Map = ({ covidCasesData }: MapProps): JSX.Element => {
     };
   }
 
-  function highlightFeature(e: Event) {
+  function highlightFeature(e: LeafletMouseEvent) {
     const layer = e.target;
 
     layer.setStyle({
@@ -74,7 +39,7 @@ const Map = ({ covidCasesData }: MapProps): JSX.Element => {
     layer.bringToFront();
   }
 
-  function resetHighlight(e: Event) {
+  function resetHighlight(e: LeafletMouseEvent) {
     geoJsonRef.current.resetStyle(e.target);
   }
 
@@ -82,7 +47,7 @@ const Map = ({ covidCasesData }: MapProps): JSX.Element => {
   //   map.fitBounds(e.target.getBounds());
   // }
 
-  function onEachFeature(feature, layer) {
+  function onEachFeature(feature, layer: Layer) {
     layer.on({
       mouseover: highlightFeature,
       mouseout: resetHighlight,
