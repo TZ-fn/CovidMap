@@ -41,3 +41,12 @@ export interface ThemeType {
     mainLogoSmaller: string;
   };
 }
+
+export interface ThemeColors {
+  fontColor: string;
+  gradientBackground: string;
+  border: string;
+  backgroundLighter: string;
+  background: string;
+  backgroundDarker: string;
+}
