@@ -14,7 +14,7 @@ export default function CountriesList({
   vaccinesData,
 }: ListPropsTypes): ReactElement {
   function getFlag(countryName: string) {
-    return covidCasesData.filter((country) => country.country === countryName)[0].countryInfo.flag;
+    return covidCasesData.find((country) => country.country === countryName)?.countryInfo.flag;
   }
 
   return (
