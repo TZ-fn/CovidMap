@@ -35,10 +35,10 @@ export default function GeoJSONwithMap({ data, style, covidCasesData }: GeoJSONw
   };
 
   const createNumberOfCasesTooltip = (countryName: string) => {
-    const numberOfCases =
-      mapCountryToNumberOfCases(countryName, covidCasesData) !== 0
-        ? Intl.NumberFormat('PL').format(mapCountryToNumberOfCases(countryName, covidCasesData))
-        : 'No data available.';
+    const numberOfCases = mapCountryToNumberOfCases(countryName, covidCasesData);
+    typeof numberOfCases === 'number'
+      ? Intl.NumberFormat('PL').format(numberOfCases)
+      : numberOfCases;
     return `${countryName}: ${numberOfCases}`;
   };
 
@@ -46,9 +46,7 @@ export default function GeoJSONwithMap({ data, style, covidCasesData }: GeoJSONw
     layer.on({
       mouseover: (e: LeafletMouseEvent) => {
         highlightFeature(e);
-        layer
-          .bindTooltip(createNumberOfCasesTooltip(layer.feature.properties.name))
-          .openTooltip(layer._bounds._southWest);
+        layer.bindTooltip(createNumberOfCasesTooltip(layer.feature.properties.name)).openTooltip();
       },
       mouseout: (e) => {
         layer.unbindTooltip();
@@ -56,7 +54,6 @@ export default function GeoJSONwithMap({ data, style, covidCasesData }: GeoJSONw
         resetHighlight(e);
       },
       click: (e) => {
-        console.log(layer._bounds);
         zoomToFeature(e);
       },
     });

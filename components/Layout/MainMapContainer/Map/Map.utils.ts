@@ -13,12 +13,14 @@ export const mapCountriesNamesToCovidDataCountries = (countryNameFromMap: string
 export const mapCountryToNumberOfCases = (
   countryNameFromMap: string,
   covidCasesData: CovidCasesDataForCountry[],
-): number | undefined => {
-  return covidCasesData.find(
-    (CovidCasesDataForCountry) =>
-      CovidCasesDataForCountry.country ===
-      mapCountriesNamesToCovidDataCountries(countryNameFromMap),
-  )?.cases;
+): number | string => {
+  return (
+    covidCasesData?.find(
+      (CovidCasesDataForCountry) =>
+        CovidCasesDataForCountry.country ===
+        mapCountriesNamesToCovidDataCountries(countryNameFromMap),
+    )?.cases || 'No data available.'
+  );
 };
 
 export const mapNumberOfCasesToColor = (numberOfCases: number, theme: ThemeType): string => {
