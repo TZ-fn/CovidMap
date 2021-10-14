@@ -25,6 +25,7 @@ export interface ThemeType {
     Carnation: string;
     Coral: string;
     WebOrange: string;
+    LighterWebOrange: string;
   };
   misc: {
     borderRadius: string;
