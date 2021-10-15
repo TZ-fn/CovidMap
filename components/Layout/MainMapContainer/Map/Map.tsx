@@ -5,6 +5,7 @@ import theme from 'theme/theme';
 import { CovidCasesDataForCountry } from 'utils/APIdata.types';
 import { mapCountryToNumberOfCases, mapNumberOfCasesToColor } from './Map.utils';
 import GeoJSONwithMap from './GeoJSONwithMap/GeoJSONwithMap';
+import MapLegend from './MapLegend/MapLegend';
 
 interface MapProps {
   covidCasesData: CovidCasesDataForCountry[];
@@ -41,6 +42,7 @@ const Map = ({ covidCasesData }: MapProps): JSX.Element => {
         style={styleMap}
         covidCasesData={covidCasesData}
       ></GeoJSONwithMap>
+      <MapLegend />
     </MapContainer>
   );
 };
