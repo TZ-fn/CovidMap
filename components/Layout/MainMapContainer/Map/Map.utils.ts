@@ -1,5 +1,6 @@
 import countryNamesFromCovidData from 'assets/data/countryNames';
 import { CovidCasesDataForCountry } from 'utils/APIdata.types';
+import casesToColorMap from 'assets/data/casesToColorMap';
 import { ThemeType } from 'theme/themeTypes';
 
 export const mapCountriesNamesToCovidDataCountries = (countryNameFromMap: string): string => {
@@ -25,23 +26,23 @@ export const mapCountryToNumberOfCases = (
 
 export const mapNumberOfCasesToColor = (numberOfCases: number, theme: ThemeType): string => {
   switch (true) {
-    case numberOfCases > 15000000:
+    case numberOfCases > casesToColorMap[0]:
       return theme.dataColors.AstronautBlue;
-    case numberOfCases > 10000000:
+    case numberOfCases > casesToColorMap[1]:
       return theme.dataColors.Chambray;
-    case numberOfCases > 5000000:
+    case numberOfCases > casesToColorMap[2]:
       return theme.dataColors.ButterflyBush;
-    case numberOfCases > 2500000:
+    case numberOfCases > casesToColorMap[3]:
       return theme.dataColors.Tapestry;
-    case numberOfCases > 1000000:
+    case numberOfCases > casesToColorMap[4]:
       return theme.dataColors.Cranberry;
-    case numberOfCases > 100000:
+    case numberOfCases > casesToColorMap[5]:
       return theme.dataColors.Carnation;
-    case numberOfCases > 10000:
+    case numberOfCases > casesToColorMap[6]:
       return theme.dataColors.Coral;
-    case numberOfCases > 500:
+    case numberOfCases > casesToColorMap[7]:
       return theme.dataColors.WebOrange;
-    case numberOfCases > 1:
+    case numberOfCases > casesToColorMap[8]:
       return theme.dataColors.LighterWebOrange;
     default:
       return theme.dataColors.NoData;
