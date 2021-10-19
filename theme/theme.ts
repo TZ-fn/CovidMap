@@ -16,7 +16,6 @@ export const theme = {
     backgroundDarker: 'hsl(199, 65%, 75%)',
   },
   dataColors: {
-    NoData: 'hsl(202, 9%, 61%)',
     AstronautBlue: 'hsl(199, 100%, 18%)',
     Chambray: 'hsl(218, 45%, 34%)',
     ButterflyBush: 'hsl(260, 28%, 44%)',
@@ -26,6 +25,7 @@ export const theme = {
     Coral: 'hsl(18, 100%, 63%)',
     WebOrange: 'hsl(39, 100%, 50%)',
     LighterWebOrange: 'hsl(39, 100%, 75%)',
+    NoData: 'hsl(202, 9%, 61%)',
   },
   misc: {
     borderRadius: '0.225em',
