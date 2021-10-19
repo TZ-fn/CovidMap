@@ -4,7 +4,7 @@ import { StyledCountriesListItem } from './CountriesListItem.styles';
 import Link from 'next/link';
 
 interface CountriesListItemProps {
-  countryFlag: string;
+  countryFlag: string | undefined;
   countryName: string;
   numberOfCasesOrVaccineDoses: number;
 }
