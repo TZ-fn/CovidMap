@@ -36,10 +36,9 @@ export default function GeoJSONwithMap({ data, style, covidCasesData }: GeoJSONw
 
   const createNumberOfCasesTooltip = (countryName: string) => {
     const numberOfCases = mapCountryToNumberOfCases(countryName, covidCasesData);
-    typeof numberOfCases === 'number'
-      ? Intl.NumberFormat('PL').format(numberOfCases)
-      : numberOfCases;
-    return `${countryName}: ${numberOfCases}`;
+    return typeof numberOfCases === 'number'
+      ? `${countryName}: ${Intl.NumberFormat('PL').format(numberOfCases)}`
+      : `${countryName}: ${numberOfCases}`;
   };
 
   function onEachFeature(feature: Feature, layer: Layer) {
