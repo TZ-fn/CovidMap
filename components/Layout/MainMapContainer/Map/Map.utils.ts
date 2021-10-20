@@ -24,7 +24,10 @@ export const mapCountryToNumberOfCases = (
   );
 };
 
-export const mapNumberOfCasesToColor = (numberOfCases: number, theme: ThemeType): string => {
+export const mapNumberOfCasesToColor = (
+  numberOfCases: number | string,
+  theme: ThemeType,
+): string => {
   switch (true) {
     case numberOfCases > casesToColorMap[0]:
       return theme.dataColors.AstronautBlue;

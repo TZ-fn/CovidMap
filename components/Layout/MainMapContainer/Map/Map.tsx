@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Tooltip } from 'react-leaflet';
+import { MapContainer, TileLayer } from 'react-leaflet';
 import { Feature } from 'geojson';
 import allCountries from 'public/geojsonData/allCountries.geo.json';
 import theme from 'theme/theme';
@@ -13,6 +13,9 @@ interface MapProps {
 
 const Map = ({ covidCasesData }: MapProps): JSX.Element => {
   function styleMap(feature: Feature) {
+    if (!feature.properties) {
+      return undefined;
+    }
     return {
       fillColor: mapNumberOfCasesToColor(
         mapCountryToNumberOfCases(feature.properties.name, covidCasesData),
