@@ -1,8 +1,7 @@
-import { useRef } from 'react';
-import { useMap, GeoJSON, GeoJSONProps, Tooltip } from 'react-leaflet';
+import { useMap, GeoJSON, GeoJSONProps } from 'react-leaflet';
 import { Layer, LeafletMouseEvent } from 'leaflet';
 import { Feature } from 'geojson';
-import { mapCountriesNamesToCovidDataCountries, mapCountryToNumberOfCases } from '../Map.utils';
+import { mapCountryToNumberOfCases } from '../Map.utils';
 import { CovidCasesDataForCountry } from 'utils/APIdata.types';
 import theme from 'theme/theme';
 
@@ -12,7 +11,6 @@ interface GeoJSONwithMapProps extends GeoJSONProps {
 
 export default function GeoJSONwithMap({ data, style, covidCasesData }: GeoJSONwithMapProps) {
   const map = useMap();
-  const geoJsonRef = useRef();
 
   const highlightFeature = (e: LeafletMouseEvent) => {
     const layer = e.target;
@@ -27,7 +25,9 @@ export default function GeoJSONwithMap({ data, style, covidCasesData }: GeoJSONw
   };
 
   const resetHighlight = (e: LeafletMouseEvent) => {
-    geoJsonRef.current.resetStyle(e.target);
+    if (typeof style === 'function') {
+      e.target.setStyle(style(e.target.feature));
+    }
   };
 
   const zoomToFeature = (e: LeafletMouseEvent) => {
@@ -45,18 +45,20 @@ export default function GeoJSONwithMap({ data, style, covidCasesData }: GeoJSONw
     layer.on({
       mouseover: (e: LeafletMouseEvent) => {
         highlightFeature(e);
-        layer.bindTooltip(createNumberOfCasesTooltip(layer.feature.properties.name)).openTooltip();
+        layer
+          .bindTooltip(createNumberOfCasesTooltip(e.target.feature.properties.name))
+          .openTooltip();
       },
-      mouseout: (e) => {
+      mouseout: (e: LeafletMouseEvent) => {
         layer.unbindTooltip();
         layer.closeTooltip();
         resetHighlight(e);
       },
-      click: (e) => {
+      click: (e: LeafletMouseEvent) => {
         zoomToFeature(e);
       },
     });
   }
 
-  return <GeoJSON data={data} style={style} onEachFeature={onEachFeature} ref={geoJsonRef} />;
+  return <GeoJSON data={data} style={style} onEachFeature={onEachFeature} />;
 }
