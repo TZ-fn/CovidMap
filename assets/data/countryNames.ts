@@ -18,6 +18,8 @@ const countryNamesFromCovidData = {
   'Czech Rep.': 'Czechia',
   'United Kingdom': 'UK',
   'Solomon Is.': 'Solomon Islands',
-};
+} as const;
+
+export type CountryNameFromMap = keyof typeof countryNamesFromCovidData;
 
 export default countryNamesFromCovidData;

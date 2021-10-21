@@ -14,7 +14,7 @@ interface MapProps {
 const Map = ({ covidCasesData }: MapProps): JSX.Element => {
   function styleMap(feature: Feature) {
     if (!feature.properties) {
-      return undefined;
+      return;
     }
     return {
       fillColor: mapNumberOfCasesToColor(

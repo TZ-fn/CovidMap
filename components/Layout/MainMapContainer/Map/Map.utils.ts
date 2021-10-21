@@ -1,11 +1,11 @@
-import countryNamesFromCovidData from 'assets/data/countryNames';
+import countryNamesFromCovidData, { CountryNameFromMap } from 'assets/data/countryNames';
 import { CovidCasesDataForCountry } from 'utils/APIdata.types';
 import casesToColorMap from 'assets/data/casesToColorMap';
 import { ThemeType } from 'theme/themeTypes';
 
 export const mapCountriesNamesToCovidDataCountries = (countryNameFromMap: string): string => {
-  if (countryNamesFromCovidData[countryNameFromMap]) {
-    return countryNamesFromCovidData[countryNameFromMap];
+  if (countryNamesFromCovidData[countryNameFromMap as CountryNameFromMap]) {
+    return countryNamesFromCovidData[countryNameFromMap as CountryNameFromMap];
   } else {
     return countryNameFromMap;
   }
