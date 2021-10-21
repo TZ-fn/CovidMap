@@ -24,7 +24,7 @@ export const theme = {
     Carnation: 'hsl(355, 93%, 67%)',
     Coral: 'hsl(18, 100%, 63%)',
     WebOrange: 'hsl(39, 100%, 50%)',
-    LighterWebOrange: 'hsl(39, 100%, 75%)',
+    Topaz: 'hsl(39, 100%, 75%)',
     NoData: 'hsl(202, 9%, 61%)',
   },
   misc: {

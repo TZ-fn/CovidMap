@@ -46,7 +46,7 @@ export const mapNumberOfCasesToColor = (
     case numberOfCases > casesToColorMap[7]:
       return theme.dataColors.WebOrange;
     case numberOfCases > casesToColorMap[8]:
-      return theme.dataColors.LighterWebOrange;
+      return theme.dataColors.Topaz;
     default:
       return theme.dataColors.NoData;
   }
