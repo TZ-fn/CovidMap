@@ -9,7 +9,11 @@ interface GeoJSONwithMapProps extends GeoJSONProps {
   covidCasesData: CovidCasesDataForCountry[];
 }
 
-export default function GeoJSONwithMap({ data, style, covidCasesData }: GeoJSONwithMapProps) {
+export default function GeoJSONwithMap({
+  data,
+  style,
+  covidCasesData,
+}: GeoJSONwithMapProps): JSX.Element {
   const map = useMap();
 
   const highlightFeature = (e: LeafletMouseEvent) => {
@@ -41,7 +45,7 @@ export default function GeoJSONwithMap({ data, style, covidCasesData }: GeoJSONw
       : `${countryName}: ${numberOfCases}`;
   };
 
-  function onEachFeature(feature: Feature, layer: Layer) {
+  function onEachFeature(_feature: Feature, layer: Layer) {
     layer.on({
       mouseover: (e: LeafletMouseEvent) => {
         highlightFeature(e);
