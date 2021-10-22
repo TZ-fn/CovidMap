@@ -1,3 +1,4 @@
+import Leaflet from 'leaflet';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import { Feature } from 'geojson';
 import allCountries from 'public/geojsonData/allCountries.geo.json';
@@ -28,12 +29,19 @@ const Map = ({ covidCasesData }: MapProps): JSX.Element => {
     };
   }
 
+  const corner1 = Leaflet.latLng(-61, -97);
+  const corner2 = Leaflet.latLng(90, 100);
+  const bounds = Leaflet.latLngBounds(corner1, corner2);
+
   return (
     <MapContainer
       center={[45, 0]}
       zoom={2}
+      minZoom={2}
       scrollWheelZoom={false}
       style={{ height: '100%', width: '100%' }}
+      maxBoundsViscosity={0.8}
+      maxBounds={bounds}
     >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
