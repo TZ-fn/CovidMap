@@ -3,7 +3,7 @@ import theme from 'theme/theme';
 
 export const StyledCountryDetailsContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 96.3%;

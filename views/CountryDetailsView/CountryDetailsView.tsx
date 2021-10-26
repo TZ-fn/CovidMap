@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { StyledCountryDetailsContainer } from './CountryDetailsView.styles';
+import ChartsContainer from './ChartsContainer/ChartsContainer';
 import capitalise from 'utils/capitalise.utils';
 
 interface CountryDetailsViewProps {
@@ -12,6 +13,7 @@ export default function CountryDetailsView({
   return (
     <StyledCountryDetailsContainer>
       <h1>{typeof countryName === 'string' && capitalise(countryName)}</h1>
+      <ChartsContainer />
     </StyledCountryDetailsContainer>
   );
 }
