@@ -5,12 +5,14 @@ interface HeadElementProps {
   title?: string | string[] | undefined;
 }
 
-export default function HeadElement({ title = 'Covid-19 Map' }: HeadElementProps): JSX.Element {
+export default function HeadElement({ title }: HeadElementProps): JSX.Element {
   return (
     <Head>
       <meta charSet='utf-8' />
       <meta name='viewport' content='width=device-width, initial-scale=1' />
-      <title>{typeof title === 'string' && `${capitalise(title)} - Covid-19 Map`}</title>
+      <title>
+        {typeof title === 'string' ? `${capitalise(title)} - Covid-19 Map` : 'Covid-19 Map'}
+      </title>
       <meta
         name='description'
         content='Web application that displays Covid-19 data for different countries'
