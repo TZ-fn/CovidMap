@@ -1,5 +1,7 @@
 import { MapContainer, TileLayer } from 'react-leaflet';
+import { LeafletMouseEvent } from 'leaflet';
 import { Feature } from 'geojson';
+import Link from 'next/link';
 import allCountries from 'public/geojsonData/allCountries.geo.json';
 import theme from 'theme/theme';
 import { CovidCasesDataForCountry } from 'utils/APIdata.types';
@@ -28,6 +30,14 @@ const Map = ({ covidCasesData }: MapProps): JSX.Element => {
     };
   }
 
+  {
+    /* <Link href={e.target}></Link> */
+  }
+
+  const GeoJsonEventHandlers = {
+    click: (e: LeafletMouseEvent) => console.log(e.target),
+  };
+
   return (
     <MapContainer
       center={[45, 0]}
@@ -42,7 +52,12 @@ const Map = ({ covidCasesData }: MapProps): JSX.Element => {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
-      <GeoJSONwithMap data={allCountries} style={styleMap} covidCasesData={covidCasesData} />
+      <GeoJSONwithMap
+        data={allCountries}
+        style={styleMap}
+        covidCasesData={covidCasesData}
+        eventHandlers={GeoJsonEventHandlers}
+      />
       <MapLegend />
     </MapContainer>
   );
