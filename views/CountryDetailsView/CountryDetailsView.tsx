@@ -12,7 +12,7 @@ export default function CountryDetailsView({
 }: CountryDetailsViewProps): ReactElement {
   return (
     <StyledCountryDetailsContainer>
-      <h1>{typeof countryName === 'string' && capitalise(countryName)}</h1>
+      <h2>{typeof countryName === 'string' && capitalise(countryName)}</h2>
       <ChartsContainer />
     </StyledCountryDetailsContainer>
   );

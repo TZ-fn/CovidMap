@@ -13,4 +13,10 @@ export const StyledCountryDetailsContainer = styled.div`
   border: 1px solid ${({ theme }) => theme.border};
   border-radius: ${theme.misc.borderRadius};
   box-shadow: ${theme.misc.shadows.mediumElevation};
+
+  h2 {
+    border-bottom: 2px solid ${theme.dataColors.Coral};
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
 `;
