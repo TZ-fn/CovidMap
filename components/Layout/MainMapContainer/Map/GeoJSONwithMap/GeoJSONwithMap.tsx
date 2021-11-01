@@ -57,11 +57,6 @@ export default function GeoJSONwithMap({
 
       click: (e: LeafletMouseEvent) => {
         const country = mapCountriesNamesToCovidDataCountries(e.target.feature.properties.name);
-        // layer
-        //   .bindPopup(
-        //     `<a style='text-decoration: underline;' href='/country/${country}'>See details for ${country}.</a>`,
-        //   )
-        //   .openPopup();
         window.location.assign(`/country/${country}`);
       },
     });
