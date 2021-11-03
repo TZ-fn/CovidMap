@@ -3,8 +3,9 @@ import theme from 'theme/theme';
 
 export const StyledChartContainer = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
   background: ${({ theme }) => theme.backgroundLighter};
   border: 1px solid ${({ theme }) => theme.border};
   border-radius: ${theme.misc.borderRadius};
