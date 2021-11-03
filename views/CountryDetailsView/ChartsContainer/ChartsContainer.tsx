@@ -1,13 +1,13 @@
 import { ReactElement } from 'react';
 import { StyledChartsContainer } from './ChartsContainer.styles';
-import Chart from '../Chart/Chart';
+import ChartContainer from '../Chart/ChartContainer';
 
 export default function CountryDetailsView(): ReactElement {
   return (
     <StyledChartsContainer>
-      <Chart></Chart>
-      <Chart></Chart>
-      <Chart></Chart>
+      <ChartContainer title='Cases'></ChartContainer>
+      <ChartContainer title='Recovered'></ChartContainer>
+      <ChartContainer title='Deaths'></ChartContainer>
     </StyledChartsContainer>
   );
 }

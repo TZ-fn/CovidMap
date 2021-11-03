@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import theme from 'theme/theme';
 
-export const StyledChart = styled.div`
+export const StyledChartContainer = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
