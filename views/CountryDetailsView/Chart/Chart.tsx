@@ -1,4 +1,5 @@
-import React, { PureComponent } from 'react';
+import { ReactElement } from 'react';
+import { useTheme } from 'styled-components';
 import {
   AreaChart,
   Area,
@@ -8,6 +9,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
+import theme from 'theme/theme';
 
 const data = [
   {
@@ -54,28 +56,42 @@ const data = [
   },
 ];
 
-export default class Example extends PureComponent {
-  render() {
-    return (
-      <ResponsiveContainer width='100%' height='100%'>
-        <AreaChart
-          width={500}
-          height={400}
-          data={data}
-          margin={{
-            top: 10,
-            right: 20,
-            left: 0,
-            bottom: 10,
-          }}
-        >
-          <CartesianGrid strokeDasharray='3 3' />
-          <XAxis dataKey='name' tick={{ fill: 'red' }} />
-          <YAxis tick={{ fill: 'red' }} />
-          <Tooltip />
-          <Area type='monotone' dataKey='uv' stroke='#8884d8' fill='#8884d8' />
-        </AreaChart>
-      </ResponsiveContainer>
-    );
-  }
+interface ChartProps {
+  fillColor: string;
+}
+
+export default function Chart({ fillColor }: ChartProps): ReactElement {
+  const themeColors = useTheme();
+  return (
+    <ResponsiveContainer width='100%' height='100%'>
+      <AreaChart
+        width={500}
+        height={400}
+        data={data}
+        margin={{
+          top: 10,
+          right: 20,
+          left: 0,
+          bottom: 10,
+        }}
+      >
+        <defs>
+          <linearGradient id={fillColor} x1='0' y1='0' x2='0' y2='1'>
+            <stop offset='50%' stopColor={theme.dataColors[fillColor]} stopOpacity={1} />
+            <stop offset='100%' stopColor={theme.dataColors[fillColor]} stopOpacity={0} />
+          </linearGradient>
+        </defs>
+        <CartesianGrid strokeDasharray='3 3' />
+        <XAxis dataKey='name' tick={{ fill: `${themeColors.fontColor}` }} />
+        <YAxis tick={{ fill: `${themeColors.fontColor}` }} />
+        <Tooltip />
+        <Area
+          type='monotone'
+          dataKey='uv'
+          stroke={themeColors.fontColor}
+          fill={`url(#${fillColor})`}
+        />
+      </AreaChart>
+    </ResponsiveContainer>
+  );
 }
