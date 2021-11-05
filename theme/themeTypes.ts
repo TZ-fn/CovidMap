@@ -1,22 +1,8 @@
 import { DefaultTheme } from 'styled-components';
 
-export interface ThemeType {
-  darkTheme: {
-    fontColor: string;
-    gradientBackground: string;
-    border: string;
-    backgroundLighter: string;
-    background: string;
-    backgroundDarker: string;
-  };
-  lightTheme: {
-    fontColor: string;
-    gradientBackground: string;
-    border: string;
-    backgroundLighter: string;
-    background: string;
-    backgroundDarker: string;
-  };
+export interface ThemeType extends DefaultTheme {
+  darkTheme: ThemeColors;
+  lightTheme: ThemeColors;
   dataColors: {
     NoData: string;
     AstronautBlue: string;
@@ -49,6 +35,7 @@ export interface ThemeColors extends DefaultTheme {
   fontColor: string;
   gradientBackground: string;
   border: string;
+  backgroundLightest: string;
   backgroundLighter: string;
   background: string;
   backgroundDarker: string;

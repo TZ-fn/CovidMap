@@ -1,4 +1,6 @@
-export const theme = {
+import { ThemeType } from './themeTypes';
+
+export const theme: ThemeType = {
   darkTheme: {
     fontColor: 'hsl(60, 100%, 97%)',
     gradientBackground: 'linear-gradient(115deg, hsl(198, 50%, 25%) 0%, hsl(198, 50%, 17%)100%);',
