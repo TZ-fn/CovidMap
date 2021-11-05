@@ -1,3 +1,5 @@
+import { DefaultTheme } from 'styled-components';
+
 export interface ThemeType {
   darkTheme: {
     fontColor: string;
@@ -43,7 +45,7 @@ export interface ThemeType {
   };
 }
 
-export interface ThemeColors {
+export interface ThemeColors extends DefaultTheme {
   fontColor: string;
   gradientBackground: string;
   border: string;
