@@ -9,7 +9,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
-import theme from 'theme/theme';
+import theme, { DataColorsType } from 'theme/theme';
 
 const data = [
   {
@@ -57,7 +57,7 @@ const data = [
 ];
 
 interface ChartProps {
-  fillColor: string;
+  fillColor: DataColorsType;
 }
 
 export default function Chart({ fillColor }: ChartProps): ReactElement {
@@ -70,21 +70,28 @@ export default function Chart({ fillColor }: ChartProps): ReactElement {
         data={data}
         margin={{
           top: 10,
-          right: 20,
+          right: 30,
           left: 0,
           bottom: 10,
         }}
       >
         <defs>
           <linearGradient id={fillColor} x1='0' y1='0' x2='0' y2='1'>
-            <stop offset='50%' stopColor={theme.dataColors[fillColor]} stopOpacity={1} />
+            <stop offset='60%' stopColor={theme.dataColors[fillColor]} stopOpacity={1} />
             <stop offset='100%' stopColor={theme.dataColors[fillColor]} stopOpacity={0} />
           </linearGradient>
         </defs>
         <CartesianGrid strokeDasharray='3 3' />
         <XAxis dataKey='name' tick={{ fill: `${themeColors.fontColor}` }} />
         <YAxis tick={{ fill: `${themeColors.fontColor}` }} />
-        <Tooltip />
+        <Tooltip
+          contentStyle={{
+            color: themeColors.fontColor,
+            backgroundColor: themeColors.backgroundLightest,
+            borderRadius: theme.misc.borderRadius,
+            borderColor: themeColors.fontColor,
+          }}
+        />
         <Area
           type='monotone'
           dataKey='uv'
