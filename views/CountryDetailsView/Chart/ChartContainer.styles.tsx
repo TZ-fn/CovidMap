@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import theme from 'theme/theme';
+import mainTheme from 'theme/theme';
 
 export const StyledChartContainer = styled.div`
   display: flex;
@@ -8,15 +8,15 @@ export const StyledChartContainer = styled.div`
   flex-direction: column;
   background: ${({ theme }) => theme.backgroundLighter};
   border: 1px solid ${({ theme }) => theme.border};
-  border-radius: ${theme.misc.borderRadius};
-  box-shadow: ${theme.misc.shadows.highElevation};
+  border-radius: ${mainTheme.misc.borderRadius};
+  box-shadow: ${mainTheme.misc.shadows.highElevation};
   margin: 0.5em 1em;
   width: 33%;
   height: 90%;
   margin-bottom: 1.5rem;
 
   h3 {
-    border-bottom: 2px solid ${theme.dataColors.Coral};
+    border-bottom: 2px solid ${mainTheme.dataColors.Coral};
     font-size: 2rem;
   }
 `;

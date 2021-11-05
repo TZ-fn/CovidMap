@@ -1,7 +1,6 @@
 import { ReactElement } from 'react';
 import { StyledChartsContainer } from './ChartsContainer.styles';
 import ChartContainer from '../Chart/ChartContainer';
-import theme from 'theme/theme';
 
 export default function CountryDetailsView(): ReactElement {
   return (

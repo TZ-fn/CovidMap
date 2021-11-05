@@ -1,10 +1,12 @@
 import { ReactElement } from 'react';
 import { StyledChartContainer } from './ChartContainer.styles';
+import { DataColorsType } from 'theme/theme';
+
 import Chart from './Chart';
 
 interface ChartProps {
   title: string;
-  fillColor: string;
+  fillColor: DataColorsType;
 }
 
 export default function ChartContainer({ title, fillColor }: ChartProps): ReactElement {
