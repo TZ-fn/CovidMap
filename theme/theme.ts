@@ -3,6 +3,7 @@ export const theme = {
     fontColor: 'hsl(60, 100%, 97%)',
     gradientBackground: 'linear-gradient(115deg, hsl(198, 50%, 25%) 0%, hsl(198, 50%, 17%)100%);',
     border: 'hsl(198, 50%, 18%)',
+    backgroundLightest: 'hsl(198, 50%, 30%)',
     backgroundLighter: 'hsl(198, 50%, 20%)',
     background: 'hsl(198, 50%, 15%)',
     backgroundDarker: 'hsl(198, 50%, 12%)',
@@ -11,6 +12,7 @@ export const theme = {
     fontColor: 'hsl(198, 50%, 5%)',
     border: 'hsl(198, 65%, 70%)',
     gradientBackground: 'linear-gradient(115deg, hsl(199, 65%, 90%) 0%, hsl(199, 65%, 87%) 50%);',
+    backgroundLightest: 'hsl(199, 65%, 98%)',
     backgroundLighter: 'hsl(199, 65%, 92%)',
     background: 'hsl(199, 65%, 85%)',
     backgroundDarker: 'hsl(199, 65%, 75%)',
@@ -63,5 +65,6 @@ export const theme = {
     mainLogoSmaller: '54em',
   },
 };
+export type DataColorsType = keyof typeof theme.dataColors;
 
 export default theme;
