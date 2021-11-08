@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import FlagIcon from 'components/Elements/FlagIcon/FlagIcon';
 import { StyledCountriesListItem } from './CountriesListItem.styles';
 import Link from 'next/link';
+import formatNumberToPolishLocale from 'utils/formatNumberToPolishLocale';
 
 interface CountriesListItemProps {
   countryFlag: string | undefined;
@@ -19,7 +20,7 @@ export default function CountriesListItem({
       <a>
         <StyledCountriesListItem>
           <FlagIcon src={countryFlag} /> {countryName}{' '}
-          {new Intl.NumberFormat('pl-PL').format(numberOfCasesOrVaccineDoses)}
+          {formatNumberToPolishLocale(numberOfCasesOrVaccineDoses)}
         </StyledCountriesListItem>
       </a>
     </Link>

@@ -11,6 +11,7 @@ import {
 } from 'recharts';
 import theme, { DataColorsType } from 'theme/theme';
 import { formatChartDataFromAPI } from 'utils/Chart.utils';
+import formatNumberToPolishLocale from 'utils/formatNumberToPolishLocale';
 
 const data = [
   {
@@ -88,7 +89,7 @@ export default function Chart({ fillColor, chartData }: ChartProps): ReactElemen
         <XAxis dataKey='date' tick={{ fill: `${themeColors.fontColor}` }} />
         <YAxis
           tick={{ fill: `${themeColors.fontColor}` }}
-          tickFormatter={(tick) => new Intl.NumberFormat('pl-PL').format(tick)}
+          tickFormatter={(tick) => formatNumberToPolishLocale(tick)}
         />
         <Tooltip
           contentStyle={{

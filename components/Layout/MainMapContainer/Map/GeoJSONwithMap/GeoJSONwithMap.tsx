@@ -4,6 +4,7 @@ import { Feature } from 'geojson';
 import { mapCountryToNumberOfCases, mapCountriesNamesToCovidDataCountries } from '../Map.utils';
 import { CovidCasesDataForCountry } from 'utils/APIdata.types';
 import theme from 'theme/theme';
+import formatNumberToPolishLocale from 'utils/formatNumberToPolishLocale';
 
 interface GeoJSONwithMapProps extends GeoJSONProps {
   covidCasesData: CovidCasesDataForCountry[];
@@ -36,7 +37,7 @@ export default function GeoJSONwithMap({
   const createNumberOfCasesTooltip = (countryName: string) => {
     const numberOfCases = mapCountryToNumberOfCases(countryName, covidCasesData);
     return typeof numberOfCases === 'number'
-      ? `${countryName}: ${Intl.NumberFormat('PL').format(numberOfCases)}`
+      ? `${countryName}: ${formatNumberToPolishLocale(numberOfCases)}`
       : `${countryName}: ${numberOfCases}`;
   };
 
