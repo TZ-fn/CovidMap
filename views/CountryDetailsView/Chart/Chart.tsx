@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import theme, { DataColorsType } from 'theme/theme';
+import { formatChartDataFromAPI } from 'utils/Chart.utils';
 
 const data = [
   {
@@ -58,20 +59,22 @@ const data = [
 
 interface ChartProps {
   fillColor: DataColorsType;
+  chartData: any;
 }
 
-export default function Chart({ fillColor }: ChartProps): ReactElement {
+export default function Chart({ fillColor, chartData }: ChartProps): ReactElement {
   const themeColors = useTheme();
+  console.log(formatChartDataFromAPI(chartData));
   return (
     <ResponsiveContainer width='100%' height='100%'>
       <AreaChart
         width={500}
         height={400}
-        data={data}
+        data={formatChartDataFromAPI(chartData)}
         margin={{
           top: 10,
           right: 30,
-          left: 0,
+          left: 30,
           bottom: 10,
         }}
       >
@@ -82,8 +85,11 @@ export default function Chart({ fillColor }: ChartProps): ReactElement {
           </linearGradient>
         </defs>
         <CartesianGrid strokeDasharray='3 3' />
-        <XAxis dataKey='name' tick={{ fill: `${themeColors.fontColor}` }} />
-        <YAxis tick={{ fill: `${themeColors.fontColor}` }} />
+        <XAxis dataKey='date' tick={{ fill: `${themeColors.fontColor}` }} />
+        <YAxis
+          tick={{ fill: `${themeColors.fontColor}` }}
+          tickFormatter={(tick) => new Intl.NumberFormat('pl-PL').format(tick)}
+        />
         <Tooltip
           contentStyle={{
             color: themeColors.fontColor,
@@ -94,7 +100,7 @@ export default function Chart({ fillColor }: ChartProps): ReactElement {
         />
         <Area
           type='monotone'
-          dataKey='uv'
+          dataKey='numberOfPeople'
           stroke={themeColors.fontColor}
           fill={`url(#${fillColor})`}
         />
