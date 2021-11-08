@@ -8,7 +8,7 @@ interface FormattedChartData {
 export function formatChartDataFromAPI(dataFromAPI): Array<FormattedChartData> {
   return Object.entries(dataFromAPI).map((entry) => {
     return {
-      numberOfCases: entry[1],
+      numberOfPeople: entry[1],
       date: formatDate(entry[0]),
     };
   });
