@@ -1,11 +1,11 @@
-interface UnformattedDataItem {}
+import { TimelineData } from './APIdata.types';
 
 interface FormattedChartData {
-  numberOfCases: number;
+  numberOfPeople: number;
   date: string;
 }
 
-export function formatChartDataFromAPI(dataFromAPI): Array<FormattedChartData> {
+export function formatChartDataFromAPI(dataFromAPI: TimelineData): Array<FormattedChartData> {
   return Object.entries(dataFromAPI).map((entry) => {
     return {
       numberOfPeople: entry[1],

@@ -38,5 +38,17 @@ export interface CovidCasesDataForCountry {
   criticalPerOneMillion: number;
 }
 
+export interface HistoricalDataForCountry {
+  country: string;
+  province: [string];
+  timeline: {
+    cases: TimelineData;
+    deaths: TimelineData;
+    recovered: TimelineData;
+  };
+}
+
+export type TimelineData = Record<string, number>;
+
 export type VaccinesData = VaccinesDataForCountry[];
 export type CovidCasesData = CovidCasesDataForCountry[];
