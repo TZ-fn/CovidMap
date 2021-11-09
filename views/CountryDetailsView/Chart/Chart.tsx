@@ -12,10 +12,11 @@ import {
 import theme, { DataColorsType } from 'theme/theme';
 import { formatChartDataFromAPI } from 'utils/Chart.utils';
 import formatNumberToPolishLocale from 'utils/formatNumberToPolishLocale';
+import { TimelineData } from 'utils/APIdata.types';
 
 interface ChartProps {
   fillColor: DataColorsType;
-  chartData: any;
+  chartData: TimelineData;
 }
 
 export default function Chart({ fillColor, chartData }: ChartProps): ReactElement {

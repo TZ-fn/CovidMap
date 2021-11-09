@@ -3,11 +3,12 @@ import { StyledChartContainer } from './ChartContainer.styles';
 import { DataColorsType } from 'theme/theme';
 
 import Chart from './Chart';
+import { TimelineData } from 'utils/APIdata.types';
 
 interface ChartProps {
   title: string;
   fillColor: DataColorsType;
-  chartData: any;
+  chartData: TimelineData;
 }
 
 export default function ChartContainer({ title, fillColor, chartData }: ChartProps): ReactElement {
