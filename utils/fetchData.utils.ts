@@ -1,10 +1,12 @@
 import { Dispatch, SetStateAction } from 'react';
-import { VaccinesData, CovidCasesData } from './APIdata.types';
+import { VaccinesData, CovidCasesData, HistoricalDataForCountry } from './APIdata.types';
 
 export async function fetchData(
   API: string,
-  setterFunction?: Dispatch<SetStateAction<never[]>>,
-): Promise<void | VaccinesData | CovidCasesData | unknown> {
+  setterFunction?: Dispatch<
+    SetStateAction<VaccinesData | CovidCasesData | HistoricalDataForCountry | never[]>
+  >,
+): Promise<void | VaccinesData | CovidCasesData | HistoricalDataForCountry | unknown> {
   try {
     const response = await fetch(API);
     const data = await response.json();

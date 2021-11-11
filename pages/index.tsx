@@ -4,10 +4,11 @@ import MainMapContainer from 'components/Layout/MainMapContainer/MainMapContaine
 import CountriesRanking from 'components/CountriesRanking/CountriesRanking';
 import CountriesList from 'components/Elements/CountriesList/CountriesList';
 import { fetchData } from 'utils/fetchData.utils';
+import { CovidCasesData, VaccinesData } from 'utils/APIdata.types';
 
 export default function Home(): ReactElement {
-  const [vaccinesData, setVaccinesData] = useState([]);
-  const [covidCasesData, setCovidCasesData] = useState([]);
+  const [vaccinesData, setVaccinesData] = useState<[] | VaccinesData>([]);
+  const [covidCasesData, setCovidCasesData] = useState<[] | CovidCasesData>([]);
 
   useEffect(() => {
     fetchData(
