@@ -9,6 +9,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
+import CustomTooltip from './Tooltip/CustomTooltip';
 import theme, { DataColorsType } from 'theme/theme';
 import { formatChartDataFromAPI } from 'utils/Chart.utils';
 import formatNumberToPolishLocale from 'utils/formatNumberToPolishLocale';
@@ -21,13 +22,6 @@ interface ChartProps {
 
 export default function Chart({ fillColor, chartData }: ChartProps): ReactElement {
   const themeColors = useTheme();
-
-  function tooltipContent({ active, payload, label }) {
-    if (active && payload && payload.length) {
-      return <p className='label'>{`${label} : ${payload[0].value}`}</p>;
-    }
-    return null;
-  }
 
   return (
     <ResponsiveContainer width='100%' height='100%'>
@@ -54,15 +48,7 @@ export default function Chart({ fillColor, chartData }: ChartProps): ReactElemen
           tick={{ fill: `${themeColors.fontColor}` }}
           tickFormatter={(tick) => formatNumberToPolishLocale(tick)}
         />
-        <Tooltip
-          content={tooltipContent}
-          contentStyle={{
-            color: themeColors.fontColor,
-            backgroundColor: themeColors.backgroundLightest,
-            borderRadius: theme.misc.borderRadius,
-            borderColor: themeColors.fontColor,
-          }}
-        />
+        <Tooltip content={<CustomTooltip />} />
         <Area
           type='monotone'
           dataKey='numberOfPeople'
