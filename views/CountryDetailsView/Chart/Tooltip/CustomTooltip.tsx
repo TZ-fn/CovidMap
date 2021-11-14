@@ -2,8 +2,8 @@ import { ReactElement } from 'react';
 import { CustomTooltipContainer } from './CustomTooltip.styles';
 
 interface CustomTooltipProps {
-  active: boolean;
-  payload: [
+  active?: boolean;
+  payload?: [
     {
       chartType: undefined;
       color: string;
@@ -20,7 +20,7 @@ interface CustomTooltipProps {
       value: number;
     },
   ];
-  label: string;
+  label?: string;
 }
 
 export default function CustomTooltip({
