@@ -23,7 +23,7 @@ export default function CountryDetailsView({ countryName }: CountryDetailsViewPr
     <StyledCountryDetailsContainer>
       <h2>{typeof countryName === 'string' && capitalise(countryName)}</h2>
       {chartData.country && chartData.province && chartData.timeline ? (
-        <ChartsContainer chartData={chartData} />
+        <ChartsContainer chartData={chartData} countryName={countryName} />
       ) : (
         'Loading ...'
       )}
