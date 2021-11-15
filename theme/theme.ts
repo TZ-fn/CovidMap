@@ -7,8 +7,8 @@ export const theme: ThemeType = {
     border: 'hsl(198, 50%, 18%)',
     backgroundLightest: 'hsl(198, 50%, 30%)',
     backgroundLighter: 'hsl(198, 50%, 20%)',
-    background: 'hsl(198, 50%, 15%)',
-    backgroundDarker: 'hsl(198, 50%, 12%)',
+    background: 'hsl(198, 50%, 17%)',
+    backgroundDarker: 'hsl(198, 50%, 13%)',
   },
   lightTheme: {
     fontColor: 'hsl(198, 50%, 5%)',
