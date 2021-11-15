@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import formatNumberToPolishLocale from 'utils/formatNumberToPolishLocale';
 import { CustomTooltipContainer } from './CustomTooltip.styles';
 
 interface CustomTooltipProps {
@@ -32,7 +33,7 @@ export default function CustomTooltip({
     return (
       <CustomTooltipContainer>
         <p>Date: {label}</p>
-        <p>Number of people: {payload[0]?.value}</p>
+        <p>Number of people: {formatNumberToPolishLocale(payload[0]?.value)}</p>
       </CustomTooltipContainer>
     );
   }
