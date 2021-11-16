@@ -26,6 +26,7 @@ export interface ThemeType extends DefaultTheme {
   };
   breakpoints: {
     smallest: string;
+    small: string;
     medium: string;
     mainLogoSmaller: string;
   };

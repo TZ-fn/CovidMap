@@ -63,6 +63,7 @@ export const theme: ThemeType = {
   },
   breakpoints: {
     smallest: '41em',
+    small: '75em',
     medium: '95em',
     mainLogoSmaller: '54em',
   },
