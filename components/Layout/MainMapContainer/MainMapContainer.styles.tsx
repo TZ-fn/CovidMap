@@ -8,7 +8,7 @@ export const StyledMainMapContainer = styled.div`
   justify-content: center;
   width: 55%;
   height: 80vh;
-  margin: auto 2em;
+  margin: 1em 1em;
   padding: 1em;
   background: ${({ theme }) => theme.gradientBackground};
   border: 1px solid ${({ theme }) => theme.border};
@@ -17,7 +17,7 @@ export const StyledMainMapContainer = styled.div`
 
   @media (max-width: ${theme.breakpoints.medium}) {
     margin-top: 2em;
-    width: 90%;
+    width: 92%;
     max-width: 65em;
     min-height: 80vh;
   }
