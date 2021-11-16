@@ -4,14 +4,16 @@ import mainTheme from 'theme/theme';
 export const StyledDataList = styled.ul`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
   background: ${({ theme }) => theme.backgroundLighter};
   border: 1px solid ${({ theme }) => theme.border};
   border-radius: ${mainTheme.misc.borderRadius};
   box-shadow: ${mainTheme.misc.shadows.highElevation};
   margin: 0.5em 1em;
+  min-width: 15em;
   width: 33%;
+  min-height: min-content;
   height: 90%;
   margin-bottom: 1.5rem;
   padding: 1em 1em;
@@ -35,5 +37,10 @@ export const StyledDataList = styled.ul`
   li {
     list-style: none;
     margin: 0.2rem 0;
+  }
+
+  @media (max-width: ${mainTheme.breakpoints.medium}) {
+    margin-left: 0;
+    margin-right: 0;
   }
 `;

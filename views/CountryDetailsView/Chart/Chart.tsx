@@ -24,7 +24,7 @@ export default function Chart({ fillColor, chartData }: ChartProps): ReactElemen
   const themeColors = useTheme();
 
   return (
-    <ResponsiveContainer width='100%' height='100%'>
+    <ResponsiveContainer width='100%' height={540}>
       <AreaChart
         width={500}
         height={400}
