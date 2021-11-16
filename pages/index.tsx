@@ -5,6 +5,7 @@ import CountriesRanking from 'components/CountriesRanking/CountriesRanking';
 import CountriesList from 'components/Elements/CountriesList/CountriesList';
 import { fetchData } from 'utils/fetchData.utils';
 import { CovidCasesData, VaccinesData } from 'utils/APIdata.types';
+import LoadingSpinner from 'components/Elements/LoadingSpinner/LoadingSpinner';
 
 export default function Home(): ReactElement {
   const [vaccinesData, setVaccinesData] = useState<[] | VaccinesData>([]);
@@ -31,7 +32,7 @@ export default function Home(): ReactElement {
           </CountriesRanking>
         </>
       ) : (
-        <p>Loading</p>
+        <LoadingSpinner />
       )}
     </StyledMain>
   );

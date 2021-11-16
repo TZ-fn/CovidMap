@@ -4,6 +4,7 @@ import ChartsContainer from './ChartsContainer/ChartsContainer';
 import capitalise from 'utils/capitalise.utils';
 import { fetchData } from 'utils/fetchData.utils';
 import { HistoricalDataForCountry } from 'utils/APIdata.types';
+import LoadingSpinner from 'components/Elements/LoadingSpinner/LoadingSpinner';
 
 interface CountryDetailsViewProps {
   countryName: string | string[] | undefined;
@@ -25,7 +26,7 @@ export default function CountryDetailsView({ countryName }: CountryDetailsViewPr
       {chartData.country && chartData.province && chartData.timeline ? (
         <ChartsContainer chartData={chartData} countryName={countryName} />
       ) : (
-        'Loading ...'
+        <LoadingSpinner />
       )}
     </StyledCountryDetailsContainer>
   );
