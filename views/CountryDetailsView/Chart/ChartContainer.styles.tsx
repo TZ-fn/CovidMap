@@ -9,7 +9,7 @@ export const StyledChartContainer = styled.div`
   background: ${({ theme }) => theme.backgroundLighter};
   border: 1px solid ${({ theme }) => theme.border};
   border-radius: ${mainTheme.misc.borderRadius};
-  box-shadow: ${mainTheme.misc.shadows.highElevation};
+  box-shadow: ${mainTheme.misc.shadows.mediumElevation};
   margin: 0.5em 1em;
   min-width: 22em;
   width: 30%;

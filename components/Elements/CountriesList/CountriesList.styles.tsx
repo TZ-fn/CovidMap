@@ -13,5 +13,5 @@ export const StyledCountriesList = styled.ol`
   background: ${({ theme }) => theme.backgroundLighter};
   border: 1px solid ${({ theme }) => theme.border};
   border-radius: ${theme.misc.borderRadius};
-  box-shadow: ${theme.misc.shadows.highElevation};
+  box-shadow: ${theme.misc.shadows.mediumElevation};
 `;
