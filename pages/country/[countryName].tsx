@@ -5,7 +5,7 @@ import HeadElement from 'components/Layout/HeadElement/HeadElement';
 import CountryDetailsView from 'views/CountryDetailsView/CountryDetailsView';
 import LoadingSpinner from 'components/Elements/LoadingSpinner/LoadingSpinner';
 
-export default function Country(): ReactElement | string {
+export default function Country(): ReactElement {
   const router = useRouter();
   const countryName = router.query.countryName;
 
