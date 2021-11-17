@@ -4,11 +4,12 @@ import { StyledButton } from './Button.styles';
 interface ButtonProps {
   children: ReactNode;
   className?: string;
+  ariaLabel?: string;
 }
 
-export default function Button({ children, className }: ButtonProps): ReactElement {
+export default function Button({ children, className, ariaLabel }: ButtonProps): ReactElement {
   return (
-    <StyledButton className={className} type='button'>
+    <StyledButton className={className} aria-label={ariaLabel} type='button'>
       {children}
     </StyledButton>
   );
