@@ -5,7 +5,8 @@ export const StyledCountryDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  min-height: 80vh;
   width: 96.3%;
   height: min-content;
   margin: 3em 0;
