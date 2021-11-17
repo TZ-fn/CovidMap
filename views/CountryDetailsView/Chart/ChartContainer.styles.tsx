@@ -16,7 +16,7 @@ export const StyledChartContainer = styled.div`
   max-width: 95%;
   height: 90%;
   margin-bottom: 1.5rem;
-  padding: 0 0.3rem;
+  padding: 0 0.7rem;
 
   h3 {
     border-bottom: 2px solid ${mainTheme.dataColors.Coral};

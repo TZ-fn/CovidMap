@@ -31,7 +31,7 @@ export default function Chart({ fillColor, chartData }: ChartProps): ReactElemen
         data={formatChartDataFromAPI(chartData)}
         margin={{
           top: 10,
-          right: 30,
+          right: 20,
           left: 30,
           bottom: 10,
         }}
