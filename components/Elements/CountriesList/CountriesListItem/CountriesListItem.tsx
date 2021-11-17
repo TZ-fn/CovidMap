@@ -17,12 +17,12 @@ export default function CountriesListItem({
 }: CountriesListItemProps): ReactElement {
   return (
     <Link href={'/country/' + countryName.toLocaleLowerCase()}>
-      <a>
         <StyledCountriesListItem>
-          <FlagIcon src={countryFlag} /> {countryName}{' '}
-          {formatNumberToPolishLocale(numberOfCasesOrVaccineDoses)}
+          <a>
+            <FlagIcon src={countryFlag} countryName={countryName} /> {countryName}{' '}
+            {formatNumberToPolishLocale(numberOfCasesOrVaccineDoses)}
+          </a>
         </StyledCountriesListItem>
-      </a>
     </Link>
   );
 }
