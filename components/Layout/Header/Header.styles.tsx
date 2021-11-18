@@ -22,11 +22,3 @@ export const StyledHeader = styled.header`
     flex-direction: column;
   }
 `;
-
-export const StyledControlPanel = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 1em;
-`;
