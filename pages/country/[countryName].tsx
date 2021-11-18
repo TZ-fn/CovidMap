@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { useRouter } from 'next/router';
-import { StyledCountryViewContainer } from './Country.style';
+import { StyledCountryViewContainer } from './Country.styles';
 import HeadElement from 'components/Layout/HeadElement/HeadElement';
 import CountryDetailsView from 'views/CountryDetailsView/CountryDetailsView';
 import LoadingSpinner from 'components/Elements/LoadingSpinner/LoadingSpinner';
