@@ -1,7 +1,6 @@
 import { MapContainer, TileLayer } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
 import { Feature } from 'geojson';
-import Link from 'next/link';
 import allCountries from 'public/geojsonData/allCountries.geo.json';
 import theme from 'theme/theme';
 import { CovidCasesDataForCountry } from 'utils/APIdata.types';
@@ -28,10 +27,6 @@ const Map = ({ covidCasesData }: MapProps): JSX.Element => {
       color: `${theme.darkTheme.background}`,
       fillOpacity: 1,
     };
-  }
-
-  {
-    /* <Link href={e.target}></Link> */
   }
 
   const GeoJsonEventHandlers = {
