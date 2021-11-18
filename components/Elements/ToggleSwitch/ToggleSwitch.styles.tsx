@@ -11,7 +11,6 @@ export const StyledToggleSwitchContainer = styled.div`
   -ms-user-select: none;
   user-select: none;
   text-align: left;
-  margin-left: 1em;
   border: 1px solid ${theme.dataColors.Coral};
   border-radius: 20px;
   box-shadow: ${theme.misc.shadows.lowElevation};
