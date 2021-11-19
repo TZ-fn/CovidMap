@@ -8,5 +8,5 @@ interface InputProps {
 }
 
 export default function Input({ id, type, placeholder }: InputProps): ReactElement {
-  return <StyledInput type={type} placeholder={placeholder} id={id} />;
+  return <StyledInput id={id} type={type} placeholder={placeholder} />;
 }

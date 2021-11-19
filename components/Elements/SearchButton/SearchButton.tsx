@@ -3,7 +3,7 @@ import { StyledSearchButton } from './SearchButton.styles';
 
 export default function SearchButton(): ReactElement {
   return (
-    <StyledSearchButton type='submit' ariaLabel='Search button'>
+    <StyledSearchButton type='button' ariaLabel='Search button'>
       <svg
         fill='#FFFEF0'
         xmlns='http://www.w3.org/2000/svg'
