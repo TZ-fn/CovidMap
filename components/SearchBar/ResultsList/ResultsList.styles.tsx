@@ -10,6 +10,7 @@ export const StyledResultsList = styled.ul`
   padding: 0.2rem 0.5rem;
   background: ${({ theme }) => theme.backgroundDarker};
   border: 1px solid ${({ theme }) => theme.border};
+  border-radius: ${mainTheme.misc.borderRadius};
   box-shadow: ${mainTheme.misc.shadows.lowElevation};
   list-style: none;
 
@@ -28,6 +29,7 @@ export const StyledResultsList = styled.ul`
 
     &:hover {
       border: 1px solid ${mainTheme.dataColors.Coral};
+      border-radius: ${mainTheme.misc.borderRadius};
     }
   }
 
