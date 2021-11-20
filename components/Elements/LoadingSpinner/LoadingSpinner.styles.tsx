@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import styled from 'styled-components';
+import mainTheme from 'theme/theme';
 
 const StyledLoader = styled.div`
   display: inline-block;
@@ -87,6 +88,14 @@ const StyledLoader = styled.div`
     100% {
       transform: rotate(360deg);
     }
+  }
+
+  @media (max-width: ${mainTheme.breakpoints.mainLogoSmaller}) {
+    left: 45vw;
+  }
+
+  @media (max-width: ${mainTheme.breakpoints.smallest}) {
+    left: 40vw;
   }
 `;
 
