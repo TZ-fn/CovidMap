@@ -21,10 +21,10 @@ export const StyledResultsList = styled.ul`
   li {
     border: 1px solid transparent;
     font-size: 1.3rem;
+    padding: 0.4rem 0.3rem;
 
     a {
       display: block;
-      padding: 0.4rem 0.3rem;
     }
 
     &:hover {
