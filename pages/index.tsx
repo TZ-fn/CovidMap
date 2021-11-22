@@ -1,24 +1,17 @@
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement } from 'react';
 import StyledMain from './index.styles';
 import MainMapContainer from 'components/Layout/MainMapContainer/MainMapContainer';
 import CountriesRanking from 'components/CountriesRanking/CountriesRanking';
 import CountriesList from 'components/Elements/CountriesList/CountriesList';
-import { fetchData } from 'utils/fetchData.utils';
-import { CovidCasesData, VaccinesData } from 'utils/APIdata.types';
 import LoadingSpinner from 'components/Elements/LoadingSpinner/LoadingSpinner';
+import { CovidCasesData, VaccinesData } from 'utils/APIdata.types';
 
-export default function Home(): ReactElement {
-  const [vaccinesData, setVaccinesData] = useState<[] | VaccinesData>([]);
-  const [covidCasesData, setCovidCasesData] = useState<[] | CovidCasesData>([]);
+interface HomeProps {
+  vaccinesData: VaccinesData;
+  covidCasesData: CovidCasesData;
+}
 
-  useEffect(() => {
-    fetchData(
-      'https://disease.sh/v3/covid-19/vaccine/coverage/countries?lastdays=1&fullData=false',
-      setVaccinesData,
-    );
-    fetchData('https://disease.sh/v3/covid-19/countries', setCovidCasesData);
-  }, []);
-
+export default function Home({ vaccinesData, covidCasesData }: HomeProps): ReactElement {
   return (
     <StyledMain>
       {vaccinesData?.length > 0 && covidCasesData?.length > 0 ? (

@@ -7,7 +7,11 @@ import SearchBar from 'components/SearchBar/SearchBar';
 import ThemeSwitch from 'components/Elements/ThemeSwitch/ThemeSwitch';
 import { ThemeTogglerContext } from 'pages/_app';
 
-export default function Header(): ReactElement {
+interface HeaderProps {
+  countriesNames: string[];
+}
+
+export default function Header({ countriesNames }: HeaderProps): ReactElement {
   const themeToggler: ChangeEventHandler<HTMLInputElement> | undefined =
     useContext(ThemeTogglerContext);
   return (
@@ -18,7 +22,7 @@ export default function Header(): ReactElement {
         </a>
       </Link>
       <MainLogo />
-      <SearchBar />
+      <SearchBar countriesNames={countriesNames} />
       <ThemeSwitch onChange={themeToggler} />
     </StyledHeader>
   );
