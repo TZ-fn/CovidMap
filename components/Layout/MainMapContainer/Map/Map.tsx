@@ -29,10 +29,6 @@ const Map = ({ covidCasesData }: MapProps): JSX.Element => {
     };
   }
 
-  const GeoJsonEventHandlers = {
-    click: (e: LeafletMouseEvent) => console.log(e.target),
-  };
-
   return (
     <MapContainer
       center={[45, 0]}
