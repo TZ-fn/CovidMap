@@ -43,12 +43,7 @@ const Map = ({ covidCasesData }: MapProps): JSX.Element => {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
-      <GeoJSONwithMap
-        data={allCountries}
-        style={styleMap}
-        covidCasesData={covidCasesData}
-        eventHandlers={GeoJsonEventHandlers}
-      />
+      <GeoJSONwithMap data={allCountries} style={styleMap} covidCasesData={covidCasesData} />
       <MapLegend />
     </MapContainer>
   );

@@ -14,7 +14,6 @@ export default function GeoJSONwithMap({
   data,
   style,
   covidCasesData,
-  eventHandlers,
 }: GeoJSONwithMapProps): JSX.Element {
   const highlightFeature = (e: LeafletMouseEvent) => {
     const layer = e.target;
@@ -63,12 +62,5 @@ export default function GeoJSONwithMap({
     });
   }
 
-  return (
-    <GeoJSON
-      eventHandlers={eventHandlers}
-      data={data}
-      style={style}
-      onEachFeature={onEachFeature}
-    />
-  );
+  return <GeoJSON data={data} style={style} onEachFeature={onEachFeature} />;
 }
