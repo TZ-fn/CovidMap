@@ -1,9 +1,9 @@
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement } from 'react';
 import { StyledChartsContainer } from './ChartsContainer.styles';
 import ChartContainer from '../Chart/ChartContainer';
 import DataList from '../DataList/DataList';
 import { HistoricalDataForCountry } from 'utils/APIdata.types';
-import { fetchData } from 'utils/fetchData.utils';
+import { useFetch } from 'hooks/useFetch';
 
 interface ChartsContainerProps {
   chartData: HistoricalDataForCountry;
@@ -14,14 +14,9 @@ export default function ChartsContainer({
   chartData,
   countryName,
 }: ChartsContainerProps): ReactElement {
-  const [countryData, setCountryData] = useState({});
-
-  useEffect(() => {
-    fetchData(
-      `https://disease.sh/v3/covid-19/countries/${countryName}?strict=true`,
-      setCountryData,
-    );
-  }, [countryName]);
+  const [countryData] = useFetch(
+    `https://disease.sh/v3/covid-19/countries/${countryName}?strict=true`,
+  );
 
   return (
     <StyledChartsContainer>
