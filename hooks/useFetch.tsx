@@ -14,6 +14,9 @@ export const useFetch = (APIurl: string): [APIdata, unknown, string] => {
         setLoadingStatus('fetching');
         const response = await fetch(APIurl);
         const data = await response.json();
+        if (response.status === 404) {
+          throw new Error(data?.message);
+        }
         setData(data);
         setLoadingStatus('fetched');
       } catch (error) {
