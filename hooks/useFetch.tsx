@@ -3,9 +3,9 @@ import { VaccinesData, CovidCasesData, HistoricalDataForCountry } from 'utils/AP
 
 type APIdata = VaccinesData | CovidCasesData | HistoricalDataForCountry;
 
-export const useFetch = (APIurl: string): [APIdata, unknown, string] => {
+export const useFetch = (APIurl: string): [APIdata, Error | null, string] => {
   const [data, setData] = useState<APIdata>([]);
-  const [error, setError] = useState<unknown | null>(null);
+  const [error, setError] = useState<Error | null>(null);
   const [loadingStatus, setLoadingStatus] = useState<string>('idle');
 
   useEffect(() => {
@@ -20,7 +20,9 @@ export const useFetch = (APIurl: string): [APIdata, unknown, string] => {
         setData(data);
         setLoadingStatus('fetched');
       } catch (error) {
-        setError(error);
+        if (error instanceof Error) {
+          setError(error);
+        }
         setLoadingStatus('error');
       }
     };
