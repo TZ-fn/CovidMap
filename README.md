@@ -18,7 +18,7 @@ On the details page, users can check the number of cases and deaths day by day f
 
 ## Live version
 
-Live version can be found [here]('').
+Live version can be found [here]('https://covid-map-chi.vercel.app/').
 
 ## Technologies I used
 
