@@ -28,6 +28,7 @@ export default function CountriesList({
                   key={country.country}
                   countryFlag={getFlag(country.country)}
                   countryName={country.country}
+                  //  @ts-ignore
                   numberOfCasesOrVaccineDoses={Object.values(country.timeline)[0]}
                 />
               );
@@ -35,8 +36,10 @@ export default function CountriesList({
               return (
                 <CountriesListItem
                   key={country.country}
+                  //  @ts-ignore
                   countryFlag={country.countryInfo.flag}
                   countryName={country.country}
+                  //  @ts-ignore
                   numberOfCasesOrVaccineDoses={country.cases}
                 />
               );

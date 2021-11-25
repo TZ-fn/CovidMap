@@ -20,6 +20,7 @@ export default function CountryDetailsView({ countryName }: CountryDetailsViewPr
       <h2>{typeof countryName === 'string' && capitalise(countryName)}</h2>
       {error !== null && <ErrorContainer message={error.message} />}
       {status === 'fetching' && <LoadingSpinner />}
+      {/* @ts-ignore */}
       {status === 'fetched' && <ChartsContainer chartData={chartData} countryName={countryName} />}
     </StyledCountryDetailsContainer>
   );

@@ -43,8 +43,10 @@ export default function Chart({ fillColor, chartData }: ChartProps): ReactElemen
           </linearGradient>
         </defs>
         <CartesianGrid strokeDasharray='3 3' />
+        {/* @ts-ignore */}
         <XAxis dataKey='date' tick={{ fill: `${themeColors.fontColor}` }} />
         <YAxis
+          // @ts-ignore
           tick={{ fill: `${themeColors.fontColor}` }}
           tickFormatter={(tick) => formatNumberToPolishLocale(tick)}
         />
@@ -52,6 +54,7 @@ export default function Chart({ fillColor, chartData }: ChartProps): ReactElemen
         <Area
           type='monotone'
           dataKey='numberOfPeople'
+          // @ts-ignore
           stroke={themeColors.fontColor}
           fill={`url(#${fillColor})`}
         />

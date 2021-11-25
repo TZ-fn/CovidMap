@@ -1,5 +1,4 @@
 import { MapContainer, TileLayer } from 'react-leaflet';
-import { LeafletMouseEvent } from 'leaflet';
 import { Feature } from 'geojson';
 import allCountries from 'public/geojsonData/allCountries.geo.json';
 import theme from 'theme/theme';
@@ -43,6 +42,7 @@ const Map = ({ covidCasesData }: MapProps): JSX.Element => {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
+      {/* @ts-ignore */}
       <GeoJSONwithMap data={allCountries} style={styleMap} covidCasesData={covidCasesData} />
       <MapLegend />
     </MapContainer>

@@ -13,12 +13,13 @@ export default function Layout({ children }: LayoutProps): ReactElement {
     'https://disease.sh/v3/covid-19/vaccine/coverage/countries?lastdays=1&fullData=false',
   );
   const [covidCasesData] = useFetch('https://disease.sh/v3/covid-19/countries');
-
+  //  @ts-ignore
   const countriesNames = covidCasesData.map((country) => {
     return country.country;
   });
 
   const childrenWithProps = Children.map(children, (child) => {
+    //  @ts-ignore
     return cloneElement(child, {
       vaccinesData: vaccinesData,
       covidCasesData: covidCasesData,
