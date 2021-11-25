@@ -13,6 +13,7 @@ export default function HeadElement({ title }: HeadElementProps): JSX.Element {
       <title>
         {typeof title === 'string' ? `${capitalise(title)} - Covid-19 Map` : 'Covid-19 Map'}
       </title>
+      <link rel='canonical' href='https://covid-map-chi.vercel.app/' />
       <meta
         name='description'
         content='Web application that displays Covid-19 data for different countries'
