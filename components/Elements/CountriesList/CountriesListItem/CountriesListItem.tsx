@@ -16,13 +16,13 @@ export default function CountriesListItem({
   numberOfCasesOrVaccineDoses,
 }: CountriesListItemProps): ReactElement {
   return (
-    <Link href={'/country/' + countryName.toLocaleLowerCase()}>
-        <StyledCountriesListItem>
-          <a>
-            <FlagIcon src={countryFlag} countryName={countryName} /> {countryName}{' '}
-            {formatNumberToPolishLocale(numberOfCasesOrVaccineDoses)}
-          </a>
-        </StyledCountriesListItem>
+    <Link href={'/country/' + countryName.toLocaleLowerCase()} passHref>
+      <StyledCountriesListItem>
+        <a>
+          <FlagIcon src={countryFlag} countryName={countryName} /> {countryName}{' '}
+          {formatNumberToPolishLocale(numberOfCasesOrVaccineDoses)}
+        </a>
+      </StyledCountriesListItem>
     </Link>
   );
 }
