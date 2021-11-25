@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import mainTheme from 'theme/theme';
 
-export const StyledDataList = styled.ul`
+export const StyledDataList = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,20 +22,20 @@ export const StyledDataList = styled.ul`
   h3,
   h4 {
     margin: 0.75rem 0;
-    border-bottom: 1px solid ${mainTheme.dataColors.Coral};
   }
 
   h3 {
     margin: 0 0 1rem 0;
     font-size: 2.2rem;
+    border-bottom: 2px solid ${mainTheme.dataColors.Coral};
   }
 
   h4 {
     font-size: 1.5rem;
+    border-bottom: 1px solid ${mainTheme.dataColors.Coral};
   }
 
-  li {
-    list-style: none;
+  p {
     margin: 0.2rem 0;
   }
 

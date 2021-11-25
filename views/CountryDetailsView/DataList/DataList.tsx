@@ -11,17 +11,17 @@ export default function DataList({ countryData }: DataListProps): ReactElement {
   return (
     <StyledDataList>
       <h3>Statistics</h3>
-      <li> Recovered: {formattedCountryData.recovered}</li>
+      <p> Recovered: {formattedCountryData.recovered}</p>
       <h4>Statistics for today:</h4>
-      <li> New cases today: {formattedCountryData.todayCases}</li>
-      <li> Deaths today: {formattedCountryData.todayDeaths}</li>
-      <li> Active cases for today: {formattedCountryData.active}</li>
-      <li> Recovered today: {formattedCountryData.todayRecovered}</li>
+      <p> New cases today: {formattedCountryData.todayCases}</p>
+      <p> Deaths today: {formattedCountryData.todayDeaths}</p>
+      <p> Active cases for today: {formattedCountryData.active}</p>
+      <p> Recovered today: {formattedCountryData.todayRecovered}</p>
       <h4>Statistics per one million:</h4>
-      <li>Cases per one million: {formattedCountryData.casesPerOneMillion}</li>
-      <li>Deaths per one million: {formattedCountryData.deathsPerOneMillion}</li>
-      <li>Active per one million: {formattedCountryData.activePerOneMillion}</li>
-      <li>Recovered per one million: {formattedCountryData.recoveredPerOneMillion}</li>
+      <p>Cases per one million: {formattedCountryData.casesPerOneMillion}</p>
+      <p>Deaths per one million: {formattedCountryData.deathsPerOneMillion}</p>
+      <p>Active per one million: {formattedCountryData.activePerOneMillion}</p>
+      <p>Recovered per one million: {formattedCountryData.recoveredPerOneMillion}</p>
     </StyledDataList>
   );
 }
