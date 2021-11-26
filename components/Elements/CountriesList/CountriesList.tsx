@@ -22,24 +22,21 @@ export default function CountriesList({
       {
         <StyledCountriesList>
           {sortCountries(covidCasesData, 12, vaccinesData).map((country) => {
-            if (vaccinesData) {
+            if (vaccinesData && 'timeline' in country) {
               return (
                 <CountriesListItem
                   key={country.country}
                   countryFlag={getFlag(country.country)}
                   countryName={country.country}
-                  //  @ts-ignore
                   numberOfCasesOrVaccineDoses={Object.values(country.timeline)[0]}
                 />
               );
-            } else {
+            } else if (('cases' in country && 'countryInfo' in country)) {
               return (
                 <CountriesListItem
                   key={country.country}
-                  //  @ts-ignore
                   countryFlag={country.countryInfo.flag}
                   countryName={country.country}
-                  //  @ts-ignore
                   numberOfCasesOrVaccineDoses={country.cases}
                 />
               );
