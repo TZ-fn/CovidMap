@@ -46,7 +46,7 @@ export default function Chart({ fillColor, chartData }: ChartProps): ReactElemen
         {/* @ts-ignore */}
         <XAxis dataKey='date' tick={{ fill: `${themeColors.fontColor}` }} />
         <YAxis
-          // @ts-ignore
+        // @ts-ignore
           tick={{ fill: `${themeColors.fontColor}` }}
           tickFormatter={(tick) => formatNumberToPolishLocale(tick)}
         />
