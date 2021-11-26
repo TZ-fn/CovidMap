@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import { StyledCountryDetailsContainer } from './CountryDetailsView.styles';
 import { useFetch } from 'hooks/useFetch';
 import ErrorContainer from 'components/Elements/ErrorContainer/ErrorContainer';
+import { HistoricalDataForCountry } from 'utils/APIdata.types';
 import capitalise from 'utils/capitalise.utils';
 import ChartsContainer from './ChartsContainer/ChartsContainer';
 import LoadingSpinner from 'components/Elements/LoadingSpinner/LoadingSpinner';
@@ -20,8 +21,7 @@ export default function CountryDetailsView({ countryName }: CountryDetailsViewPr
       <h2>{typeof countryName === 'string' && capitalise(countryName)}</h2>
       {error !== null && <ErrorContainer message={error.message} />}
       {status === 'fetching' && <LoadingSpinner />}
-      {/* @ts-ignore */}
-      {status === 'fetched' && <ChartsContainer chartData={chartData} countryName={countryName} />}
+      {status === 'fetched' && <ChartsContainer chartData={chartData as HistoricalDataForCountry} countryName={countryName} />}
     </StyledCountryDetailsContainer>
   );
 }

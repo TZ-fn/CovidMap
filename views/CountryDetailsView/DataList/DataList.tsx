@@ -1,10 +1,10 @@
 import { ReactElement } from 'react';
-import { HistoricalDataForCountry } from 'utils/APIdata.types';
+import { CovidCasesDataForCountry } from 'utils/APIdata.types';
 import formatObjectNumbersToPolishLocale from 'utils/formatObjectNumbersToPolishLocale.utils';
 import { StyledDataList } from './DataList.styles';
 
 interface DataListProps {
-  countryData: HistoricalDataForCountry;
+  countryData: CovidCasesDataForCountry;
 }
 
 export default function DataList({ countryData }: DataListProps): ReactElement {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { VaccinesData, CovidCasesData, HistoricalDataForCountry } from 'utils/APIdata.types';
+import { VaccinesData, CovidCasesData, HistoricalDataForCountry, CovidCasesDataForCountry } from 'utils/APIdata.types';
 
-type APIdata = VaccinesData | CovidCasesData | HistoricalDataForCountry;
+type APIdata = VaccinesData | CovidCasesData | HistoricalDataForCountry | CovidCasesDataForCountry;
 
 export const useFetch = (APIurl: string): [APIdata, Error | null, string] => {
   const [data, setData] = useState<APIdata>([]);
