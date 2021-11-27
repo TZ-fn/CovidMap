@@ -1,4 +1,4 @@
-import { Children, cloneElement, ReactElement, ReactNode } from 'react';
+import { Children, cloneElement, isValidElement, ReactElement, ReactNode } from 'react';
 import { StyledWrapper } from './Layout.styles';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
@@ -13,17 +13,16 @@ export default function Layout({ children }: LayoutProps): ReactElement {
     'https://disease.sh/v3/covid-19/vaccine/coverage/countries?lastdays=1&fullData=false',
   );
   const [covidCasesData] = useFetch('https://disease.sh/v3/covid-19/countries');
-  //  @ts-ignore
-  const countriesNames = covidCasesData.map((country) => {
-    return country.country;
-  });
+  const countriesNames =
+    'map' in covidCasesData ? covidCasesData.map((country) => country.country) : [''];
 
   const childrenWithProps = Children.map(children, (child) => {
-    //  @ts-ignore
-    return cloneElement(child, {
-      vaccinesData: vaccinesData,
-      covidCasesData: covidCasesData,
-    });
+    if (isValidElement(child)) {
+      return cloneElement(child, {
+        vaccinesData: vaccinesData,
+        covidCasesData: covidCasesData,
+      });
+    }
   });
 
   return (
