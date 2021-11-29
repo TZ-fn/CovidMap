@@ -1,5 +1,6 @@
 import { MapContainer, TileLayer } from 'react-leaflet';
-import { Feature } from 'geojson';
+import { StyleFunction } from 'leaflet';
+import { Feature, FeatureCollection } from 'geojson';
 import allCountries from 'public/geojsonData/allCountries.geo.json';
 import theme from 'theme/theme';
 import { CovidCasesDataForCountry } from 'utils/APIdata.types';
@@ -14,7 +15,7 @@ interface MapProps {
 const Map = ({ covidCasesData }: MapProps): JSX.Element => {
   function styleMap(feature: Feature) {
     if (!feature.properties) {
-      return;
+      return {};
     }
     return {
       fillColor: mapNumberOfCasesToColor(
@@ -42,8 +43,11 @@ const Map = ({ covidCasesData }: MapProps): JSX.Element => {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
-      {/* @ts-ignore */}
-      <GeoJSONwithMap data={allCountries} style={styleMap} covidCasesData={covidCasesData} />
+      <GeoJSONwithMap
+        data={allCountries as FeatureCollection}
+        style={styleMap as StyleFunction}
+        covidCasesData={covidCasesData}
+      />
       <MapLegend />
     </MapContainer>
   );
