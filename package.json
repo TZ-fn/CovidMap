@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@testing-library/react": "^12.1.2",
     "@types/geojson": "^7946.0.8",
     "@types/react-leaflet": "^2.8.2",
     "babel-eslint": "^10.1.0",
@@ -23,9 +24,12 @@
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.14.5",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@types/jest": "^27.0.3",
     "@types/leaflet": "^1.7.5",
     "@types/react": "^17.0.14",
     "@types/styled-components": "^5.1.11",
+    "@types/testing-library__jest-dom": "^5.14.1",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
     "babel-plugin-styled-components": "^1.13.2",

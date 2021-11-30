@@ -65,6 +65,7 @@ export const theme: ThemeType = {
     mainLogoSmaller: '54em',
   },
 };
+
 export type DataColorsType = keyof typeof theme.dataColors;
 
 export default theme;
