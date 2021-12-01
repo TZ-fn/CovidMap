@@ -7,6 +7,7 @@ const createJestConfig = nextJest({
 
 const customJestConfig: Config.InitialOptions = {
   verbose: true,
+  moduleDirectories: ['node_modules', '.'],
 };
 
 module.exports = createJestConfig(customJestConfig);
