@@ -30,6 +30,7 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
         id='country-search'
         placeholder='Search for a country'
         onChange={(e) => handleSearch(e.target.value)}
+        autocomplete='off'
       />
       {searchValue.length > 0 ? (
         <ResultsList

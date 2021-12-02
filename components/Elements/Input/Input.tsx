@@ -6,6 +6,7 @@ interface InputProps {
   type: string;
   placeholder: string;
   value?: string;
+  autocomplete?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
@@ -14,9 +15,17 @@ export default function Input({
   type,
   placeholder,
   value,
+  autocomplete,
   onChange,
 }: InputProps): ReactElement {
   return (
-    <StyledInput id={id} type={type} placeholder={placeholder} value={value} onChange={onChange} />
+    <StyledInput
+      id={id}
+      type={type}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+      autoComplete={autocomplete}
+    />
   );
 }
