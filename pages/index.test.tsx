@@ -14,5 +14,5 @@ it('renders the main component', () => {
 
 it('renders the loader when there is no data', () => {
   render(<Home />);
-  expect(screen.findByTestId(/loading/)).toBeInTheDocument();
+  expect(screen.getByTestId('loading')).toBeInTheDocument();
 });
