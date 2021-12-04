@@ -26,7 +26,7 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
       </label>
       <Input
         value={searchValue}
-        type='text'
+        type='search'
         id='country-search'
         placeholder='Search for a country'
         onChange={(e) => handleSearch(e.target.value)}
