@@ -10,6 +10,7 @@ const customJestConfig: Config.InitialOptions = {
   moduleDirectories: ['node_modules', '.'],
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
+  testPathIgnorePatterns: ['/node_modules/', '/.history/'],
 };
 
 module.exports = createJestConfig(customJestConfig);

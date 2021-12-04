@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Home from './index';
+import Home from '../pages/index';
 
 it('does not render the rankings where there is not data', () => {
   render(<Home />);
