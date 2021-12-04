@@ -4,7 +4,7 @@ import mainTheme from 'theme/theme';
 export const StyledErrorContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
   background: ${({ theme }) => theme.backgroundLighter};
   border: 1px solid ${({ theme }) => theme.border};
@@ -13,8 +13,8 @@ export const StyledErrorContainer = styled.div`
   min-height: 2em;
   padding: 1.5em 2em;
   margin: 3em 1em 1em 1em;
+`;
 
-  div {
-    margin-right: 1.5em;
-  }
+export const StyledErrorImageContainer = styled.div`
+  margin-right: 1em;
 `;
