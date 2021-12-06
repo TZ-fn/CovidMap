@@ -5,7 +5,7 @@ import HeadElement from 'components/Layout/HeadElement/HeadElement';
 import CountryDetailsView from 'views/CountryDetailsView/CountryDetailsView';
 import LoadingSpinner from 'components/Elements/LoadingSpinner/LoadingSpinner';
 
-const StyledCountryViewContainer = styled.div`
+export const StyledCountryViewContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

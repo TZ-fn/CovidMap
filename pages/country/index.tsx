@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
+import { StyledCountryViewContainer } from './[countryName]';
 
 export default function Country(): ReactElement {
-  return <div>Please select your country.</div>;
+  return <StyledCountryViewContainer>Please select your country.</StyledCountryViewContainer>;
 }
