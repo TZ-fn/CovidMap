@@ -4,21 +4,21 @@ import Layout from '../components/Layout/Layout';
 
 window.fetch = jest.fn();
 
-describe('fetches the data correctly', () => {
-  it('renders the header correctly', () => {
+describe('fetches the data', () => {
+  it('fetches from the api 2 times', () => {
     jest.spyOn(window, 'fetch');
     render(<Layout>test</Layout>);
     expect(window.fetch).toBeCalledTimes(2);
   });
 });
 
-describe('renders correctly', () => {
-  it('renders the header correctly', () => {
+describe('renders header and footer', () => {
+  it('renders the header', () => {
     render(<Layout>test</Layout>);
     expect(screen.getByRole(/banner/)).toBeInTheDocument();
   });
 
-  it('renders the footer correctly', () => {
+  it('renders the footer', () => {
     render(<Layout>test</Layout>);
     expect(screen.getByRole(/contentinfo/)).toBeInTheDocument();
   });
