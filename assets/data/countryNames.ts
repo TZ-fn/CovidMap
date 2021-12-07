@@ -1,3 +1,4 @@
+// This object maps countries' names to standardise names from different APIs
 const countryNamesFromCovidData = {
   'Dominican Republic': 'Dominican Rep.',
   'United States': 'USA',
