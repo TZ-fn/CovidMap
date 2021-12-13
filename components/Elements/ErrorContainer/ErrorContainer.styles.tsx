@@ -6,13 +6,13 @@ export const StyledErrorContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  min-height: 2em;
+  padding: 1.5em 2em;
+  margin: 3em 1em 1em 1em;
   background: ${({ theme }) => theme.backgroundLighter};
   border: 1px solid ${({ theme }) => theme.border};
   border-radius: ${mainTheme.misc.borderRadius};
   box-shadow: ${mainTheme.misc.shadows.mediumElevation};
-  min-height: 2em;
-  padding: 1.5em 2em;
-  margin: 3em 1em 1em 1em;
 `;
 
 export const StyledErrorImageContainer = styled.div`
