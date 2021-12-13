@@ -1,9 +1,13 @@
-import { ReactElement } from 'react';
+import { ReactElement, MouseEventHandler } from 'react';
 import { StyledSearchButton } from './SearchButton.styles';
 
-export default function SearchButton(): ReactElement {
+interface SearchButtonProps {
+  onClick: MouseEventHandler<HTMLButtonElement>
+}
+
+export default function SearchButton({onClick}: SearchButtonProps): ReactElement {
   return (
-    <StyledSearchButton type='button' ariaLabel='Search button'>
+    <StyledSearchButton type='button' ariaLabel='Search button' onClick={onClick}>
       <svg
         fill='#FFFEF0'
         xmlns='http://www.w3.org/2000/svg'
