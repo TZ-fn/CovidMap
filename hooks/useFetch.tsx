@@ -11,6 +11,7 @@ export const useFetch = (APIurl: string): [APIdata, Error | null, string] => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setError(null);
         setLoadingStatus('fetching');
         const response = await fetch(APIurl);
         const data = await response.json();
