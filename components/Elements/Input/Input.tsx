@@ -8,6 +8,7 @@ interface InputProps {
   value?: string;
   autocomplete?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  name?: string;
 }
 
 export default function Input({
@@ -17,6 +18,7 @@ export default function Input({
   value,
   autocomplete,
   onChange,
+  name,
 }: InputProps): ReactElement {
   return (
     <StyledInput
@@ -26,6 +28,7 @@ export default function Input({
       value={value}
       onChange={onChange}
       autoComplete={autocomplete}
+      name={name}
     />
   );
 }

@@ -3,6 +3,7 @@ import { StyledSearchBarContainer } from './SearchBar.styles';
 import Input from 'components/Elements/Input/Input';
 import ResultsList from './ResultsList/ResultsList';
 import SearchButton from 'components/Elements/SearchButton/SearchButton';
+import Link from 'next/link';
 
 interface SearchBarProps {
   countriesNames: string[];
@@ -21,7 +22,29 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
 
   return (
     <StyledSearchBarContainer>
-      <label htmlFor='country-search'>
+      <form action='/' method='get'>
+        <label htmlFor='country-search'>
+          <span>Search for a country</span>
+        </label>
+        <Input
+          value={searchValue}
+          type='search'
+          id='country-search'
+          placeholder='Search for a country'
+          onChange={(e) => handleSearch(e.target.value)}
+          name='country'
+          autocomplete='off'
+        />
+        <SearchButton />
+      </form>
+      {searchValue.length > 0 ? (
+        <ResultsList
+          searchValue={searchValue}
+          resetTheSearch={resetTheSearch}
+          countriesNames={countriesNames}
+        />
+      ) : null}
+      {/* <label htmlFor='country-search'>
         <span>Search for a country</span>
       </label>
       <Input
@@ -32,14 +55,12 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
         onChange={(e) => handleSearch(e.target.value)}
         autocomplete='off'
       />
-      {searchValue.length > 0 ? (
-        <ResultsList
-          searchValue={searchValue}
-          resetTheSearch={resetTheSearch}
-          countriesNames={countriesNames}
-        />
-      ) : null}
-      <SearchButton />
+
+      <Link href={`/country/${searchValue}`} passHref>
+        <a>
+          <SearchButton onClick={() => resetTheSearch()} />
+        </a>
+      </Link> */}
     </StyledSearchBarContainer>
   );
 }

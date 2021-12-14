@@ -8,6 +8,11 @@ export const StyledSearchBarContainer = styled.div`
   justify-content: space-between;
   margin-right: 1em;
 
+  form {
+    display: flex;
+    align-items: center;
+  }
+
   span {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
