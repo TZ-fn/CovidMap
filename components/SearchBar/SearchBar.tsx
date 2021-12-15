@@ -3,7 +3,6 @@ import { StyledSearchBarContainer } from './SearchBar.styles';
 import Input from 'components/Elements/Input/Input';
 import ResultsList from './ResultsList/ResultsList';
 import SearchButton from 'components/Elements/SearchButton/SearchButton';
-import Link from 'next/link';
 
 interface SearchBarProps {
   countriesNames: string[];
@@ -11,6 +10,7 @@ interface SearchBarProps {
 
 export default function SearchBar({ countriesNames }: SearchBarProps): ReactElement {
   const [searchValue, setSearchValue] = useState('');
+  const [activeSuggestion, setActiveSuggestion] = useState('');
 
   const handleSearch = (inputValue: string) => {
     setSearchValue(inputValue);
@@ -27,11 +27,12 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
           <span>Search for a country</span>
         </label>
         <Input
-          value={searchValue}
+          value={activeSuggestion ? activeSuggestion : searchValue}
           type='search'
           id='country-search'
           placeholder='Search for a country'
           onChange={(e) => handleSearch(e.target.value)}
+          onKeyDown={(e) => console.log(e.key)}
           name='country'
           autocomplete='off'
         />
@@ -42,25 +43,9 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
           searchValue={searchValue}
           resetTheSearch={resetTheSearch}
           countriesNames={countriesNames}
+          setActiveSuggestion={setActiveSuggestion}
         />
       ) : null}
-      {/* <label htmlFor='country-search'>
-        <span>Search for a country</span>
-      </label>
-      <Input
-        value={searchValue}
-        type='search'
-        id='country-search'
-        placeholder='Search for a country'
-        onChange={(e) => handleSearch(e.target.value)}
-        autocomplete='off'
-      />
-
-      <Link href={`/country/${searchValue}`} passHref>
-        <a>
-          <SearchButton onClick={() => resetTheSearch()} />
-        </a>
-      </Link> */}
     </StyledSearchBarContainer>
   );
 }
