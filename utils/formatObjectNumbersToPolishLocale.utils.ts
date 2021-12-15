@@ -1,10 +1,12 @@
 import formatNumberToPolishLocale from './formatNumberToPolishLocale';
-//  @ts-ignore
-export default function formatObjectNumbersToPolishLocale(object) {
+
+export default function formatObjectNumbersToPolishLocale<T>(object: T): T {
+  const formattedObject = object;
   for (const property in object) {
     if (typeof object[property] === 'number') {
-      object[property] = formatNumberToPolishLocale(object[property]);
+      // @ts-ignore
+      formattedObject[property] = formatNumberToPolishLocale(object[property] as unknown as number);
     }
   }
-  return object;
+  return formattedObject;
 }

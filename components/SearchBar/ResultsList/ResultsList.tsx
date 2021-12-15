@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, Dispatch, SetStateAction } from 'react';
 import { StyledResultsList } from './ResultsList.styles';
 import Link from 'next/dist/client/link';
 
@@ -6,6 +6,7 @@ interface ResultsListProps {
   searchValue: string;
   resetTheSearch: () => void;
   countriesNames: string[];
+  setActiveSuggestion: Dispatch<SetStateAction<string>>;
 }
 
 export default function ResultsList({
@@ -14,11 +15,17 @@ export default function ResultsList({
   countriesNames,
 }: ResultsListProps): ReactElement | null {
   const filteredCountries = countriesNames.filter((country: string) =>
-    country.toLowerCase().includes(searchValue.toLowerCase()),
+    country.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()),
   );
 
   return (
-    <StyledResultsList>
+    <StyledResultsList
+      onKeyDown={(e) => {
+        // if (e.key === 'Enter') {
+        console.log(e.key);
+        // }
+      }}
+    >
       {(() => {
         switch (true) {
           case searchValue.length === 1:
@@ -29,7 +36,7 @@ export default function ResultsList({
             return filteredCountries.map((country: string) => {
               return (
                 <li onClick={() => resetTheSearch()} key={country}>
-                  <Link href={`/country/${country}`}>{country}</Link>
+                  <Link href={`/country/${country.toLocaleLowerCase()}`}>{country}</Link>
                 </li>
               );
             });
