@@ -1,4 +1,4 @@
-import {ReactElement, ReactNode, MouseEventHandler } from 'react';
+import { ReactElement, ReactNode, MouseEventHandler } from 'react';
 import { StyledButton } from './Button.styles';
 
 interface ButtonProps {
@@ -6,7 +6,7 @@ interface ButtonProps {
   className?: string;
   type: 'button' | 'submit' | 'reset' | undefined;
   ariaLabel?: string;
-  onClick: MouseEventHandler<HTMLButtonElement>
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export default function Button({
@@ -14,7 +14,7 @@ export default function Button({
   className,
   type = 'button',
   ariaLabel,
-  onClick
+  onClick,
 }: ButtonProps): ReactElement {
   return (
     <StyledButton className={className} aria-label={ariaLabel} type={type} onClick={onClick}>
