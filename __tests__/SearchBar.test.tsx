@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import SearchBar from '../components/SearchBar/SearchBar';
-import allCountriesNames from '../assets/data/allCountriesNames';
+import allCountriesNames from '../assets/data/test-mocks/allCountriesNames';
 
 it('renders the SearchBar', () => {
   render(<SearchBar countriesNames={allCountriesNames} />);
@@ -25,6 +25,6 @@ it('renders the results list', () => {
 //   });
 //   const countryResult = screen.getByText(/Poland/);
 //   fireEvent.click(countryResult);
-//   console.log(document.body);
+//   console.log(document.body.innerHTML);
 //   // expect(screen.getByText(/Poland/)).toBeInTheDocument();
 // });
