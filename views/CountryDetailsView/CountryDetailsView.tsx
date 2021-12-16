@@ -18,10 +18,24 @@ export default function CountryDetailsView({ countryName }: CountryDetailsViewPr
 
   return (
     <StyledCountryDetailsContainer>
-      <h2>{typeof countryName === 'string' && capitalise(countryName)}</h2>
+      <h2>
+        {/* Capitalise each part of the country's name or entire name if it's a single word */}
+        {typeof countryName === 'string' && countryName.split(' ').length < 1
+          ? capitalise(countryName)
+          : typeof countryName === 'string' &&
+            countryName
+              .split(' ')
+              .map((namePart: string) => capitalise(namePart))
+              .join(' ')}
+      </h2>
       {error !== null && <ErrorContainer message={error.message} />}
       {status === 'fetching' && <LoadingSpinner />}
-      {status === 'fetched' && <ChartsContainer chartData={chartData as HistoricalDataForCountry} countryName={countryName} />}
+      {status === 'fetched' && (
+        <ChartsContainer
+          chartData={chartData as HistoricalDataForCountry}
+          countryName={countryName}
+        />
+      )}
     </StyledCountryDetailsContainer>
   );
 }
