@@ -38,6 +38,9 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
 
   const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'ArrowDown') {
+      if(!searchValue.trim()){
+        return;
+      }
       e.preventDefault();
       if (activeSuggestionIndex === filteredSuggestions.length - 1) {
         return;
@@ -71,7 +74,7 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
 
   return (
     <StyledSearchBarContainer>
-      <form action='/' method='get'>
+      <form action='/country/' method='get'>
         <label htmlFor='country-search'>
           <span>Search for a country</span>
         </label>
