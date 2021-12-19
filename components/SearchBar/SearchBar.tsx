@@ -7,6 +7,7 @@ import {
 } from './SearchBar.styles';
 import Input from 'components/Elements/Input/Input';
 import SearchButton from 'components/Elements/SearchButton/SearchButton';
+import { useRouter } from 'next/router';
 
 interface SearchBarProps {
   countriesNames: string[];
@@ -38,7 +39,7 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
 
   const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'ArrowDown') {
-      if(!searchValue.trim()){
+      if (!searchValue.trim()) {
         return;
       }
       e.preventDefault();
@@ -74,7 +75,7 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
 
   return (
     <StyledSearchBarContainer>
-      <form action='/country/' method='get'>
+      <form action='/s' method='get'>
         <label htmlFor='country-search'>
           <span>Search for a country</span>
         </label>
