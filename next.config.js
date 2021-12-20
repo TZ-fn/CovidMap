@@ -7,9 +7,15 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/s\\?country=:country',
-        destination: '/country/:country',
-        // has: [{ type: 'query', key: '' }],
+        source: '/',
+        has: [
+          {
+            type: 'query',
+            key: 'country',
+            value: '(?<countryName>.*)',
+          }
+        ],
+        destination: '/country/:countryName',
         permanent: true,
       }
     ];

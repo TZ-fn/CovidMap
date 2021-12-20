@@ -21,6 +21,9 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
   const [wasArrowDownPressedAlready, setWasArrowDownPressedAlready] = useState(false);
   const savedSearchValue = useRef(searchValue);
 
+  // const router = useRouter();
+  // console.log(router);
+
   const filterSuggestions = (searchValue: string) =>
     countriesNames.filter((country) =>
       country.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()),
@@ -67,7 +70,6 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
     }
 
     if (e.key === 'Enter') {
-      // e.preventDefault();
       setSearchValue(filteredSuggestions[activeSuggestionIndex]);
       setShowSuggestions(false);
     }
@@ -75,7 +77,7 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
 
   return (
     <StyledSearchBarContainer>
-      <form action='/s' method='get'>
+      <form action='/' method='get'>
         <label htmlFor='country-search'>
           <span>Search for a country</span>
         </label>
