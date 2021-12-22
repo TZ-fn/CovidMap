@@ -73,7 +73,7 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
       setActiveSuggestionIndex(0);
       setSearchValue(filteredSuggestions[activeSuggestionIndex]);
       setShowSuggestions(false);
-      router.push(`/country/${filteredSuggestions[activeSuggestionIndex]}`);
+      router.push(`/country/${searchValue}`);
     }
   };
 
@@ -95,7 +95,7 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
         <SearchButton />
       </form>
 
-      {searchValue.length > 0 && showSuggestions === true ? (
+      {searchValue?.length > 0 && showSuggestions === true ? (
         <StyledAutosuggestionList>
           {(() => {
             switch (true) {
