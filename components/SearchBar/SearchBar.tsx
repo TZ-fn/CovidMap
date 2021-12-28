@@ -70,6 +70,9 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
 
     if (e.key === 'Enter') {
       e.preventDefault();
+      if (!searchValue.trim()) {
+        return;
+      }
       setActiveSuggestionIndex(0);
       setSearchValue(filteredSuggestions[activeSuggestionIndex]);
       setShowSuggestions(false);
