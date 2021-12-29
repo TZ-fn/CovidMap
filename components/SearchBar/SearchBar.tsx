@@ -74,8 +74,10 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
         return;
       }
       setActiveSuggestionIndex(0);
-      setSearchValue(filteredSuggestions[activeSuggestionIndex]);
+      savedSearchValue.current = '';
+      setSearchValue('');
       setShowSuggestions(false);
+      setWasArrowDownPressedAlready(false);
       router.push(`/country/${searchValue}`);
     }
   };
