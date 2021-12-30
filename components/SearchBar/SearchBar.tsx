@@ -1,4 +1,4 @@
-import { ReactElement, useState, KeyboardEvent, useRef } from 'react';
+import { ReactElement, useState, KeyboardEvent, useRef, MouseEvent } from 'react';
 import Link from 'next/link';
 import {
   StyledSearchBarContainer,
@@ -37,6 +37,19 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
 
   const resetTheSearch = () => {
     setSearchValue('');
+  };
+
+  const handleSearchButton = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    if (!searchValue.trim()) {
+      return;
+    }
+    setActiveSuggestionIndex(0);
+    savedSearchValue.current = '';
+    setSearchValue('');
+    setShowSuggestions(false);
+    setWasArrowDownPressedAlready(false);
+    router.push(`/country/${searchValue}`);
   };
 
   const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -97,7 +110,7 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
           onKeyDown={(e) => handleKeyPress(e)}
           autocomplete='off'
         />
-        <SearchButton />
+        <SearchButton onClick={(e) => handleSearchButton(e)} />
       </form>
 
       {searchValue?.length > 0 && showSuggestions === true ? (
