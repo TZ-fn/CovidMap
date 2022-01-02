@@ -1,5 +1,6 @@
 import { GeoJSON, GeoJSONProps } from 'react-leaflet';
 import { Layer, LeafletMouseEvent } from 'leaflet';
+import { useRouter } from 'next/router';
 import { Feature } from 'geojson';
 import { mapCountryToNumberOfCases, mapCountriesNamesToCovidDataCountries } from '../Map.utils';
 import { CovidCasesDataForCountry } from 'utils/APIdata.types';
@@ -15,6 +16,8 @@ export default function GeoJSONwithMap({
   style,
   covidCasesData,
 }: GeoJSONwithMapProps): JSX.Element {
+  const router = useRouter();
+
   const highlightFeature = (e: LeafletMouseEvent) => {
     const layer = e.target;
 
@@ -57,7 +60,7 @@ export default function GeoJSONwithMap({
 
       click: (e: LeafletMouseEvent) => {
         const country = mapCountriesNamesToCovidDataCountries(e.target.feature.properties.name);
-        window.location.assign(`/country/${country}`);
+        router.push(`/country/${country}`);
       },
     });
   }
