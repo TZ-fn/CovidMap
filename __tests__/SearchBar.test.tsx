@@ -2,6 +2,15 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import SearchBar from '../components/SearchBar/SearchBar';
 import allCountriesNames from '../assets/data/test-mocks/allCountriesNames';
+import { createRouter } from 'next/router';
+import { RouterContext } from 'next-server/dist/lib/router-context';
+
+const router = createRouter('', { user: 'nikita' }, '', {
+  initialProps: {},
+  pageLoader: jest.fn(),
+  App: jest.fn(),
+  Component: jest.fn(),
+});
 
 it('renders the SearchBar', () => {
   render(<SearchBar countriesNames={allCountriesNames} />);
@@ -17,14 +26,18 @@ it('renders the results list', () => {
   expect(screen.getByText(/Poland/)).toBeInTheDocument();
 });
 
-// it('renders the results list', () => {
-//   render(<SearchBar countriesNames={allCountriesNames} />);
-//   const searchBarInput = screen.getByPlaceholderText(/Search for a country/);
-//   fireEvent.change(searchBarInput, {
-//     target: { value: 'Poland' },
-//   });
-//   const countryResult = screen.getByText(/Poland/);
-//   fireEvent.click(countryResult);
-//   console.log(document.body.innerHTML);
-//   // expect(screen.getByText(/Poland/)).toBeInTheDocument();
-// });
+it('renders the results list', () => {
+  render(
+    <RouterContext.Provider value={router}>
+      <SearchBar countriesNames={allCountriesNames} />
+    </RouterContext.Provider>,
+  );
+  const searchBarInput = screen.getByPlaceholderText(/Search for a country/);
+  fireEvent.change(searchBarInput, {
+    target: { value: 'Poland' },
+  });
+
+  const countryResult = screen.getByText(/Poland/);
+  fireEvent.click(countryResult);
+  // expect(screen.getByText(/Poland/)).toBeInTheDocument();
+});
