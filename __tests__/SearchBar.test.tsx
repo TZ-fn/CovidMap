@@ -2,15 +2,11 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import SearchBar from '../components/SearchBar/SearchBar';
 import allCountriesNames from '../assets/data/test-mocks/allCountriesNames';
-import { createRouter } from 'next/router';
-import { RouterContext } from 'next-server/dist/lib/router-context';
+import { useRouter } from 'next/router';
 
-const router = createRouter('', { user: 'nikita' }, '', {
-  initialProps: {},
-  pageLoader: jest.fn(),
-  App: jest.fn(),
-  Component: jest.fn(),
-});
+jest.mock('next/router', () => ({
+  useRouter: jest.fn(),
+}));
 
 it('renders the SearchBar', () => {
   render(<SearchBar countriesNames={allCountriesNames} />);
@@ -27,17 +23,17 @@ it('renders the results list', () => {
 });
 
 it('renders the results list', () => {
-  render(
-    <RouterContext.Provider value={router}>
-      <SearchBar countriesNames={allCountriesNames} />
-    </RouterContext.Provider>,
-  );
+  const push = jest.fn();
+  useRouter.mockImplementation(() => ({ push }));
+
+  render(<SearchBar countriesNames={allCountriesNames} />);
   const searchBarInput = screen.getByPlaceholderText(/Search for a country/);
   fireEvent.change(searchBarInput, {
     target: { value: 'Poland' },
   });
 
   const countryResult = screen.getByText(/Poland/);
+
   fireEvent.click(countryResult);
-  // expect(screen.getByText(/Poland/)).toBeInTheDocument();
+  expect(push).toHaveBeenCalledWith('/Poland/');
 });
