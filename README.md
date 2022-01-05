@@ -4,7 +4,7 @@
 
 ## About
 
-This is an app that allows users to check various statistics about Covid-19 around the world.
+This is an app that allows users to check various statistics about Covid-19 from around the world.
 
 This app uses the [disease.sh](https://disease.sh/) API as a source of data.
 
@@ -16,9 +16,11 @@ Both countries on the maps and countries on the lists are links to an individual
 
 On the details page, users can check the number of cases and deaths day by day for a year back. They are displayed on two area charts.
 
+Users can also switch between dark and light color themes using a switch in the top-right corner of the header.
+
 ## Live version
 
-Live version can be found [here](https://covid-map-chi.vercel.app/).
+The live version can be found [here](https://covid-map-chi.vercel.app/).
 
 ## Technologies I used
 
