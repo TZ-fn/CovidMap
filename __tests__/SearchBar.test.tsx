@@ -22,6 +22,16 @@ it('renders the results list', () => {
   expect(screen.getByText(/Poland/)).toBeInTheDocument();
 });
 
+it('checks if ArrowDown works properly with the search results list', () => {
+  render(<SearchBar countriesNames={allCountriesNames} />);
+  const searchBarInput = screen.getByPlaceholderText(/Search for a country/);
+  fireEvent.change(searchBarInput, {
+    target: { value: 'Poland' },
+  });
+  fireEvent.keyDown(searchBarInput, { key: 'ArrowDown', code: 'ArrowDown', charCode: 40 });
+  expect(searchBarInput).toHaveValue('Poland');
+});
+
 it('renders the results list', () => {
   const push = jest.fn();
   useRouter.mockImplementation(() => ({ push }));
