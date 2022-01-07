@@ -33,6 +33,7 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
     savedSearchValue.current = searchValue;
     setFilteredSuggestions(filterSuggestions(searchValue));
     setShowSuggestions(true);
+    setWasArrowDownPressedAlready(false);
   };
 
   const resetTheSearch = () => {
@@ -58,7 +59,7 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
         return;
       }
       e.preventDefault();
-      if (activeSuggestionIndex === filteredSuggestions.length - 1) {
+      if (wasArrowDownPressedAlready && activeSuggestionIndex === filteredSuggestions.length - 1) {
         return;
       }
       if (!wasArrowDownPressedAlready) {
