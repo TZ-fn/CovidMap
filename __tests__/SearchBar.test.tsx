@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import SearchBar from '../components/SearchBar/SearchBar';
 import allCountriesNames from '../assets/data/test-mocks/allCountriesNames';
 import { useRouter } from 'next/router';
@@ -16,34 +17,28 @@ it('renders the SearchBar', () => {
 it('renders the results list', () => {
   render(<SearchBar countriesNames={allCountriesNames} />);
   const searchBarInput = screen.getByPlaceholderText(/Search for a country/);
-  fireEvent.change(searchBarInput, {
-    target: { value: 'Poland' },
-  });
+  userEvent.type(searchBarInput, 'Poland');
   expect(screen.getByText(/Poland/)).toBeInTheDocument();
 });
 
-it('checks if ArrowDown works properly with the search results list', () => {
+it('checks if pressing ArrowDown works properly with the search results list', () => {
   render(<SearchBar countriesNames={allCountriesNames} />);
   const searchBarInput = screen.getByPlaceholderText(/Search for a country/);
-  fireEvent.change(searchBarInput, {
-    target: { value: 'Poland' },
-  });
-  fireEvent.keyDown(searchBarInput, { key: 'ArrowDown', code: 'ArrowDown', charCode: 40 });
-  expect(searchBarInput).toHaveValue('Poland');
+  userEvent.type(searchBarInput, 'Port');
+  userEvent.keyboard('{arrowdown}');
+  expect(searchBarInput).toHaveValue('Portugal');
 });
 
-it('renders the results list', () => {
+it('checks if the routing works', () => {
   const push = jest.fn();
   useRouter.mockImplementation(() => ({ push }));
 
   render(<SearchBar countriesNames={allCountriesNames} />);
   const searchBarInput = screen.getByPlaceholderText(/Search for a country/);
-  fireEvent.change(searchBarInput, {
-    target: { value: 'Poland' },
-  });
+  userEvent.type(searchBarInput, 'Poland');
 
   const countryResult = screen.getByText(/Poland/);
 
-  fireEvent.click(countryResult);
+  userEvent.click(countryResult);
   expect(push).toHaveBeenCalledWith('/Poland/');
 });
