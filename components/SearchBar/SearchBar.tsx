@@ -109,6 +109,8 @@ export default function SearchBar({ countriesNames }: SearchBarProps): ReactElem
           placeholder='Search for a country'
           onChange={(e) => handleSearchInput(e.target.value)}
           onKeyDown={(e) => handleKeyPress(e)}
+          onBlur={() => setShowSuggestions(false)}
+          onFocus={() => setShowSuggestions(true)}
           autocomplete='off'
         />
         <SearchButton onClick={(e) => handleSearchButton(e)} />

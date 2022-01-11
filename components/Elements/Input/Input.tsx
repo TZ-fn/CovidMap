@@ -1,4 +1,4 @@
-import { ReactElement, ChangeEventHandler, KeyboardEventHandler } from 'react';
+import { ReactElement, ChangeEventHandler, KeyboardEventHandler, FocusEventHandler } from 'react';
 import { StyledInput } from './Input.styles';
 
 interface InputProps {
@@ -9,6 +9,9 @@ interface InputProps {
   autocomplete?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
+  onFocus?: FocusEventHandler<HTMLInputElement>;
+
   name?: string;
 }
 
@@ -20,6 +23,8 @@ export default function Input({
   autocomplete,
   onChange,
   onKeyDown,
+  onBlur,
+  onFocus,
   name,
 }: InputProps): ReactElement {
   return (
@@ -30,8 +35,10 @@ export default function Input({
       value={value}
       onChange={onChange}
       onKeyDown={onKeyDown}
-      autoComplete={autocomplete}
+      onBlur={onBlur}
+      onFocus={onFocus}
       name={name}
+      autoComplete={autocomplete}
     />
   );
 }
