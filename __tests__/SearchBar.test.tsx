@@ -6,6 +6,8 @@ import allCountriesNames from '__tests__/test-mocks/allCountriesNames';
 import { createMockRouter } from '__tests__/test-mocks/createMockRouter';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
 
+const router = createMockRouter();
+
 it('renders the SearchBar', () => {
   render(<SearchBar countriesNames={allCountriesNames} />);
   expect(screen.getByRole('searchbox', { name: /search for a country/i })).toBeInTheDocument();
@@ -27,18 +29,34 @@ it('checks if pressing ArrowDown works properly with the search results list', (
 });
 
 it('checks if SearchButton works properly', () => {
-  const userInput = 'Poland';
-  const router = createMockRouter();
-
   render(
     <RouterContext.Provider value={router}>
       <SearchBar countriesNames={allCountriesNames} />
     </RouterContext.Provider>,
   );
-  const searchBarInput = screen.getByRole('searchbox', { name: /search for a country/i });
-  userEvent.type(searchBarInput, userInput);
 
+  const userInput = 'Poland';
+  const searchBarInput = screen.getByRole('searchbox', { name: /search for a country/i });
   const searchButton = screen.getByRole('button', { name: /search button/i });
+
+  userEvent.type(searchBarInput, userInput);
   userEvent.click(searchButton);
+
+  expect(router.push).toHaveBeenCalledWith(`/country/${userInput}`);
+});
+
+it('checks if Enter key works properly', () => {
+  render(
+    <RouterContext.Provider value={router}>
+      <SearchBar countriesNames={allCountriesNames} />
+    </RouterContext.Provider>,
+  );
+
+  const userInput = 'Poland';
+  const searchBarInput = screen.getByRole('searchbox', { name: /search for a country/i });
+
+  userEvent.type(searchBarInput, userInput);
+  userEvent.keyboard('{Enter}');
+
   expect(router.push).toHaveBeenCalledWith(`/country/${userInput}`);
 });
