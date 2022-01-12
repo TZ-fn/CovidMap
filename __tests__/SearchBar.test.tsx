@@ -1,44 +1,44 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import SearchBar from '../components/SearchBar/SearchBar';
-import allCountriesNames from '../assets/data/test-mocks/allCountriesNames';
-import { useRouter } from 'next/router';
-
-jest.mock('next/router', () => ({
-  useRouter: jest.fn(),
-}));
+import SearchBar from 'components/SearchBar/SearchBar';
+import allCountriesNames from '__tests__/test-mocks/allCountriesNames';
+import { createMockRouter } from '__tests__/test-mocks/createMockRouter';
+import { RouterContext } from 'next/dist/shared/lib/router-context';
 
 it('renders the SearchBar', () => {
   render(<SearchBar countriesNames={allCountriesNames} />);
-  expect(screen.getByPlaceholderText(/Search for a country/)).toBeInTheDocument();
+  expect(screen.getByRole('searchbox', { name: /search for a country/i })).toBeInTheDocument();
 });
 
 it('renders the results list', () => {
   render(<SearchBar countriesNames={allCountriesNames} />);
-  const searchBarInput = screen.getByPlaceholderText(/Search for a country/);
+  const searchBarInput = screen.getByRole('searchbox', { name: /search for a country/i });
   userEvent.type(searchBarInput, 'Poland');
   expect(screen.getByText(/Poland/)).toBeInTheDocument();
 });
 
 it('checks if pressing ArrowDown works properly with the search results list', () => {
   render(<SearchBar countriesNames={allCountriesNames} />);
-  const searchBarInput = screen.getByPlaceholderText(/Search for a country/);
+  const searchBarInput = screen.getByRole('searchbox', { name: /search for a country/i });
   userEvent.type(searchBarInput, 'Port');
   userEvent.keyboard('{arrowdown}');
   expect(searchBarInput).toHaveValue('Portugal');
 });
 
-it('checks if the routing works', () => {
-  const push = jest.fn();
-  useRouter.mockImplementation(() => ({ push }));
+it('checks if SearchButton works properly', () => {
+  const userInput = 'Poland';
+  const router = createMockRouter();
 
-  render(<SearchBar countriesNames={allCountriesNames} />);
-  const searchBarInput = screen.getByPlaceholderText(/Search for a country/);
-  userEvent.type(searchBarInput, 'Poland');
+  render(
+    <RouterContext.Provider value={router}>
+      <SearchBar countriesNames={allCountriesNames} />
+    </RouterContext.Provider>,
+  );
+  const searchBarInput = screen.getByRole('searchbox', { name: /search for a country/i });
+  userEvent.type(searchBarInput, userInput);
 
-  const countryResult = screen.getByText(/Poland/);
-
-  userEvent.click(countryResult);
-  expect(push).toHaveBeenCalledWith('/Poland/');
+  const searchButton = screen.getByRole('button', { name: /search button/i });
+  userEvent.click(searchButton);
+  expect(router.push).toHaveBeenCalledWith(`/country/${userInput}`);
 });
