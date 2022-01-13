@@ -3,16 +3,15 @@ import { StyledWrapper } from './Layout.styles';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import { useFetch } from 'hooks/useFetch';
+import { VACCINES_DATA, ALL_COUNTRIES_DATA } from 'assets/data/APIs';
 
 interface LayoutProps {
   children: ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps): ReactElement {
-  const [vaccinesData] = useFetch(
-    'https://disease.sh/v3/covid-19/vaccine/coverage/countries?lastdays=1&fullData=false',
-  );
-  const [covidCasesData] = useFetch('https://disease.sh/v3/covid-19/countries');
+  const [vaccinesData] = useFetch(VACCINES_DATA);
+  const [covidCasesData] = useFetch(ALL_COUNTRIES_DATA);
   const countriesNames =
     'map' in covidCasesData ? covidCasesData.map((country) => country.country) : [''];
 
