@@ -16,7 +16,7 @@ it('does not render the rankings where there is not data', () => {
 
 it('renders the loader when there is no data', () => {
   render(<Home vaccinesData={null} covidCasesData={null} />);
-  expect(screen.getByTestId('loading')).toBeInTheDocument();
+  expect(screen.getByTestId('loading-spinner')).toBeInTheDocument();
 });
 
 it('renders both rankings when passed correct data', () => {

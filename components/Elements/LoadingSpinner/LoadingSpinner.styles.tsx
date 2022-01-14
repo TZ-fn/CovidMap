@@ -100,7 +100,7 @@ const StyledLoader = styled.div`
 `;
 
 const StyledLoadingSpinner = (): ReactElement => (
-  <StyledLoader data-testid='loading' className='lds-roller'>
+  <StyledLoader data-testid='loading-spinner' className='lds-roller'>
     <div />
     <div />
     <div />
