@@ -1,9 +1,9 @@
-export default function useFetch(input: string): [null, Error | null, string] {
+export default function useFetch(input: 'error' | 'fetching'): [null, Error | null, string] {
   if (input === 'error') {
-    return [null, null, 'sad'];
+    return [null, new Error('An error occurred while fetching the data'), input];
   }
   if (input === 'fetching') {
-    return [null, null, 'sad'];
+    return [null, null, input];
   }
-  return [null, null, 'default'];
+  return [null, null, input];
 }
