@@ -4,7 +4,12 @@ import CountryDetailsView from 'views/CountryDetailsView/CountryDetailsView';
 import { useFetch } from 'hooks/useFetch';
 
 const countryName = 'Poland';
-// jest.mock('hooks/useFetch');
+
+jest.mock('hooks/useFetch', () => {
+  return jest.fn(() => [[null, new Error('An error occurred while fetching the data'), 'error']]);
+});
+
+jest.isMockFunction(useFetch);
 
 it('renders the loader', () => {
   render(<CountryDetailsView countryName={countryName} />);
@@ -12,8 +17,6 @@ it('renders the loader', () => {
 });
 
 it('renders the error message when there is data fetching error', async () => {
-  useFetch.mockReturnValue([null, new Error('An error occurred while fetching the data'), 'error']);
-
   render(<CountryDetailsView countryName={countryName} />);
   expect(
     await screen.findByText(
