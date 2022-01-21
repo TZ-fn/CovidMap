@@ -1,15 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import CountryDetailsView from 'views/CountryDetailsView/CountryDetailsView';
-import { useFetch } from 'hooks/useFetch';
 
 const countryName = 'Poland';
-
-jest.mock('hooks/useFetch', () => {
-  return jest.fn(() => [[null, new Error('An error occurred while fetching the data'), 'error']]);
-});
-
-jest.isMockFunction(useFetch);
 
 it('renders the loader', () => {
   render(<CountryDetailsView countryName={countryName} />);
