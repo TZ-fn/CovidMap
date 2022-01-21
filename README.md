@@ -47,3 +47,5 @@ React Testing Library
 One of the main problems for me was the lack of sufficient documentation for the react-leaflet, many of the issues had to be solved by referring to the original Leaflet documentation. Mainly I had some problems with styling and working with GeoJSON objects, but they were all eventually solved.
 
 Another challenge for me was using TypeScript in this project. This is the first time I was using it and had some troubles with solving all the errors that I encountered. One of them was using TypeScript along with the styled-components and typing its theme object.
+
+Testing, especially mocking `useRouter` hook and my custom `useFetch` hook, was another thing that was giving me problems. Great help to mock the `useRouter` hook was [this](https://www.youtube.com/watch?v=uF2lqBluQV8) video by Bruno Antunes. My first attempts to mock `useRouter` were not working, because the Next.js `RouterContext` import was using a wrong module address (it was changed to a new one).
