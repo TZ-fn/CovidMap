@@ -1,7 +1,6 @@
 import { ReactElement } from 'react';
 import Image from 'next/image';
 import { StyledErrorContainer, StyledErrorImageContainer } from './ErrorContainer.styles';
-import ErrorIcon from 'public/icons/cross.svg';
 
 interface ErrorContainerProps {
   message: string;
@@ -11,7 +10,13 @@ export default function ErrorContainer({ message }: ErrorContainerProps): ReactE
   return (
     <StyledErrorContainer>
       <StyledErrorImageContainer>
-        <Image src={ErrorIcon.src} alt='' width='33px' height='33px' layout='fixed' />
+        <Image
+          src={'/../public/icons/cross.svg'}
+          alt=''
+          width='33px'
+          height='33px'
+          layout='fixed'
+        />
       </StyledErrorImageContainer>
       {message}
     </StyledErrorContainer>
