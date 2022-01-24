@@ -10,13 +10,7 @@ export default function ErrorContainer({ message }: ErrorContainerProps): ReactE
   return (
     <StyledErrorContainer>
       <StyledErrorImageContainer>
-        <Image
-          src={'/../public/icons/cross.svg'}
-          alt=''
-          width='33px'
-          height='33px'
-          layout='fixed'
-        />
+        <Image src={'/icons/cross.svg'} alt='' width='33px' height='33px' layout='fixed' />
       </StyledErrorImageContainer>
       {message}
     </StyledErrorContainer>
