@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react';
-import { VaccinesData, CovidCasesData, HistoricalDataForCountry, CovidCasesDataForCountry } from 'utils/APIdata.types';
+import {
+  VaccinesData,
+  CovidCasesData,
+  HistoricalDataForCountry,
+  CovidCasesDataForCountry,
+} from 'utils/APIdata.types';
 
 type APIdata = VaccinesData | CovidCasesData | HistoricalDataForCountry | CovidCasesDataForCountry;
 
