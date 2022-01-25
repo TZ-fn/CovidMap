@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom';
-import mockUseFetch from '__tests__/test-mocks/mockUseFetch';
 
 beforeEach(() => {
-  jest.mock('hooks/useFetch', () => jest.fn(() => mockUseFetch('error')));
+  window.fetch = jest.fn(() => Promise.resolve({} as Response));
 });
