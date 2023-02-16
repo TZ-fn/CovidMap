@@ -22,6 +22,14 @@ Users can also switch between dark and light color themes using a switch in the 
 
 The live version can be found [here](https://covid-map-chi.vercel.app/).
 
+## Running the project locally
+
+Clone or download this repository.
+
+Run `npm install` then `npm run dev` in the main directory.
+
+Open `http://localhost:3000` to view the app in your browser.
+
 ## Technologies I used
 
 Next.js
