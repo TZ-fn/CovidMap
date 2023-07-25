@@ -4,18 +4,23 @@ import Home from '../pages/index';
 import covidCasesData from './test-mocks/covidCasesData';
 import vaccinesData from './test-mocks/vaccinesData';
 
+function renderHomeWithNoData() {
+  //@ts-expect-error no data should be passed
+  render(<Home vaccinesData={null} covidCasesData={null} />);
+}
+
 it('renders the main component', () => {
-  render(<Home />);
+  renderHomeWithNoData();
   expect(screen.getByRole('main')).toBeInTheDocument();
 });
 
 it('does not render the rankings where there is not data', () => {
-  render(<Home vaccinesData={null} covidCasesData={null} />);
+  renderHomeWithNoData();
   expect(screen.queryByText(/Covid-19 cases worldwide/)).not.toBeInTheDocument();
 });
 
 it('renders the loader when there is no data', () => {
-  render(<Home vaccinesData={null} covidCasesData={null} />);
+  renderHomeWithNoData();
   expect(screen.getByTestId('loading-spinner')).toBeInTheDocument();
 });
 
